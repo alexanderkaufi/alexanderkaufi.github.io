@@ -30,6 +30,7 @@ const translations = {
     "preview.cycle": "CycleContext-App mit Zyklusübersicht und Alltagshinweisen",
     "preview.gallery": "Kunstwerk aus der Nunavut Gallery",
     "preview.bento": "Produktübersicht von Bento Software",
+    "preview.bentoAnimation": "Animation von Bento Software",
     "preview.heating": "Themenbild zur Berechnung von Wärmekosten",
     "preview.gymmix": "Trainingsübersicht aus dem Gymmix Manual",
     "preview.dashboard": "KLUUG · Dashboard",
@@ -111,6 +112,7 @@ const translations = {
     "preview.cycle": "CycleContext app with a cycle overview and everyday guidance",
     "preview.gallery": "Artwork from the Nunavut Gallery",
     "preview.bento": "Bento Software product overview",
+    "preview.bentoAnimation": "Bento Software animation",
     "preview.heating": "Illustration for the heating cost calculator",
     "preview.gymmix": "Training overview from the Gymmix Manual",
     "preview.dashboard": "KLUUG · Dashboard",
@@ -246,7 +248,8 @@ const browserLanguage = navigator.language.toLowerCase().startsWith("de") ? "de"
 setLanguage(savedLanguage || browserLanguage);
 
 const revealItems = document.querySelectorAll(".reveal");
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const reducedMotion = reducedMotionQuery.matches;
 if (reducedMotion || !("IntersectionObserver" in window)) {
   revealItems.forEach((element) => element.classList.add("visible"));
 } else {
@@ -260,3 +263,55 @@ if (reducedMotion || !("IntersectionObserver" in window)) {
   }, { threshold: 0.1, rootMargin: "0px 0px -4%" });
   revealItems.forEach((element) => observer.observe(element));
 }
+
+const parallaxItems = [...document.querySelectorAll("[data-parallax]")];
+let parallaxFrame = 0;
+
+function updateParallax() {
+  parallaxFrame = 0;
+  if (reducedMotionQuery.matches) {
+    parallaxItems.forEach((element) => element.style.removeProperty("--parallax-y"));
+    return;
+  }
+
+  const viewportHeight = window.innerHeight;
+  const mobileFactor = window.innerWidth < 641 ? 0.6 : 1;
+  parallaxItems.forEach((element) => {
+    const anchor = element.closest(".project-card, .hero-showcase") || element;
+    const bounds = anchor.getBoundingClientRect();
+    if (bounds.bottom < -50 || bounds.top > viewportHeight + 50) return;
+    const progress = Math.max(-1, Math.min(1, (viewportHeight / 2 - bounds.top - bounds.height / 2) / viewportHeight));
+    const offset = progress * Number(element.dataset.parallax) * mobileFactor;
+    element.style.setProperty("--parallax-y", `${offset.toFixed(1)}px`);
+  });
+}
+
+function queueParallax() {
+  if (!parallaxFrame) parallaxFrame = requestAnimationFrame(updateParallax);
+}
+
+updateParallax();
+window.addEventListener("scroll", queueParallax, { passive: true });
+window.addEventListener("resize", queueParallax, { passive: true });
+
+const bentoVideo = document.querySelector(".project-preview-bento video");
+const bentoPreview = bentoVideo?.closest(".project-preview-bento");
+bentoVideo?.addEventListener("error", () => bentoPreview?.classList.add("video-unavailable"));
+if (bentoVideo?.error) bentoPreview?.classList.add("video-unavailable");
+if (reducedMotionQuery.matches) bentoVideo?.pause();
+
+if (bentoVideo && "IntersectionObserver" in window) {
+  const videoObserver = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting && !reducedMotionQuery.matches) {
+      bentoVideo.play().catch(() => {});
+    } else {
+      bentoVideo.pause();
+    }
+  }, { threshold: 0.15 });
+  videoObserver.observe(bentoVideo);
+}
+
+reducedMotionQuery.addEventListener?.("change", () => {
+  queueParallax();
+  if (reducedMotionQuery.matches) bentoVideo?.pause();
+});

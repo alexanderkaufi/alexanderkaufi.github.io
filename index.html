@@ -11,8 +11,8 @@
     <meta property="og:url" content="https://alexanderkaufi.github.io/" />
     <link rel="canonical" href="https://alexanderkaufi.github.io/" />
     <title>Alexander Kaufmann — Portfolio</title>
-    <link rel="stylesheet" href="./portfolio.css?v=5" />
-    <script src="./portfolio.js?v=3" defer></script>
+    <link rel="stylesheet" href="./portfolio.css?v=6" />
+    <script src="./portfolio.js?v=4" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#inhalt" data-i18n="skip">Zum Inhalt springen</a>
@@ -46,9 +46,9 @@
             <a class="button button-quiet" href="https://github.com/alexanderkaufi" target="_blank" rel="noopener noreferrer"><span data-i18n="hero.cta.github">GitHub-Profil</span><span aria-hidden="true">↗</span></a>
           </div>
           <div class="hero-showcase reveal" aria-hidden="true">
-            <div class="showcase-tile showcase-gallery"><img src="./assets/previews/nunavut-gallery.jpg" alt="" /></div>
-            <div class="showcase-tile showcase-cycle"><img src="./assets/previews/cyclecontext.png" alt="" /></div>
-            <div class="showcase-tile showcase-gymmix"><img src="./assets/previews/gymmix-manual.png" alt="" /></div>
+            <div class="showcase-tile showcase-gallery" data-parallax="-24"><img src="./assets/previews/nunavut-gallery.jpg" alt="" /></div>
+            <div class="showcase-tile showcase-cycle" data-parallax="17"><img src="./assets/previews/cyclecontext.png" alt="" /></div>
+            <div class="showcase-tile showcase-gymmix" data-parallax="-19"><img src="./assets/previews/gymmix-manual.png" alt="" /></div>
           </div>
           <div class="hero-note reveal"><span class="hero-note-dot" aria-hidden="true"></span><span data-i18n="hero.note">Eine Auswahl aus Web, Apps und digitalen Werkzeugen</span></div>
         </div>
@@ -65,7 +65,7 @@
           </div>
           <div class="project-grid">
             <article class="project-card reveal">
-              <figure class="project-card-preview project-preview-cycle"><img src="./assets/previews/cyclecontext.png" alt="CycleContext-App mit Zyklusübersicht und Hinweisen für den Alltag" data-i18n-alt="preview.cycle" loading="lazy" decoding="async" /></figure>
+              <figure class="project-card-preview project-preview-cycle" data-parallax="8"><img src="./assets/previews/cyclecontext.png" alt="CycleContext-App mit Zyklusübersicht und Hinweisen für den Alltag" data-i18n-alt="preview.cycle" loading="lazy" decoding="async" /></figure>
               <div class="project-card-content">
                 <p class="project-card-type" data-i18n="cycle.category">iOS-App · Gesundheit</p>
                 <h3>CycleContext</h3>
@@ -80,7 +80,7 @@
               </div>
             </article>
             <article class="project-card reveal">
-              <figure class="project-card-preview project-preview-gallery"><img src="./assets/previews/nunavut-gallery.jpg" alt="Kunstwerk aus der Nunavut Gallery" data-i18n-alt="preview.gallery" loading="lazy" decoding="async" /></figure>
+              <figure class="project-card-preview project-preview-gallery" data-parallax="-8"><img src="./assets/previews/nunavut-gallery.jpg" alt="Kunstwerk aus der Nunavut Gallery" data-i18n-alt="preview.gallery" loading="lazy" decoding="async" /></figure>
               <div class="project-card-content">
                 <p class="project-card-type" data-i18n="gallery.category">Webplattform · Kunst</p>
                 <h3>Nunavut Gallery</h3>
@@ -89,7 +89,10 @@
               </div>
             </article>
             <article class="project-card reveal">
-              <figure class="project-card-preview project-preview-bento"><img src="./assets/previews/bento-software.jpg" alt="Produktübersicht von Bento Software" data-i18n-alt="preview.bento" loading="lazy" decoding="async" /></figure>
+              <figure class="project-card-preview project-preview-bento" data-parallax="8" aria-label="Animation von Bento Software" data-i18n-aria="preview.bentoAnimation">
+                <video src="./assets/previews/bento-software.mp4" poster="./assets/previews/bento-software.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+                <img class="motion-fallback" src="./assets/previews/bento-software.jpg" alt="" loading="lazy" decoding="async" />
+              </figure>
               <div class="project-card-content">
                 <p class="project-card-type" data-i18n="bento.category">Webseite · Digitale Produkte</p>
                 <h3>Bento Software</h3>
@@ -98,7 +101,7 @@
               </div>
             </article>
             <article class="project-card reveal">
-              <figure class="project-card-preview project-preview-text project-preview-kluug" aria-label="Textvorschau aus dem KLUUG-Dashboard" data-i18n-aria="preview.dashboardAria">
+              <figure class="project-card-preview project-preview-text project-preview-kluug" data-parallax="-8" aria-label="Textvorschau aus dem KLUUG-Dashboard" data-i18n-aria="preview.dashboardAria">
                 <span class="preview-label" data-i18n="preview.dashboard">KLUUG · Dashboard</span>
                 <p class="preview-kicker" data-i18n="preview.ready">Bereit für heute?</p>
                 <blockquote data-i18n="preview.kluug">Hey Alex! Was knacken wir heute?</blockquote>
@@ -111,7 +114,7 @@
               </div>
             </article>
             <article class="project-card reveal">
-              <figure class="project-card-preview project-preview-heating"><img src="./assets/previews/waermekosten.jpg" alt="Themenbild zur Berechnung von Wärmekosten" data-i18n-alt="preview.heating" loading="lazy" decoding="async" /></figure>
+              <figure class="project-card-preview project-preview-heating" data-parallax="8"><img src="./assets/previews/waermekosten.jpg" alt="Themenbild zur Berechnung von Wärmekosten" data-i18n-alt="preview.heating" loading="lazy" decoding="async" /></figure>
               <div class="project-card-content">
                 <p class="project-card-type" data-i18n="heat.category">Web · Rechner</p>
                 <h3 data-i18n="heat.title">Wärmekosten</h3>
@@ -120,7 +123,7 @@
               </div>
             </article>
             <article class="project-card reveal">
-              <figure class="project-card-preview project-preview-text project-preview-credo" aria-label="Textvorschau aus dem Glaubensbekenntnis" data-i18n-aria="preview.credoAria">
+              <figure class="project-card-preview project-preview-text project-preview-credo" data-parallax="-8" aria-label="Textvorschau aus dem Glaubensbekenntnis" data-i18n-aria="preview.credoAria">
                 <span class="preview-label" data-i18n="preview.credoLabel">Credo · Glaubensbekenntnis</span>
                 <p class="preview-script" data-i18n="preview.credoHeading">Nizäno-Konstantinopolitanisches Glaubensbekenntnis</p>
                 <blockquote data-i18n="preview.credoQuote">Wir glauben an den einen Gott, den Vater, den Allmächtigen.</blockquote>
@@ -134,7 +137,7 @@
               </div>
             </article>
             <article class="project-card reveal">
-              <figure class="project-card-preview project-preview-gymmix"><img src="./assets/previews/gymmix-manual.png" alt="Trainingsübersicht aus dem Gymmix Manual" data-i18n-alt="preview.gymmix" loading="lazy" decoding="async" /></figure>
+              <figure class="project-card-preview project-preview-gymmix" data-parallax="8"><img src="./assets/previews/gymmix-manual.png" alt="Trainingsübersicht aus dem Gymmix Manual" data-i18n-alt="preview.gymmix" loading="lazy" decoding="async" /></figure>
               <div class="project-card-content">
                 <p class="project-card-type" data-i18n="gymmix.category">Web · Dokumentation</p>
                 <h3>Gymmix Manual</h3>
@@ -149,7 +152,7 @@
               </div>
             </article>
             <article class="project-card reveal">
-              <figure class="project-card-preview project-preview-text project-preview-luv" aria-label="Textvorschau aus der LuV-Anwendung" data-i18n-aria="preview.luvAria">
+              <figure class="project-card-preview project-preview-text project-preview-luv" data-parallax="-8" aria-label="Textvorschau aus der LuV-Anwendung" data-i18n-aria="preview.luvAria">
                 <span class="preview-label" data-i18n="preview.luvLabel">LuV · Beurteilung</span>
                 <p class="preview-script" data-i18n="preview.luvHeading">Leistungs- und Verhaltensbeurteilung</p>
                 <span class="preview-chip-row" aria-hidden="true"><span data-i18n="preview.luvTab">Bewertung</span><span data-i18n="preview.luvResult">Erzeugtes Ergebnis</span></span>
@@ -163,7 +166,7 @@
               </div>
             </article>
             <article class="project-card reveal">
-              <figure class="project-card-preview project-preview-text project-preview-transkript" aria-label="Textvorschau aus dem Transkript-Redaktor" data-i18n-aria="preview.transcriptAria">
+              <figure class="project-card-preview project-preview-text project-preview-transkript" data-parallax="8" aria-label="Textvorschau aus dem Transkript-Redaktor" data-i18n-aria="preview.transcriptAria">
                 <span class="preview-label" data-i18n="preview.transcriptLabel">Transkript · Redaktor</span>
                 <p class="preview-script" data-i18n="preview.transcriptHeading">YouTube-Wissensdateien im Handumdrehen erzeugen</p>
                 <span class="preview-input" data-i18n="preview.transcriptInput">YouTube URL / Video-ID</span>
