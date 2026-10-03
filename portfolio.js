@@ -19,7 +19,11 @@ const translations = {
     "hero.note": "Eine Auswahl aus Web, Apps und digitalen Werkzeugen",
     "projects.eyebrow": "Ausgewählte Arbeiten",
     "projects.title": "Einblicke in meine Projekte.",
-    "projects.intro": "Neun Projekte aus Apps, Web und digitalen Werkzeugen — jedes mit einer kleinen Vorschau.",
+    "projects.intro": "Elf Projekte aus Apps, Web und digitalen Werkzeugen — jedes mit einer kleinen Vorschau.",
+    "gymmixApp.category": "iOS-App · Fitness",
+    "gymmixApp.description": "Trainings planen, Sätze und Gewichte festhalten und Fortschritte im Gym oder zu Hause verfolgen.",
+    "carddisplay.category": "iOS-App · Produktivität",
+    "carddisplay.description": "Digitale Visitenkarten gestalten, vorhandene Karten erfassen und Kontakte direkt vom iPhone teilen.",
     "cycle.category": "iOS-App · Gesundheit",
     "cycle.description": "Eine ruhige iPhone-App, die Zyklusabschnitte einordnet und persönliche Daten lokal auf dem Gerät hält.",
     "cycle.site": "Projektseite",
@@ -28,6 +32,8 @@ const translations = {
     "link.projectSite": "Projektseite",
     "gymmix.handbook": "Handbuch",
     "preview.cycle": "CycleContext-App mit Zyklusübersicht und Alltagshinweisen",
+    "preview.gymmixApp": "Gymmix-Motiv mit anatomischer Muskelillustration",
+    "preview.carddisplay": "CardDisplay-Symbol mit digitaler Visitenkarte",
     "preview.gallery": "Kunstwerk aus der Nunavut Gallery",
     "preview.bento": "Produktübersicht von Bento Software",
     "preview.bentoAnimation": "Animation von Bento Software",
@@ -60,9 +66,9 @@ const translations = {
     "kluug.description": "Eine Lern-App für Klasse 5 bis 8 mit Lernpfaden, Quiz-Quests und Fiete als Tutor.",
     "bento.category": "Webseite · Digitale Produkte",
     "bento.description": "Eine klare Produktwelt für praktische Apps und kleine Helfer im Alltag.",
-    "heat.category": "Web · Rechner",
-    "heat.title": "Wärmekosten",
-    "heat.description": "Ein lokaler Kostenvergleich, der Heizoptionen verständlich gegenüberstellt.",
+    "heat.category": "Konzept · Web-Rechner",
+    "heat.title": "Wärmekostenrechner",
+    "heat.description": "Ein interaktiver Entwurf, der die Kosten von Gasheizung und Wärmepumpe anhand eigener Annahmen vergleicht.",
     "credo.category": "Web · Wissen",
     "credo.description": "Texte zum orthodoxen Glaubensbekenntnis und zur Katechese digital zugänglich gemacht.",
     "gymmix.category": "Web · Dokumentation",
@@ -101,7 +107,11 @@ const translations = {
     "hero.note": "A selection of websites, apps, and digital tools",
     "projects.eyebrow": "Selected work",
     "projects.title": "A closer look at my work.",
-    "projects.intro": "Nine projects across apps, web, and digital tools — each with a small preview.",
+    "projects.intro": "Eleven projects across apps, web, and digital tools — each with a small preview.",
+    "gymmixApp.category": "iOS app · Fitness",
+    "gymmixApp.description": "Plan workouts, log sets and weights, and follow progress in the gym or at home.",
+    "carddisplay.category": "iOS app · Productivity",
+    "carddisplay.description": "Create digital business cards, capture existing cards, and share contact details from your iPhone.",
     "cycle.category": "iOS app · Health",
     "cycle.description": "A calm iPhone app that explains cycle stages while keeping personal data on the device.",
     "cycle.site": "Project page",
@@ -110,6 +120,8 @@ const translations = {
     "link.projectSite": "Project site",
     "gymmix.handbook": "Manual",
     "preview.cycle": "CycleContext app with a cycle overview and everyday guidance",
+    "preview.gymmixApp": "Gymmix artwork showing an anatomical muscle illustration",
+    "preview.carddisplay": "CardDisplay icon with a digital business card",
     "preview.gallery": "Artwork from the Nunavut Gallery",
     "preview.bento": "Bento Software product overview",
     "preview.bentoAnimation": "Bento Software animation",
@@ -142,9 +154,9 @@ const translations = {
     "kluug.description": "A learning app for grades 5–8 with learning paths, quiz quests, and Fiete as a tutor.",
     "bento.category": "Website · Digital products",
     "bento.description": "A clear product home for practical apps and useful tools for everyday life.",
-    "heat.category": "Web · Calculator",
-    "heat.title": "Heating Costs",
-    "heat.description": "A local cost comparison that makes heating options easier to understand.",
+    "heat.category": "Concept · Web calculator",
+    "heat.title": "Heating Cost Calculator",
+    "heat.description": "An interactive concept comparing gas heating and heat pump costs using your own assumptions.",
     "credo.category": "Web · Knowledge",
     "credo.description": "Digital access to texts on the Orthodox Creed and catechesis.",
     "gymmix.category": "Web · Documentation",
@@ -269,7 +281,8 @@ const heroSection = document.querySelector(".hero");
 const heroShowcase = document.querySelector(".hero-showcase");
 const leftShowcaseTile = heroShowcase?.querySelector('[data-swap-side="left"]');
 const rightShowcaseTile = heroShowcase?.querySelector('[data-swap-side="right"]');
-const centerShowcaseTile = heroShowcase?.querySelector(".showcase-cycle");
+const centerShowcaseTile = heroShowcase?.querySelector(".showcase-featured");
+const projectCards = [...document.querySelectorAll(".project-card")];
 let parallaxFrame = 0;
 
 function updateParallax() {
@@ -280,6 +293,10 @@ function updateParallax() {
       element.style.removeProperty("--swap-x");
       element.style.removeProperty("--swap-arc");
       element.style.removeProperty("--tile-angle");
+    });
+    projectCards.forEach((card) => {
+      card.style.removeProperty("--media-depth-y");
+      card.style.removeProperty("--copy-depth-y");
     });
     return;
   }
@@ -293,6 +310,14 @@ function updateParallax() {
     const progress = Math.max(-1, Math.min(1, (viewportHeight / 2 - bounds.top - bounds.height / 2) / viewportHeight));
     const offset = progress * Number(element.dataset.parallax) * mobileFactor;
     element.style.setProperty("--parallax-y", `${offset.toFixed(1)}px`);
+  });
+
+  projectCards.forEach((card) => {
+    const bounds = card.getBoundingClientRect();
+    if (bounds.bottom < -50 || bounds.top > viewportHeight + 50) return;
+    const progress = Math.max(-1, Math.min(1, (viewportHeight / 2 - bounds.top - bounds.height / 2) / viewportHeight));
+    card.style.setProperty("--media-depth-y", `${(progress * 13 * mobileFactor).toFixed(1)}px`);
+    card.style.setProperty("--copy-depth-y", `${(-progress * 5 * mobileFactor).toFixed(1)}px`);
   });
 
   if (heroSection && heroShowcase && leftShowcaseTile && rightShowcaseTile && centerShowcaseTile) {
