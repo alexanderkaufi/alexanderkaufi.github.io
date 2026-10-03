@@ -322,10 +322,9 @@ function updateParallax() {
 
   if (heroSection && heroShowcase && leftShowcaseTile && rightShowcaseTile && centerShowcaseTile) {
     const showcaseBounds = heroShowcase.getBoundingClientRect();
-    const showcaseCenter = showcaseBounds.top + showcaseBounds.height / 2;
-    const swapStart = viewportHeight / 2;
-    const swapEnd = -viewportHeight * 0.15;
-    const swapProgress = Math.max(0, Math.min(1, (swapStart - showcaseCenter) / (swapStart - swapEnd)));
+    const imageTravel = viewportHeight + showcaseBounds.height;
+    const imageProgress = (viewportHeight - showcaseBounds.top) / imageTravel;
+    const swapProgress = Math.max(0, Math.min(1, (imageProgress - 1 / 3) / (2 / 3)));
     const gap = Number.parseFloat(getComputedStyle(heroShowcase).columnGap) || 0;
     const distance = leftShowcaseTile.offsetWidth / 2 + centerShowcaseTile.offsetWidth + rightShowcaseTile.offsetWidth / 2 + gap * 2;
     const travel = distance * swapProgress;
