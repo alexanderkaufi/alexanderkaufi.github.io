@@ -265,12 +265,22 @@ if (reducedMotion || !("IntersectionObserver" in window)) {
 }
 
 const parallaxItems = [...document.querySelectorAll("[data-parallax]")];
+const heroSection = document.querySelector(".hero");
+const heroShowcase = document.querySelector(".hero-showcase");
+const leftShowcaseTile = heroShowcase?.querySelector('[data-swap-side="left"]');
+const rightShowcaseTile = heroShowcase?.querySelector('[data-swap-side="right"]');
+const centerShowcaseTile = heroShowcase?.querySelector(".showcase-cycle");
 let parallaxFrame = 0;
 
 function updateParallax() {
   parallaxFrame = 0;
   if (reducedMotionQuery.matches) {
-    parallaxItems.forEach((element) => element.style.removeProperty("--parallax-y"));
+    parallaxItems.forEach((element) => {
+      element.style.removeProperty("--parallax-y");
+      element.style.removeProperty("--swap-x");
+      element.style.removeProperty("--swap-arc");
+      element.style.removeProperty("--tile-angle");
+    });
     return;
   }
 
@@ -284,6 +294,22 @@ function updateParallax() {
     const offset = progress * Number(element.dataset.parallax) * mobileFactor;
     element.style.setProperty("--parallax-y", `${offset.toFixed(1)}px`);
   });
+
+  if (heroSection && heroShowcase && leftShowcaseTile && rightShowcaseTile && centerShowcaseTile) {
+    const heroTop = heroSection.getBoundingClientRect().top;
+    const scrollSpan = Math.max(1, heroSection.offsetHeight - viewportHeight);
+    const swapProgress = Math.max(0, Math.min(1, -heroTop / scrollSpan));
+    const gap = Number.parseFloat(getComputedStyle(heroShowcase).columnGap) || 0;
+    const distance = leftShowcaseTile.offsetWidth / 2 + centerShowcaseTile.offsetWidth + rightShowcaseTile.offsetWidth / 2 + gap * 2;
+    const travel = distance * swapProgress;
+    const arc = Math.sin(Math.PI * swapProgress) * 142 * mobileFactor;
+    leftShowcaseTile.style.setProperty("--swap-x", `${travel.toFixed(1)}px`);
+    leftShowcaseTile.style.setProperty("--swap-arc", `${(-arc).toFixed(1)}px`);
+    leftShowcaseTile.style.setProperty("--tile-angle", `${(-10 + 19 * swapProgress).toFixed(1)}deg`);
+    rightShowcaseTile.style.setProperty("--swap-x", `${(-travel).toFixed(1)}px`);
+    rightShowcaseTile.style.setProperty("--swap-arc", `${arc.toFixed(1)}px`);
+    rightShowcaseTile.style.setProperty("--tile-angle", `${(9 - 19 * swapProgress).toFixed(1)}deg`);
+  }
 }
 
 function queueParallax() {
