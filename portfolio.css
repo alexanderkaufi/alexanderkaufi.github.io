@@ -161,7 +161,7 @@ h1, h2, h3 { letter-spacing: -.055em; }
 .button-primary:hover { background: #30333b; }
 .button-quiet { color: var(--blue); background: transparent; }
 .button-quiet:hover { background: rgba(0, 113, 227, .07); }
-.hero-showcase { position: relative; width: min(780px, 100%); height: 290px; margin: 74px auto 0; display: flex; align-items: center; justify-content: center; gap: 28px; perspective: 900px; }
+.hero-showcase { position: relative; width: min(780px, 100%); height: 420px; margin: 74px auto 0; display: flex; align-items: center; justify-content: center; gap: 28px; perspective: 900px; }
 .showcase-tile { padding: 12px; border: 1px solid rgba(255, 255, 255, .94); border-radius: 24px; display: grid; place-items: center; overflow: hidden; background: rgba(255, 255, 255, .62); box-shadow: 0 28px 62px rgba(50, 60, 91, .16), inset 0 1px 0 #fff; }
 .showcase-tile img { width: 100%; height: 100%; object-fit: contain; }
 .showcase-gallery { --tile-angle: -10deg; width: 230px; height: 188px; transform: translate3d(var(--swap-x, 0px), calc(var(--parallax-y, 0px) + var(--swap-arc, 0px)), 0) rotate(var(--tile-angle)) translateY(29px); }
@@ -359,7 +359,7 @@ html.has-js .reveal.visible { opacity: 1; transform: translateY(0); }
   .hero-lead { max-width: 480px; font-size: 1.05rem; }
   .hero-actions { gap: 6px; margin-top: 25px; }
   .button { min-height: 46px; padding-inline: 17px; font-size: .85rem; }
-  .hero-showcase { height: 205px; margin-top: 50px; gap: 8px; }
+  .hero-showcase { height: 280px; margin-top: 50px; gap: 8px; }
   .showcase-tile { padding: 7px; border-radius: 15px; }
   .showcase-gallery, .showcase-gymmix { width: 28%; height: 135px; }
   .showcase-cycle { width: 35%; height: 198px; padding: 6px; }
