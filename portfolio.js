@@ -321,9 +321,11 @@ function updateParallax() {
   });
 
   if (heroSection && heroShowcase && leftShowcaseTile && rightShowcaseTile && centerShowcaseTile) {
-    const heroTop = heroSection.getBoundingClientRect().top;
-    const scrollSpan = Math.max(1, heroSection.offsetHeight - viewportHeight);
-    const swapProgress = Math.max(0, Math.min(1, -heroTop / scrollSpan));
+    const showcaseBounds = heroShowcase.getBoundingClientRect();
+    const showcaseCenter = showcaseBounds.top + showcaseBounds.height / 2;
+    const swapStart = viewportHeight / 2;
+    const swapEnd = -viewportHeight * 0.15;
+    const swapProgress = Math.max(0, Math.min(1, (swapStart - showcaseCenter) / (swapStart - swapEnd)));
     const gap = Number.parseFloat(getComputedStyle(heroShowcase).columnGap) || 0;
     const distance = leftShowcaseTile.offsetWidth / 2 + centerShowcaseTile.offsetWidth + rightShowcaseTile.offsetWidth / 2 + gap * 2;
     const travel = distance * swapProgress;
@@ -345,6 +347,28 @@ updateParallax();
 window.addEventListener("scroll", queueParallax, { passive: true });
 window.addEventListener("resize", queueParallax, { passive: true });
 
+const finePointerQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+projectCards.forEach((card) => {
+  card.addEventListener("pointermove", (event) => {
+    if (!finePointerQuery.matches || reducedMotionQuery.matches || event.pointerType === "touch") return;
+    const bounds = card.getBoundingClientRect();
+    const x = event.clientX - bounds.left;
+    const y = event.clientY - bounds.top;
+    const rotateX = ((y / bounds.height) * 2 - 1) * -6;
+    const rotateY = ((x / bounds.width) * 2 - 1) * 6;
+    card.classList.add("is-pointer-active");
+    card.style.setProperty("--mouse-x", `${x.toFixed(1)}px`);
+    card.style.setProperty("--mouse-y", `${y.toFixed(1)}px`);
+    card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+  });
+  card.addEventListener("pointerleave", () => {
+    card.classList.remove("is-pointer-active");
+    card.style.removeProperty("--mouse-x");
+    card.style.removeProperty("--mouse-y");
+    card.style.removeProperty("transform");
+  });
+});
+
 const bentoVideo = document.querySelector(".project-preview-bento video");
 const bentoPreview = bentoVideo?.closest(".project-preview-bento");
 bentoVideo?.addEventListener("error", () => bentoPreview?.classList.add("video-unavailable"));
@@ -364,5 +388,13 @@ if (bentoVideo && "IntersectionObserver" in window) {
 
 reducedMotionQuery.addEventListener?.("change", () => {
   queueParallax();
-  if (reducedMotionQuery.matches) bentoVideo?.pause();
+  if (reducedMotionQuery.matches) {
+    bentoVideo?.pause();
+    projectCards.forEach((card) => {
+      card.classList.remove("is-pointer-active");
+      card.style.removeProperty("--mouse-x");
+      card.style.removeProperty("--mouse-y");
+      card.style.removeProperty("transform");
+    });
+  }
 });
