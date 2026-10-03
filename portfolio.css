@@ -87,6 +87,7 @@ h1, h2, h3 { letter-spacing: -.055em; }
 .hero {
   position: relative;
   overflow: hidden;
+  min-height: 150vh;
   padding: clamp(152px, 19vh, 210px) 0 64px;
   text-align: center;
   background:
