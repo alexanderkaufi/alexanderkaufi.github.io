@@ -281,8 +281,8 @@ if (reducedMotion || !("IntersectionObserver" in window)) {
 const parallaxItems = [...document.querySelectorAll("[data-parallax]")];
 const heroSection = document.querySelector(".hero");
 const heroShowcase = document.querySelector(".hero-showcase");
-const leftShowcaseTile = heroShowcase?.querySelector('[data-swap-side="left"]');
-const rightShowcaseTile = heroShowcase?.querySelector('[data-swap-side="right"]');
+const leftShowcaseTile = heroShowcase?.querySelector('[data-reveal-side="left"]');
+const rightShowcaseTile = heroShowcase?.querySelector('[data-reveal-side="right"]');
 const centerShowcaseTile = heroShowcase?.querySelector(".showcase-featured");
 const projectCards = [...document.querySelectorAll(".project-card")];
 let parallaxFrame = 0;
@@ -292,7 +292,7 @@ function updateParallax() {
   if (reducedMotionQuery.matches) {
     parallaxItems.forEach((element) => {
       element.style.removeProperty("--parallax-y");
-      element.style.removeProperty("--swap-x");
+      element.style.removeProperty("--reveal-x");
       element.style.removeProperty("--swap-arc");
       element.style.removeProperty("--tile-angle");
     });
@@ -326,19 +326,18 @@ function updateParallax() {
     const showcaseBounds = heroShowcase.getBoundingClientRect();
     const imageTravel = viewportHeight + showcaseBounds.height;
     const imageProgress = (viewportHeight - showcaseBounds.top) / imageTravel;
-    const swapStart = 0.4;
-    const swapEnd = 0.63;
-    const swapProgress = Math.max(0, Math.min(1, (imageProgress - swapStart) / (swapEnd - swapStart)));
+    const revealStart = 0.4;
+    const revealEnd = 0.63;
+    const revealProgress = Math.max(0, Math.min(1, (imageProgress - revealStart) / (revealEnd - revealStart)));
     const gap = Number.parseFloat(getComputedStyle(heroShowcase).columnGap) || 0;
-    const distance = leftShowcaseTile.offsetWidth / 2 + centerShowcaseTile.offsetWidth + rightShowcaseTile.offsetWidth / 2 + gap * 2;
-    const travel = distance * swapProgress;
-    const arc = Math.sin(Math.PI * swapProgress) * 142 * mobileFactor;
-    leftShowcaseTile.style.setProperty("--swap-x", `${travel.toFixed(1)}px`);
+    const leftTuck = gap + leftShowcaseTile.offsetWidth * (2 / 3);
+    const rightTuck = gap + rightShowcaseTile.offsetWidth * (2 / 3);
+    const revealRemaining = 1 - revealProgress;
+    const arc = Math.sin(Math.PI * revealProgress) * 42 * mobileFactor;
+    leftShowcaseTile.style.setProperty("--reveal-x", `${(leftTuck * revealRemaining).toFixed(1)}px`);
     leftShowcaseTile.style.setProperty("--swap-arc", `${(-arc).toFixed(1)}px`);
-    leftShowcaseTile.style.setProperty("--tile-angle", `${(-10 + 19 * swapProgress).toFixed(1)}deg`);
-    rightShowcaseTile.style.setProperty("--swap-x", `${(-travel).toFixed(1)}px`);
+    rightShowcaseTile.style.setProperty("--reveal-x", `${(-rightTuck * revealRemaining).toFixed(1)}px`);
     rightShowcaseTile.style.setProperty("--swap-arc", `${arc.toFixed(1)}px`);
-    rightShowcaseTile.style.setProperty("--tile-angle", `${(9 - 19 * swapProgress).toFixed(1)}deg`);
   }
 }
 
