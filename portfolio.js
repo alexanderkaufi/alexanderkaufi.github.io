@@ -327,7 +327,7 @@ function updateParallax() {
     const imageTravel = viewportHeight + showcaseBounds.height;
     const imageProgress = (viewportHeight - showcaseBounds.top) / imageTravel;
     const swapStart = 0.4;
-    const swapEnd = 1 + (showcaseBounds.height / 3) / imageTravel;
+    const swapEnd = 0.63;
     const swapProgress = Math.max(0, Math.min(1, (imageProgress - swapStart) / (swapEnd - swapStart)));
     const gap = Number.parseFloat(getComputedStyle(heroShowcase).columnGap) || 0;
     const distance = leftShowcaseTile.offsetWidth / 2 + centerShowcaseTile.offsetWidth + rightShowcaseTile.offsetWidth / 2 + gap * 2;

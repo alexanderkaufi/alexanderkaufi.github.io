@@ -164,7 +164,7 @@ h1, h2, h3 { letter-spacing: -.055em; }
 .hero-showcase { position: relative; width: min(780px, 100%); height: 420px; margin: 74px auto 0; display: flex; align-items: center; justify-content: center; gap: 28px; perspective: 900px; }
 .showcase-tile { padding: 12px; border: 1px solid rgba(255, 255, 255, .94); border-radius: 24px; display: grid; place-items: center; overflow: hidden; background: rgba(255, 255, 255, .62); box-shadow: 0 28px 62px rgba(50, 60, 91, .16), inset 0 1px 0 #fff; }
 .showcase-tile img { width: 100%; height: 100%; object-fit: contain; }
-.showcase-gallery { --tile-angle: -10deg; width: 230px; height: 188px; transform: translate3d(var(--swap-x, 0px), calc(var(--parallax-y, 0px) + var(--swap-arc, 0px)), 0) rotate(var(--tile-angle)) translateY(29px); }
+.showcase-gallery { --tile-angle: -10deg; width: 230px; height: 300px; transform: translate3d(var(--swap-x, 0px), calc(var(--parallax-y, 0px) + var(--swap-arc, 0px)), 0) rotate(var(--tile-angle)) translateY(29px); }
 .showcase-gallery img { border-radius: 12px; }
 .showcase-featured { position: relative; z-index: 2; width: 250px; height: 250px; padding: 10px; transform: translate3d(0, var(--parallax-y, 0px), 0) rotate(-1deg); background: #f7f7fb; }
 .showcase-featured img { border-radius: 15px; filter: drop-shadow(0 5px 12px rgba(39, 46, 63, .12)); }
@@ -440,10 +440,10 @@ html.has-js .project-card.reveal { transition: opacity .65s var(--ease), transfo
   .hero-lead { max-width: 480px; font-size: 1.05rem; }
   .hero-actions { gap: 6px; margin-top: 25px; }
   .button { min-height: 46px; padding-inline: 17px; font-size: .85rem; }
-  .hero-showcase { height: 280px; margin-top: 50px; gap: 8px; }
+  .hero-showcase { height: 300px; margin-top: 50px; gap: 8px; }
   .showcase-tile { padding: 7px; border-radius: 15px; }
-  .showcase-gallery { width: 28%; height: 135px; }
-  .showcase-bento { width: 28%; height: 175px; }
+  .showcase-gallery { width: 32%; height: 200px; }
+  .showcase-bento { width: 26%; height: 175px; }
   .showcase-featured { width: 35%; height: 160px; padding: 6px; }
   .hero-note { max-width: 280px; margin: 34px auto 0; font-size: .72rem; line-height: 1.5; }
   .projects-section { padding: 72px 0 78px; }
