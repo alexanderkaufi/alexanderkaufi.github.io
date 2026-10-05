@@ -373,6 +373,11 @@ projectCards.forEach((card) => {
 
 const bentoVideo = document.querySelector(".project-preview-bento video");
 const bentoPreview = bentoVideo?.closest(".project-preview-bento");
+// Keep the preview silent before any autoplay attempt, including after navigation.
+if (bentoVideo) {
+  bentoVideo.muted = true;
+  bentoVideo.defaultMuted = true;
+}
 bentoVideo?.addEventListener("error", () => bentoPreview?.classList.add("video-unavailable"));
 if (bentoVideo?.error) bentoPreview?.classList.add("video-unavailable");
 if (reducedMotionQuery.matches) bentoVideo?.pause();
