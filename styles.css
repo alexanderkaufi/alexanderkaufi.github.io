@@ -92,7 +92,6 @@ button { font: inherit; }
 }
 .button-small { min-height: 32px; padding: 0 15px; color: #fff; background: var(--blue); font-size: .74rem; }
 .button-primary { color: #fff; background: var(--blue); }
-.button-secondary { color: var(--blue); background: transparent; box-shadow: inset 0 0 0 1px var(--blue); }
 
 a, button, summary { touch-action: manipulation; }
 :focus-visible { outline: 3px solid rgba(0, 113, 227, .55); outline-offset: 3px; }
@@ -102,7 +101,6 @@ a, button, summary { touch-action: manipulation; }
   .button:hover { transform: translateY(-1px); }
   .button-small:hover { color: #fff; background: #0077ed; }
   .button-primary:hover { background: #0077ed; }
-  .button-secondary:hover { color: #fff; background: var(--blue); }
   .footer nav a:hover, .footer-bottom a:hover { color: #fff; }
 }
 
@@ -126,12 +124,6 @@ h1 {
   line-height: 1.02;
   font-weight: 720;
 }
-h1 span {
-  color: transparent;
-  background: linear-gradient(90deg, #ec3550, #f47725 25%, #1687ed 52%, #27a96e 75%, #e72e72);
-  background-clip: text;
-  -webkit-background-clip: text;
-}
 h2 { margin-bottom: 20px; font-size: clamp(2.2rem, 4vw, 3.65rem); line-height: 1.06; font-weight: 700; }
 h3 { margin-bottom: 12px; font-size: 1.55rem; line-height: 1.12; }
 
@@ -153,9 +145,8 @@ h3 { margin-bottom: 12px; font-size: 1.55rem; line-height: 1.12; }
   transform: translateX(-50%);
 }
 .hero-copy { max-width: 980px; text-align: center; position: relative; z-index: 2; }
-.hero-lead { max-width: 700px; margin: 0 auto 26px; color: var(--muted); font-size: clamp(1.08rem, 1.7vw, 1.3rem); line-height: 1.5; letter-spacing: -.02em; }
-.button-row { display: flex; justify-content: center; gap: 12px; }
-.hero-stage { min-height: 500px; margin-top: 44px; display: grid; place-items: center; position: relative; }
+.hero-lead { max-width: 700px; margin: 0 auto; color: var(--muted); font-size: clamp(1.08rem, 1.7vw, 1.3rem); line-height: 1.5; letter-spacing: -.02em; }
+.hero-stage { min-height: 500px; margin-top: 32px; display: grid; place-items: center; position: relative; }
 .cycle-halo {
   position: absolute;
   width: 480px;
@@ -292,9 +283,7 @@ h3 { margin-bottom: 12px; font-size: 1.55rem; line-height: 1.12; }
   .hero { padding: 106px 0 36px; }
   h1 { font-size: clamp(2.7rem, 10.5vw, 3.7rem); }
   .hero-lead { font-size: 1rem; }
-  .button-row { flex-direction: column; }
-  .button-row .button { width: 100%; }
-  .hero-stage { min-height: 420px; margin-top: 30px; }
+  .hero-stage { min-height: 420px; margin-top: 24px; }
   .device-hero { width: 195px; }
   .cycle-halo { width: 350px; height: 350px; }
   .trust-grid p { padding: 0 8px; }
