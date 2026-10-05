@@ -32,8 +32,46 @@ document.querySelectorAll("[data-year]").forEach((item) => {
   item.textContent = new Date().getFullYear();
 });
 
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+const reducedMotion = motionPreference.matches;
 const reveals = document.querySelectorAll(".reveal");
+
+const parallaxElements = [...document.querySelectorAll("[data-parallax]")];
+const compactMotion = window.matchMedia("(max-width: 760px), (pointer: coarse)");
+if (!reducedMotion && parallaxElements.length && "requestAnimationFrame" in window) {
+  let parallaxFrame = 0;
+
+  const updateParallax = () => {
+    parallaxFrame = 0;
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const motionScale = compactMotion.matches ? 0.5 : 1;
+    const updates = [];
+
+    parallaxElements.forEach((element) => {
+      const bounds = element.getBoundingClientRect();
+      if (bounds.bottom < -120 || bounds.top > viewportHeight + 120) return;
+
+      const currentOffset = Number.parseFloat(element.style.getPropertyValue("--parallax-y")) || 0;
+      const naturalTop = bounds.top - currentOffset;
+      const visibleProgress = Math.max(0, Math.min(1, (viewportHeight - naturalTop) / (viewportHeight + bounds.height)));
+      const strength = Number.parseFloat(element.dataset.parallax) || 0;
+      updates.push([element, (visibleProgress - 0.5) * strength * motionScale]);
+    });
+
+    updates.forEach(([element, offset]) => {
+      element.style.setProperty("--parallax-y", `${offset.toFixed(2)}px`);
+    });
+  };
+
+  const requestParallaxUpdate = () => {
+    if (!parallaxFrame) parallaxFrame = window.requestAnimationFrame(updateParallax);
+  };
+
+  requestParallaxUpdate();
+  window.addEventListener("scroll", requestParallaxUpdate, { passive: true });
+  window.addEventListener("resize", requestParallaxUpdate, { passive: true });
+  window.addEventListener("load", requestParallaxUpdate, { once: true });
+}
 
 if (reducedMotion || !("IntersectionObserver" in window)) {
   reveals.forEach((item) => item.classList.add("visible"));
