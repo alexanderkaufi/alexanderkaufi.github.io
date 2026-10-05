@@ -382,6 +382,24 @@ bentoVideo?.addEventListener("error", () => bentoPreview?.classList.add("video-u
 if (bentoVideo?.error) bentoPreview?.classList.add("video-unavailable");
 if (reducedMotionQuery.matches) bentoVideo?.pause();
 
+function revealBentoVideoAfterFrame() {
+  if (!bentoVideo || !bentoPreview || reducedMotionQuery.matches) return;
+
+  const reveal = () => {
+    if (!bentoVideo.paused && !reducedMotionQuery.matches) {
+      bentoPreview.classList.add("video-ready");
+    }
+  };
+
+  if ("requestVideoFrameCallback" in bentoVideo) {
+    bentoVideo.requestVideoFrameCallback(reveal);
+  } else if (bentoVideo.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+    reveal();
+  }
+}
+
+bentoVideo?.addEventListener("playing", revealBentoVideoAfterFrame);
+
 if (bentoVideo && "IntersectionObserver" in window) {
   const videoObserver = new IntersectionObserver(([entry]) => {
     if (entry.isIntersecting && !reducedMotionQuery.matches) {
@@ -397,6 +415,7 @@ reducedMotionQuery.addEventListener?.("change", () => {
   queueParallax();
   if (reducedMotionQuery.matches) {
     bentoVideo?.pause();
+    bentoPreview?.classList.remove("video-ready");
     projectCards.forEach((card) => {
       card.classList.remove("is-pointer-active");
       card.style.removeProperty("--mouse-x");
