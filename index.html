@@ -12,8 +12,8 @@
     <link rel="canonical" href="https://alexanderkaufi.github.io/" />
     <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
     <title>Alexander Kaufmann — Portfolio</title>
-    <link rel="stylesheet" href="./portfolio.css?v=15" />
-    <script src="./portfolio.js?v=14" defer></script>
+    <link rel="stylesheet" href="./portfolio.css?v=16" />
+    <script src="./portfolio.js?v=15" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#inhalt" data-i18n="skip">Zum Inhalt springen</a>
@@ -114,8 +114,12 @@
             </article>
             <article class="project-card reveal">
               <figure class="project-card-preview project-preview-bento" data-parallax="8" aria-label="Animation aus meinem Bento-Webprojekt" data-i18n-aria="preview.bentoAnimation">
-                <video src="./assets/previews/bento-software.mp4" poster="./assets/previews/bento-software.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+                <video id="bento-preview-video" src="./assets/previews/bento-software.mp4" poster="./assets/previews/bento-software.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video>
                 <img class="motion-fallback" src="./assets/previews/bento-software.jpg" alt="" loading="lazy" decoding="async" />
+                <button class="preview-motion-toggle" type="button" aria-label="Bento-Animation abspielen" aria-controls="bento-preview-video" aria-pressed="false" data-i18n-aria="bento.motion.play">
+                  <span class="motion-play-icon" aria-hidden="true">▶</span>
+                  <span class="motion-pause-icon" aria-hidden="true">Ⅱ</span>
+                </button>
               </figure>
               <div class="project-card-content">
                 <p class="project-card-type" data-i18n="bento.category">Eigenes Webprojekt · Produktdesign</p>
