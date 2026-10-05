@@ -38,8 +38,6 @@ const translations = {
     "preview.gallery": "Kunstwerk aus der Nunavut Gallery",
     "preview.bento": "Produktübersicht von Bento Software",
     "preview.bentoAnimation": "Animation aus meinem Bento-Webprojekt",
-    "bento.motion.play": "Bento-Animation abspielen",
-    "bento.motion.pause": "Bento-Animation pausieren",
     "preview.heating": "Themenbild zur Berechnung von Wärmekosten",
     "preview.gymmix": "Trainingsübersicht aus dem Gymmix Manual",
     "preview.dashboard": "KLUUG · Dashboard",
@@ -129,8 +127,6 @@ const translations = {
     "preview.gallery": "Artwork from the Nunavut Gallery",
     "preview.bento": "Bento Software product overview",
     "preview.bentoAnimation": "Animation from my Bento website project",
-    "bento.motion.play": "Play Bento animation",
-    "bento.motion.pause": "Pause Bento animation",
     "preview.heating": "Illustration for the heating cost calculator",
     "preview.gymmix": "Training overview from the Gymmix Manual",
     "preview.dashboard": "KLUUG · Dashboard",
@@ -213,12 +209,6 @@ function setLanguage(language) {
     const value = copy[element.dataset.i18nAria];
     if (value) element.setAttribute("aria-label", value);
   });
-
-  const bentoToggle = document.querySelector(".preview-motion-toggle");
-  if (bentoToggle) {
-    const stateKey = bentoToggle.getAttribute("aria-pressed") === "true" ? "bento.motion.pause" : "bento.motion.play";
-    bentoToggle.setAttribute("aria-label", copy[stateKey]);
-  }
 
   document.querySelectorAll("[data-language]").forEach((button) => {
     button.setAttribute("aria-pressed", String(button.dataset.language === language));
@@ -387,32 +377,10 @@ bentoVideo?.addEventListener("error", () => bentoPreview?.classList.add("video-u
 if (bentoVideo?.error) bentoPreview?.classList.add("video-unavailable");
 if (reducedMotionQuery.matches) bentoVideo?.pause();
 
-const bentoMotionToggle = document.querySelector(".preview-motion-toggle");
-function updateBentoMotionToggle() {
-  if (!bentoVideo || !bentoMotionToggle) return;
-  const isPlaying = !bentoVideo.paused && !bentoVideo.ended;
-  const language = document.documentElement.lang === "en" ? "en" : "de";
-  const labelKey = isPlaying ? "bento.motion.pause" : "bento.motion.play";
-  bentoMotionToggle.setAttribute("aria-pressed", String(isPlaying));
-  bentoMotionToggle.setAttribute("aria-label", translations[language][labelKey]);
-}
-
-bentoVideo?.addEventListener("play", updateBentoMotionToggle);
-bentoVideo?.addEventListener("pause", updateBentoMotionToggle);
-bentoMotionToggle?.addEventListener("click", () => {
-  if (!bentoVideo) return;
-  if (bentoVideo.paused) {
-    bentoVideo.play().catch(() => {});
-  } else {
-    bentoVideo.pause();
-  }
-});
-updateBentoMotionToggle();
-
 if (bentoVideo && "IntersectionObserver" in window) {
   const videoObserver = new IntersectionObserver(([entry]) => {
     if (entry.isIntersecting && !reducedMotionQuery.matches) {
-      bentoVideo.play().catch(updateBentoMotionToggle);
+      bentoVideo.play().catch(() => {});
     } else {
       bentoVideo.pause();
     }
