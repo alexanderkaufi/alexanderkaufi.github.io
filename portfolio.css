@@ -227,6 +227,7 @@ h1, h2, h3 { letter-spacing: -.055em; }
   padding: 12px clamp(28px, 5vw, 64px) 28px;
   justify-content: flex-start;
 }
+.project-card[data-project="heating"] .project-card-link { align-self: flex-end; }
 .project-preview-gymmix { background: #eff1f3; }
 .project-preview-gymmix img { object-position: center 24%; }
 .project-preview-text { padding: 35px 42px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
