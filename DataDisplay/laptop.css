@@ -1,0 +1,222 @@
+/* Farben des illustrierten App-Fensters. */
+:root {
+  --app-canvas: #f4f5f7;
+  --app-toolbar: #e9ecef;
+  --app-sidebar: #eef0f2;
+  --app-selection: #dee5ec;
+  --app-selection-text: #2b435c;
+  --window-control: #a3abb4;
+}
+
+/* Die Illustration skaliert als Einheit mit der verfügbaren Bildschirmbreite. */
+.laptop {
+  position: relative;
+  container-type: inline-size;
+  width: 94%;
+  margin-inline: auto;
+}
+.laptop-screen {
+  position: relative;
+  padding: 1.45cqw 1.08cqw 1.55cqw;
+  border: 1px solid #666d75;
+  border-radius: 2.25cqw 2.25cqw 0.5cqw 0.5cqw;
+  background: linear-gradient(150deg, #22272c, #14171b 70%);
+  box-shadow: inset 0 0 0 1px #323940, 0 6px 16px rgb(26 32 39 / 11%);
+}
+.camera {
+  position: absolute;
+  top: 0.42cqw;
+  left: 50%;
+  width: 0.55cqw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #505a63;
+}
+.laptop-base {
+  position: relative;
+  height: 1.7cqw;
+  margin-inline: -3.6%;
+  border: 1px solid rgb(65 73 81 / 30%);
+  border-top-color: #d5d8dc;
+  border-radius: 0.25cqw 0.25cqw 8% 8% / 20% 20% 85% 85%;
+  background: linear-gradient(#dce0e3, #c5cbd0 45%, #929aa2 90%);
+  box-shadow: 0 0.3cqw 0.55cqw rgb(37 46 55 / 12%);
+}
+.laptop-notch {
+  width: 14%;
+  height: 34%;
+  margin-inline: auto;
+  border-radius: 0 0 0.7cqw 0.7cqw;
+  background: #90979f;
+}
+
+/* Arbeitsfenster */
+.dashboard-demo {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  aspect-ratio: 1.64;
+  overflow: hidden;
+  border-radius: 1cqw 1cqw 0.4cqw 0.4cqw;
+  background: var(--app-canvas);
+  color: var(--ink);
+  text-align: left;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.35;
+}
+.demo-toolbar {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 3.6cqw;
+  border-bottom: 1px solid var(--line);
+  background: var(--app-toolbar);
+  color: var(--body-text);
+  font-size: 1.15cqw;
+  font-weight: 560;
+}
+.window-controls {
+  position: absolute;
+  left: 1.6cqw;
+  display: flex;
+  gap: 0.64cqw;
+}
+.window-controls i {
+  width: 0.84cqw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--window-control);
+}
+.demo-window {
+  display: grid;
+  grid-template-columns: minmax(0, 0.19fr) minmax(0, 0.81fr);
+  min-height: 0;
+}
+.demo-sidebar {
+  min-width: 0;
+  padding: 3.3cqw 1cqw;
+  border-right: 1px solid var(--line);
+  background: var(--app-sidebar);
+  color: var(--body-text);
+  font-size: 1.35cqw;
+}
+.demo-sidebar > div {
+  padding: 0.9cqw 0.9cqw;
+  border-left: 0.28cqw solid transparent;
+}
+.demo-sidebar .demo-nav-title {
+  margin-bottom: 1.25cqw;
+  color: var(--subtle-text);
+  font-size: 0.99cqw;
+  font-weight: 620;
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+}
+.demo-sidebar .demo-active {
+  border-left-color: var(--accent);
+  border-radius: 0 0.45cqw 0.45cqw 0;
+  background: var(--app-selection);
+  color: var(--app-selection-text);
+  font-weight: 650;
+}
+.demo-content {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 2cqw;
+  min-width: 0;
+  min-height: 0;
+  padding: 2.8cqw 2.3cqw 2.25cqw;
+}
+.demo-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.demo-top strong { font-size: 3cqw; line-height: 1.15; font-weight: 610; letter-spacing: -0.045em; }
+.demo-top > span { color: var(--subtle-text); font-size: 1.42cqw; }
+.demo-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.67fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1.18fr) minmax(0, 0.82fr);
+  gap: 1.2cqw;
+}
+.demo-card {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1.55cqw;
+  border: 1px solid var(--panel-border);
+  border-radius: 0.82cqw;
+  background: var(--surface);
+}
+.demo-card-title {
+  color: var(--body-text);
+  font-size: 1.37cqw;
+  font-weight: 590;
+}
+.demo-trend .trend-chart { flex: 1; min-height: 0; margin-block: 0.5cqw; }
+.demo-trend .legend { font-size: 1.08cqw; }
+.demo-annual {
+  justify-content: center;
+  border-top: 0.36cqw solid var(--accent);
+}
+.demo-annual strong {
+  margin-block: 1.5cqw 0.3cqw;
+  color: var(--ink);
+  font-size: 3.52cqw;
+  line-height: 1.15;
+  font-weight: 570;
+  letter-spacing: -0.052em;
+  white-space: nowrap;
+}
+.demo-annual span:last-child { color: var(--subtle-text); font-size: 1.12cqw; }
+.quarter-plot {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  gap: 1.5cqw;
+  padding: 1cqw 0.7cqw 0;
+}
+.quarter-plot > div {
+  flex: 1;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 0.36cqw;
+  align-items: end;
+  justify-items: center;
+}
+.quarter-plot i {
+  width: 75%;
+  height: var(--value);
+  border-radius: 0.17cqw 0.17cqw 0 0;
+  background: var(--series-south);
+}
+.quarter-plot > div:last-child i { background: var(--accent); }
+.quarter-plot span { color: var(--subtle-text); font-size: 1.06cqw; }
+.demo-ranking { justify-content: space-between; }
+.demo-ranking > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.4cqw;
+  padding-top: 0.55cqw;
+  border-top: 1px solid var(--line);
+  color: var(--body-text);
+  font-size: 1.2cqw;
+}
+.demo-ranking b { font-weight: 570; }
+
+/* Auf kleinen Illustrationen erhält das Dashboard die volle Bildschirmbreite. */
+@container (max-width: 25rem) {
+  .demo-sidebar { display: none; }
+  .demo-window { grid-template-columns: 1fr; }
+  .demo-toolbar { height: 4.2cqw; font-size: 1.65cqw; }
+  .demo-content { padding: 2.1cqw; gap: 1.4cqw; }
+  .demo-top strong { font-size: 3.55cqw; }
+  .demo-top > span, .demo-annual span:last-child { font-size: 1.7cqw; }
+  .demo-card-title { font-size: 1.94cqw; }
+  .demo-annual strong { font-size: 4.45cqw; }
+  .demo-trend .legend, .quarter-plot span { font-size: 1.48cqw; }
+  .demo-ranking > div { font-size: 1.62cqw; }
+}

@@ -1,0 +1,34 @@
+:root {
+  color-scheme: dark;
+  --paper: #15191e;
+  --surface: #232a31;
+  --pearl: #191e24;
+  --report-surface: #252c33;
+  --ink: #eef1f4;
+  --body-text: #c1cad3;
+  --subtle-text: #a5b0bc;
+  --line: #39434c;
+  --graphite: #101419;
+  --nav-button: #dce3e9;
+  --nav-button-hover: #f0f3f6;
+  --button-text: #141c24;
+  --accent: #95b8dd;
+  --accent-hover: #b0cbe6;
+  --series-west: #b3bec8;
+  --series-south: #84939f;
+  --panel-border: #414c56;
+  --panel-shadow: 0 12px 32px -16px rgb(0 0 0 / 52%);
+  --header-fill: rgb(21 25 30 / 94%);
+  --header-shadow: 0 1px 0 rgb(200 215 231 / 9%), 0 5px 16px rgb(0 0 0 / 8%);
+  --hero-fill: linear-gradient(165deg, #161a1f 12%, #191e24 65%, #20272e);
+  --desk-shadow: rgb(0 0 0 / 65%);
+  --frame-line: rgb(180 197 214 / 14%);
+  --frame-grid: rgb(180 197 214 / 8%);
+  --sheet-back: #303942;
+  --app-canvas: #191e23;
+  --app-toolbar: #2b3239;
+  --app-sidebar: #1e242a;
+  --app-selection: #344453;
+  --app-selection-text: #dce8f4;
+  --window-control: #81909d;
+}
