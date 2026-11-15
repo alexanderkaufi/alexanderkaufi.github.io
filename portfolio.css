@@ -209,6 +209,10 @@ h1, h2, h3 { letter-spacing: -.055em; }
 .project-preview-gymmix-app img { padding: 22px; }
 .project-preview-carddisplay { background: #ece4df; }
 .project-preview-carddisplay img { padding: 78px; }
+.project-preview-datadisplay { background: #eef1f8; }
+.project-preview-datadisplay img { padding: clamp(55px, 7vw, 90px); }
+.project-preview-grow { background: #e7ede4; }
+.project-preview-grow img { padding: 0; object-fit: cover; }
 .project-preview-gallery { background: #e9e4dc; }
 .project-preview-gallery img { object-position: center 40%; }
 .project-preview-bento { background: #e8e8e8; }
