@@ -1,0 +1,344 @@
+@import url('vars.css');
+@import url('grid.css');
+@import url('../libs/btn/anim-menu-btn.css');
+
+/* --------------------------------------------------------------------------
+   1. Webfonts (Montserrat 400, 600, 700, 900)
+   -------------------------------------------------------------------------- */
+@font-face {
+    font-family: 'Montserrat-AG';
+    src: local('Montserrat Regular'), local('Montserrat-Regular'),
+         url('../fonts/Montserrat-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat-AG';
+    src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
+         url('../fonts/Montserrat-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat-AG';
+    src: local('Montserrat Bold'), local('Montserrat-Bold'),
+         url('../fonts/Montserrat-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat-AG';
+    src: local('Montserrat Black'), local('Montserrat-Black'),
+         url('../fonts/Montserrat-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* --------------------------------------------------------------------------
+   2. Global Reset & Base
+   -------------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background-color: #0b1a1d;
+    color: var(--white-color);
+    font-family: 'Montserrat-AG', 'Montserrat', sans-serif;
+    font-size: 16px;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------------------------------------------------------------------------
+   3. Swiper Slider, Multi-Layer Parallax & 3D Camera Zoom
+   -------------------------------------------------------------------------- */
+.slider {
+    height: 100%;
+}
+
+.slider__item {
+    overflow: hidden;
+    transform: scale(1.25) !important;
+    transition: 2s ease !important;
+}
+
+.slider__item:not(.swiper-slide-active) {
+    transform: scale(1) !important;
+}
+
+.slider__layer {
+    position: absolute;
+    inset: -6%;
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+}
+
+/* Subtle dark atmospheric vignette so white/grey typography stands out crisply */
+.slider__item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(11, 26, 29, 0.12) 0%, rgba(11, 26, 29, 0.48) 100%);
+    pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   4. UI Overlay Architecture & Pointer Events
+   -------------------------------------------------------------------------- */
+.slider-ui {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.header-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.topline {
+    padding: 3.2rem 0;
+}
+
+.logo {
+    display: block;
+}
+
+.logo img {
+    display: block;
+    width: 15.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. Navigation Menu with Animated Pill Indicators
+   -------------------------------------------------------------------------- */
+.main-menu li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+.main-menu li * {
+    color: var(--grey-color);
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.725rem;
+    letter-spacing: 0.25em;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-menu li *::before,
+.main-menu li *::after {
+    content: '';
+    display: inline-block;
+    height: 2px;
+    width: 11.25px;
+    background-color: var(--green-color);
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    border-radius: 10rem;
+    margin: 0 7.25px;
+    visibility: hidden;
+    transition: visibility 0.2s ease;
+}
+
+.main-menu li *::before {
+    left: -1.5px;
+}
+
+.main-menu li.active *,
+.main-menu li:hover * {
+    color: var(--white-color);
+}
+
+.main-menu li.active *::before,
+.main-menu li.active *::after,
+.main-menu li:hover *::before,
+.main-menu li:hover *::after {
+    visibility: visible;
+}
+
+/* --------------------------------------------------------------------------
+   6. Asymmetric Button System
+   -------------------------------------------------------------------------- */
+.button {
+    display: inline-block;
+    padding: 1.05rem 2.6rem;
+    border: 1.5px solid transparent;
+    border-radius: 10rem 0 10rem 10rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.21em;
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.button--top {
+    background-color: transparent;
+    border-color: var(--green-color);
+    color: var(--white-color);
+    margin: 0 0 0 3rem;
+}
+
+.button--top:hover {
+    background-color: var(--green-color);
+    color: #0b1a1d;
+}
+
+.button--main {
+    background-color: var(--green-color);
+    color: #0b1a1d;
+    padding: 1.4rem 3.5rem;
+    margin-top: 2rem;
+}
+
+.button--main:hover {
+    background-color: var(--white-color);
+    color: #0b1a1d;
+}
+
+/* --------------------------------------------------------------------------
+   7. Animated Hamburger Menu Button (.submenu)
+   -------------------------------------------------------------------------- */
+.submenu {
+    --anim-menu-btn-color: var(--grey-color);
+    --anim-menu-btn-gap: 0.195rem;
+    --anim-menu-btn-width: 1.08rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* --------------------------------------------------------------------------
+   8. Header Content, Viewport-Index Typography & 3D Letter Shading
+   -------------------------------------------------------------------------- */
+.header-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1;
+    position: relative;
+}
+
+.header-content__slide {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    inset: 0;
+}
+
+.header-content h1 {
+    font-size: calc(var(--index) * 11.95);
+    text-transform: uppercase;
+    font-weight: 900;
+    user-select: none;
+}
+
+.letters .letter {
+    display: inline-block;
+    position: relative;
+    text-shadow: 25px 0 35px rgba(0, 0, 0, 0.4);
+    margin-left: calc(var(--index) * -2.65);
+    right: calc(var(--index) * -2.65);
+    opacity: 0;
+    top: -5rem;
+    transition: opacity 1.2s ease, top 1.2s var(--transition);
+}
+
+.header-content__slide.active .letters .letter {
+    opacity: 1;
+    top: 0;
+}
+
+.header-content__slide:not(.active) .letters .letter {
+    opacity: 0;
+    top: 5rem;
+}
+
+.header-content__info {
+    position: relative;
+    top: 1.8rem;
+    opacity: 0;
+    transition: opacity 1s ease, top 1.25s ease;
+}
+
+.header-content__slide.active .header-content__info {
+    top: 0;
+    opacity: 1;
+}
+
+.header-content__slide:has(+ .header-content__slide.active) .header-content__info {
+    top: -1.8rem;
+    opacity: 0;
+}
+
+.header-content__info p {
+    max-width: 560px;
+    font-weight: 600;
+    line-height: 1.4;
+    display: inline-block;
+    font-size: 0.95rem;
+    color: var(--grey-color);
+}
+
+.header-bottom {
+    min-height: 3.2rem;
+}
+
+/* --------------------------------------------------------------------------
+   9. Touch & Click Interactivity Restoration
+   -------------------------------------------------------------------------- */
+.logo,
+.main-menu,
+.button,
+.submenu {
+    pointer-events: auto;
+}
+
+.header-content__slide:not(.active) .button {
+    pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   10. Responsive Adjustments for Compact Screens
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .main-menu,
+    .button--top {
+        display: none;
+    }
+
+    .logo img {
+        width: 11rem;
+    }
+
+    .header-content__info p {
+        max-width: 90vw;
+        font-size: 0.85rem;
+    }
+}

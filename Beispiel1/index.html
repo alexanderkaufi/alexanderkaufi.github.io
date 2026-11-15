@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow — Moderne Website mit Parallax-Effekt</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="libs/btn/anim-menu-btn.js" defer></script>
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+
+    <div class="swiper slider">
+
+        <div class="slider-ui">
+            <div class="container header-wrapper">
+
+                <div class="topline">
+                    <div class="row">
+                        <div class="col col--center">
+                            <a href="#" class="logo">
+                                <img src="img/logo.svg" alt="Grow Logo">
+                            </a>
+                        </div>
+                        <div class="col col--lead col--center col--right">
+                            <nav class="main-menu">
+                                <ul>
+                                    <li><a href="#">Main</a></li>
+                                    <li class="active"><span>Info</span></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </nav>
+                            <a href="#" class="button button--top">Plant Now</a>
+                        </div>
+                        <div class="col col--center">
+                            <button class="submenu anim-menu-btn" aria-label="Toggle Menu">
+                                <i class="anim-menu-btn__icon anim-menu-btn__icon--close"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header-content">
+                    <div class="header-content__slide active">
+                        <h1 class="letters">Grow</h1>
+                        <div class="header-content__info">
+                            <p>Pflanzen schaffen eine natürliche Atmosphäre der Ruhe und revitalisieren moderne Lebensräume nachhaltig.<br>Entdecken Sie exklusive Begrünungskonzepte.</p><br>
+                            <a href="#" class="button button--main">Plant Now</a>
+                        </div>
+                    </div>
+
+                    <div class="header-content__slide">
+                        <h1 class="letters">Wood</h1>
+                        <div class="header-content__info">
+                            <p>Natürliche Holzstrukturen und organische Texturen verleihen zeitgenössischer Architektur zeitlose Wärme.<br>Perfektion im Einklang mit der Natur.</p><br>
+                            <a href="#" class="button button--main">Plant Now</a>
+                        </div>
+                    </div>
+
+                    <div class="header-content__slide">
+                        <h1 class="letters">Leaf</h1>
+                        <div class="header-content__info">
+                            <p>Jedes Blatt fängt Licht und wandelt es in vitale Energie um – filigrane Ästhetik für Ihr Zuhause.<br>Faszinierende Botanik neu interpretiert.</p><br>
+                            <a href="#" class="button button--main">Plant Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header-bottom"></div>
+
+            </div>
+        </div>
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide slider__item">
+                <div class="slider__layer" data-swiper-parallax="35%" style="background-image: url(img/slides/slide-1-layer-back.jpg);"></div>
+                <div class="slider__layer" data-swiper-parallax="25%" style="background-image: url(img/slides/slide-1-layer-middle.png);"></div>
+                <div class="slider__layer" data-swiper-parallax="14%" style="background-image: url(img/slides/slide-1-layer-front.png);"></div>
+            </div>
+
+            <div class="swiper-slide slider__item">
+                <div class="slider__layer" data-swiper-parallax="35%" style="background-image: url(img/slides/slide-2-layer-back.jpg);"></div>
+                <div class="slider__layer" data-swiper-parallax="25%" style="background-image: url(img/slides/slide-2-layer-middle.png);"></div>
+                <div class="slider__layer" data-swiper-parallax="14%" style="background-image: url(img/slides/slide-2-layer-front.png);"></div>
+            </div>
+
+            <div class="swiper-slide slider__item">
+                <div class="slider__layer" data-swiper-parallax="35%" style="background-image: url(img/slides/slide-3-layer-back.jpg);"></div>
+                <div class="slider__layer" data-swiper-parallax="25%" style="background-image: url(img/slides/slide-3-layer-middle.png);"></div>
+                <div class="slider__layer" data-swiper-parallax="14%" style="background-image: url(img/slides/slide-3-layer-front.png);"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
