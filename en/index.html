@@ -3,22 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#f5f5f7" />
-    <meta name="description" content="Cycle Context helps you understand the menstrual cycle in everyday life—for your own documentation or respectful support." />
+    <meta name="theme-color" content="#f8f6f3" />
+    <meta name="description" content="Cycle Context helps you understand the menstrual cycle in everyday life—for your own documentation or respectful support. No account, data stored locally on your iPhone." />
     <title>Cycle Context: Period Guide | CycleContext</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CycleContext – Understand the cycle." />
+    <meta property="og:description" content="Document your own cycle or respectfully support someone close to you—private and stored locally on your iPhone." />
+    <meta property="og:image" content="../assets/app-icon.png" />
     <link rel="icon" type="image/png" href="../assets/app-icon.png" />
+    <link rel="apple-touch-icon" href="../assets/app-icon.png" />
     <link rel="alternate" hreflang="de" href="../de/" />
     <link rel="alternate" hreflang="en" href="../en/" />
-    <link rel="stylesheet" href="../styles.css?v=11" />
-    <script src="../script.js?v=6" defer></script>
+    <link rel="stylesheet" href="../styles.css?v=12" />
+    <script src="../script.js?v=7" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+    <!-- Reusable cycle ring (28-day example) -->
+    <svg width="0" height="0" class="sr-only" aria-hidden="true" focusable="false">
+      <defs>
+        <g id="ring-segments" transform="rotate(-90 100 100)" fill="none">
+          <circle class="seg seg-1" cx="100" cy="100" r="84" stroke-dasharray="90.48 437.31" stroke-dashoffset="-1.88" />
+          <circle class="seg seg-2" cx="100" cy="100" r="84" stroke-dasharray="128.18 399.61" stroke-dashoffset="-96.13" />
+          <circle class="seg seg-3" cx="100" cy="100" r="84" stroke-dasharray="52.78 475.01" stroke-dashoffset="-228.08" />
+          <circle class="seg seg-4" cx="100" cy="100" r="84" stroke-dasharray="147.03 380.76" stroke-dashoffset="-284.63" />
+          <circle class="seg seg-5" cx="100" cy="100" r="84" stroke-dasharray="90.48 437.31" stroke-dashoffset="-435.42" />
+        </g>
+      </defs>
+    </svg>
 
     <header class="site-header" data-header>
       <nav class="nav shell" aria-label="Main navigation">
         <a class="brand" href="#top" aria-label="CycleContext home">
-          <img src="../assets/app-icon.png" alt="" />
+          <img src="../assets/app-icon.png" alt="" width="30" height="30" />
           <span>CycleContext</span>
         </a>
         <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
@@ -26,122 +45,397 @@
         </button>
         <div class="nav-links" id="nav-links">
           <a href="#features">Features</a>
+          <a href="#cycle">Cycle</a>
           <a href="#privacy">Privacy</a>
-          <a href="#availability">Availability</a>
-          <a class="language-link" href="../de/" data-language="de" lang="de">DE</a>
+          <a href="#faq">FAQ</a>
+          <a class="language-link" href="../de/" data-language="de" lang="de" aria-label="Deutsche Version">DE</a>
           <a class="button button-small" href="https://apps.apple.com/app/id6804225862">Download on the App Store</a>
         </div>
       </nav>
     </header>
 
     <main id="content">
+      <!-- HERO -->
       <section class="hero" id="top">
-        <div class="hero-aura" data-parallax="90" aria-hidden="true"></div>
-        <div class="shell hero-copy reveal">
-          <p class="eyebrow">Cycle Context: Period Guide</p>
-          <h1>Understand the cycle.</h1>
-          <p class="hero-lead">Document your own cycle or respectfully support someone close to you—with private profiles and data stored locally on your iPhone.</p>
+        <div class="hero-bg" aria-hidden="true">
+          <span class="blob blob-1" data-parallax="80"></span>
+          <span class="blob blob-2" data-parallax="-60"></span>
+          <span class="blob blob-3" data-parallax="40"></span>
         </div>
-        <div class="shell hero-stage reveal" data-delay="1">
-          <div class="cycle-halo" data-parallax="110" aria-hidden="true"></div>
-          <figure class="device device-hero" data-parallax="-70">
-            <img src="../assets/dashboard.png" alt="CycleContext Today view with current cycle stage and everyday guidance" />
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <a class="pill reveal" href="#availability"><span class="pill-dot" aria-hidden="true"></span>Now on the App Store · iPhone &amp; iPad</a>
+            <h1 class="reveal" data-delay="1">Understand <em class="accent">the cycle.</em></h1>
+            <p class="hero-lead reveal" data-delay="2">Document your own cycle or respectfully support someone close to you—with private profiles and data stored locally on your iPhone.</p>
+            <div class="hero-actions reveal" data-delay="3">
+              <a class="button button-primary" href="https://apps.apple.com/app/id6804225862">
+                Download on the App Store
+                <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M5 10h10m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="button button-ghost" href="#cycle">Explore the cycle</a>
+            </div>
+            <ul class="hero-facts reveal" data-delay="4">
+              <li>7-day free trial</li>
+              <li>No account</li>
+              <li>Data stays local</li>
+            </ul>
+          </div>
+
+          <div class="hero-visual reveal" data-delay="2"
+               data-orbit
+               data-phases="Menstruation|Building phase|Ovulation window|Early luteal phase|Possible PMS period"
+               data-day-template="Cycle day {d} of 28"
+               data-next-one="Next stage tomorrow"
+               data-next-many="Next stage in {n} days">
+            <div class="orbit-stage" data-tilt>
+              <div class="orbit-floor" aria-hidden="true"></div>
+              <svg class="orbit-ring orbit-back" viewBox="0 0 200 200" preserveAspectRatio="none" aria-hidden="true"><use href="#ring-segments" /></svg>
+              <figure class="device device-hero">
+                <img src="../assets/dashboard.png" alt="CycleContext Today view with current cycle stage and everyday guidance" width="1206" height="2622" />
+              </figure>
+              <svg class="orbit-ring orbit-front" viewBox="0 0 200 200" preserveAspectRatio="none" aria-hidden="true"><use href="#ring-segments" /></svg>
+              <span class="orbit-knob" aria-hidden="true"></span>
+            </div>
+            <div class="float-chip chip-day" aria-hidden="true">
+              <span class="chip-dot" data-orbit-dot></span>
+              <span><strong data-orbit-day>Cycle day 4 of 28</strong><small data-orbit-phase>Menstruation</small></span>
+            </div>
+            <div class="float-chip chip-next" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M7 3v3m10-3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+              <span data-orbit-next>Next stage in 2 days</span>
+            </div>
+            <div class="float-chip chip-lock" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M7 11V8a5 5 0 0 1 10 0v3M6 11h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+              <span>Stored on your iPhone</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MARQUEE -->
+      <section class="marquee" aria-label="Key benefits">
+        <div class="marquee-track">
+          <ul>
+            <li><i class="d1"></i>No account</li>
+            <li><i class="d2"></i>Local on your device</li>
+            <li><i class="d3"></i>Clear, respectful language</li>
+            <li><i class="d4"></i>Separate profiles</li>
+            <li><i class="d5"></i>Try everything for 7 days</li>
+            <li><i class="d1"></i>iPhone &amp; iPad</li>
+            <li><i class="d2"></i>Guidance, not templates</li>
+          </ul>
+          <ul aria-hidden="true">
+            <li><i class="d1"></i>No account</li>
+            <li><i class="d2"></i>Local on your device</li>
+            <li><i class="d3"></i>Clear, respectful language</li>
+            <li><i class="d4"></i>Separate profiles</li>
+            <li><i class="d5"></i>Try everything for 7 days</li>
+            <li><i class="d1"></i>iPhone &amp; iPad</li>
+            <li><i class="d2"></i>Guidance, not templates</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="section features" id="features">
+        <div class="shell section-head reveal">
+          <p class="eyebrow">Understand today</p>
+          <h2>What might matter <em>right now.</em></h2>
+          <p>CycleContext translates an estimated cycle stage into understandable context. See possible physical changes, everyday guidance, and upcoming stages—without predicting feelings or behaviour.</p>
+        </div>
+
+        <div class="shell bento">
+          <article class="card card-today reveal" data-spotlight>
+            <div class="card-text">
+              <h3>Today at a glance.</h3>
+              <p>Cycle day, current stage, and respectful everyday guidance in one calm overview.</p>
+            </div>
+            <div class="mini-today" aria-hidden="true">
+              <p class="mini-phase"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z" fill="currentColor"/></svg>Menstruation</p>
+              <p class="mini-day">Cycle day 4 of 28</p>
+              <p class="mini-copy">Bleeding, cramps, or tiredness can be a burden—but they don’t have to be.</p>
+              <div class="mini-bar"><i></i><i></i><i></i><i></i><i></i><b></b></div>
+            </div>
+          </article>
+
+          <article class="card card-plan reveal" data-delay="1" data-spotlight>
+            <div class="mini-chips" aria-hidden="true">
+              <span class="mini-chip mini-chip-red"><small>Cycle</small>Adjust</span>
+              <span class="mini-chip mini-chip-blue"><small>Next stage</small>on August 22</span>
+            </div>
+            <div class="card-text">
+              <h3>Plan with context.</h3>
+              <p>View upcoming stages and adjust the calendar-based estimate whenever needed.</p>
+            </div>
+          </article>
+
+          <article class="card card-ask reveal" data-delay="2" data-spotlight>
+            <div class="bubbles" aria-hidden="true">
+              <span class="bubble bubble-out">How are you feeling today?</span>
+              <span class="bubble bubble-in">Pretty okay—a bit tired.</span>
+              <span class="bubble bubble-out">Want me to make us some tea? ☕️</span>
+            </div>
+            <div class="card-text">
+              <h3>Ask first.<br />Then support.</h3>
+              <p>Personal observations and expressed needs always come before an estimate.</p>
+            </div>
+          </article>
+
+          <article class="card card-notes reveal" data-delay="1" data-spotlight>
+            <div class="tags" aria-hidden="true">
+              <span>Slept well</span><span>Cramps</span><span>Tired</span><span>Headache</span><span>Lots of energy</span><span>Note</span>
+            </div>
+            <div class="card-text">
+              <h3>Capture observations.</h3>
+              <p>Entries and notes add to the estimate—with what is actually happening.</p>
+            </div>
+          </article>
+
+          <article class="card card-profiles reveal" data-delay="2" data-spotlight>
+            <div class="mini-list" aria-hidden="true">
+              <p><span class="av av-red">♥</span><span><strong>S.</strong><small>Menstruation, cycle day 4 of 28</small></span></p>
+              <p><span class="av av-blue">●</span><span><strong>Partner</strong><small>Ovulation, cycle day 16 of 30</small></span></p>
+            </div>
+            <div class="card-text">
+              <h3>Multiple profiles.</h3>
+              <p>Neatly separated, each with its own cycle and entries.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CYCLE EXPLORER -->
+      <section class="section explorer" id="cycle" data-explorer data-active="1">
+        <div class="shell section-head section-head-center reveal">
+          <p class="eyebrow">Guidance, not a template</p>
+          <h2>Five stages.<br /><em>One individual cycle.</em></h2>
+          <p>The app explains possible patterns. It does not predict how someone will feel or behave.</p>
+        </div>
+
+        <div class="shell explorer-grid reveal" data-delay="1">
+          <div class="explorer-dial">
+            <svg class="dial" viewBox="0 0 200 200" data-dial>
+              <g transform="rotate(-90 100 100)" fill="none">
+                <circle class="dial-track" cx="100" cy="100" r="84" />
+                <circle class="seg seg-1" data-phase="1" cx="100" cy="100" r="84" stroke-dasharray="90.48 437.31" stroke-dashoffset="-1.88" />
+                <circle class="seg seg-2" data-phase="2" cx="100" cy="100" r="84" stroke-dasharray="128.18 399.61" stroke-dashoffset="-96.13" />
+                <circle class="seg seg-3" data-phase="3" cx="100" cy="100" r="84" stroke-dasharray="52.78 475.01" stroke-dashoffset="-228.08" />
+                <circle class="seg seg-4" data-phase="4" cx="100" cy="100" r="84" stroke-dasharray="147.03 380.76" stroke-dashoffset="-284.63" />
+                <circle class="seg seg-5" data-phase="5" cx="100" cy="100" r="84" stroke-dasharray="90.48 437.31" stroke-dashoffset="-435.42" />
+              </g>
+              <g class="dial-ticks" aria-hidden="true"></g>
+            </svg>
+            <button class="dial-knob" type="button" role="slider" data-knob
+                    aria-label="Cycle day"
+                    aria-valuemin="1" aria-valuemax="28" aria-valuenow="4"
+                    aria-valuetext="Day 4, Menstruation"
+                    data-valuetext="Day {d}, {p}"></button>
+            <div class="dial-center" aria-hidden="true">
+              <small>Day</small>
+              <strong data-dial-day>4</strong>
+              <small>of 28</small>
+            </div>
+            <p class="dial-hint"><span aria-hidden="true">↻</span> Drag the dot through the cycle</p>
+          </div>
+
+          <div class="explorer-panels">
+            <div class="phase-tabs" role="group" aria-label="Cycle stages">
+              <button type="button" data-tab="1" data-day="3" aria-pressed="true"><i class="d1"></i>Menstruation</button>
+              <button type="button" data-tab="2" data-day="9" aria-pressed="false"><i class="d2"></i>Building</button>
+              <button type="button" data-tab="3" data-day="14" aria-pressed="false"><i class="d3"></i>Ovulation</button>
+              <button type="button" data-tab="4" data-day="19" aria-pressed="false"><i class="d4"></i>Luteal</button>
+              <button type="button" data-tab="5" data-day="26" aria-pressed="false"><i class="d5"></i>PMS</button>
+            </div>
+
+            <div class="phase-stack">
+              <article class="phase-panel is-active" data-panel="1" data-name="Menstruation">
+                <p class="phase-meta"><span>01</span>Days 1–5</p>
+                <h3>Menstruation</h3>
+                <p>The uterine lining is shed. Bleeding, cramps, or tiredness can be a burden—but they don’t have to be.</p>
+                <p class="phase-tip"><strong>Everyday</strong>How someone actually feels decides whether rest, movement, or support helps.</p>
+              </article>
+              <article class="phase-panel" data-panel="2" data-name="Building phase">
+                <p class="phase-meta"><span>02</span>Days 6–12</p>
+                <h3>Building phase</h3>
+                <p>Follicles develop and oestrogen rises. Some people notice renewed energy during this time.</p>
+                <p class="phase-tip"><strong>Everyday</strong>A good moment to align on shared plans—without attaching expectations.</p>
+              </article>
+              <article class="phase-panel" data-panel="3" data-name="Ovulation window">
+                <p class="phase-meta"><span>03</span>Days 13–15</p>
+                <h3>Ovulation window</h3>
+                <p>Ovulation might happen around this time. The app only shows a careful calendar-based estimate.</p>
+                <p class="phase-tip"><strong>Important</strong>Not suitable for contraception or fertility determination.</p>
+              </article>
+              <article class="phase-panel" data-panel="4" data-name="Early luteal phase">
+                <p class="phase-meta"><span>04</span>Days 16–23</p>
+                <h3>Early luteal phase</h3>
+                <p>Progesterone rises and the body changes. Shifts in sleep, appetite, or temperature are possible.</p>
+                <p class="phase-tip"><strong>Everyday</strong>Noting observations helps you recognise your own patterns.</p>
+              </article>
+              <article class="phase-panel" data-panel="5" data-name="Possible PMS period">
+                <p class="phase-meta"><span>05</span>Days 24–28</p>
+                <h3>Possible PMS period</h3>
+                <p>Before the next period, symptoms such as tension or headaches may occur. For many people, this time passes unremarkably.</p>
+                <p class="phase-tip"><strong>Everyday</strong>Understand symptoms without assuming them—and when in doubt, ask.</p>
+              </article>
+            </div>
+            <p class="explorer-note">Example based on 28 days. Every cycle is different—you can adjust the estimate in the app at any time.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PERSPECTIVES -->
+      <section class="section perspectives" id="perspectives" data-switch>
+        <div class="shell perspective-grid">
+          <div class="perspective-copy reveal">
+            <p class="eyebrow">Personal and separate</p>
+            <h2>A profile for <em>every perspective.</em></h2>
+
+            <div class="segmented" role="tablist" aria-label="Choose a perspective">
+              <button role="tab" type="button" id="tab-self" aria-controls="view-self" aria-selected="true" data-view="self">For me</button>
+              <button role="tab" type="button" id="tab-other" aria-controls="view-other" aria-selected="false" data-view="other">For someone close</button>
+              <span class="segmented-thumb" aria-hidden="true"></span>
+            </div>
+
+            <div class="views">
+              <div class="view is-active" id="view-self" role="tabpanel" aria-labelledby="tab-self">
+                <h3>Your cycle, your notes.</h3>
+                <p>Document your own cycle, capture observations, and see what the coming days may bring.</p>
+                <ul class="check-list">
+                  <li>Cycle day and stage at a glance</li>
+                  <li>Entries and personal notes</li>
+                  <li>Adjust the estimate anytime</li>
+                </ul>
+              </div>
+              <div class="view" id="view-other" role="tabpanel" aria-labelledby="tab-other" hidden>
+                <h3>Support with respect.</h3>
+                <p>Understand what might be going on—and ask rather than assume. Profiles stay neatly separate.</p>
+                <ul class="check-list">
+                  <li>Separate profiles and entries</li>
+                  <li>Personal observations, not assumptions</li>
+                  <li>Only with the other person’s knowledge and consent</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="perspective-visual reveal" data-delay="1">
+            <div class="perspective-ring" aria-hidden="true"><svg viewBox="0 0 200 200"><use href="#ring-segments" /></svg></div>
+            <figure class="device device-switch">
+              <img class="shot shot-self is-active" src="../assets/dashboard.png" alt="CycleContext Today view" width="1206" height="2622" loading="lazy" />
+              <img class="shot shot-other" src="../assets/profiles.png" alt="CycleContext profile management with two people" width="1206" height="2622" loading="lazy" />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRIVACY -->
+      <section class="section privacy" id="privacy">
+        <div class="privacy-glow" data-parallax="90" aria-hidden="true"></div>
+        <div class="shell privacy-grid">
+          <div class="privacy-copy reveal">
+            <p class="eyebrow">Private by design</p>
+            <h2>Your data.<br /><em>On your device.</em></h2>
+            <p>Profiles, cycle data, and entries stay locally on your iPhone in the current version. There is no account and no sync with our own server.</p>
+          </div>
+
+          <div class="vault reveal" data-delay="1" aria-hidden="true">
+            <div class="vault-boundary"></div>
+            <div class="vault-phone">
+              <svg class="vault-ring" viewBox="0 0 200 200"><use href="#ring-segments" /></svg>
+              <svg class="vault-lock" viewBox="0 0 24 24"><path d="M7 11V8a5 5 0 0 1 10 0v3M6 11h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <span class="particle p1"></span><span class="particle p2"></span><span class="particle p3"></span><span class="particle p4"></span><span class="particle p5"></span>
+            </div>
+            <span class="vault-tag vt-1"><s>Account</s></span>
+            <span class="vault-tag vt-2"><s>Server sync</s></span>
+          </div>
+
+          <div class="pillars">
+            <article class="pillar reveal">
+              <span class="pillar-icon"><svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M11 18.5h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+              <h3>Only on this iPhone</h3>
+              <p>No account, no sync with our own server. Regular iPhone backups may include app data.</p>
+            </article>
+            <article class="pillar reveal" data-delay="1">
+              <span class="pillar-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5M15.5 5.2a3 3 0 0 1 0 5.6M17 14.3c1.9.6 3.1 2.2 3.5 4.7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+              <h3>Knowledge and consent</h3>
+              <p>Only record someone else’s data if they know about it and agree—ideally using a nickname or initials.</p>
+            </article>
+            <article class="pillar reveal" data-delay="2">
+              <span class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M4 7h16M9.5 7V4.5h5V7M6 7l1 13h10l1-13M10 11v5m4-5v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <h3>Delete data</h3>
+              <p>Delete individual profiles and their entries at any time. Deleting the app also removes its locally stored data.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section class="section gallery" aria-labelledby="gallery-title">
+        <div class="shell section-head section-head-center reveal">
+          <p class="eyebrow">A look inside</p>
+          <h2 id="gallery-title">Calm. Clear. <em>Uncluttered.</em></h2>
+        </div>
+        <div class="gallery-rail" tabindex="0" aria-label="App screenshots">
+          <figure class="gallery-item reveal">
+            <div class="device"><img src="../assets/dashboard.png" alt="Today view with cycle day and stage" width="1206" height="2622" loading="lazy" /></div>
+            <figcaption><strong>Today</strong>The current stage, with context.</figcaption>
+          </figure>
+          <figure class="gallery-item reveal" data-delay="1">
+            <div class="device"><img src="../assets/profiles.png" alt="Profile management" width="1206" height="2622" loading="lazy" /></div>
+            <figcaption><strong>Profiles</strong>Separate and quick to switch.</figcaption>
+          </figure>
+          <figure class="gallery-item reveal" data-delay="2">
+            <div class="device"><img src="../assets/privacy.png" alt="Privacy and consent" width="1206" height="2622" loading="lazy" /></div>
+            <figcaption><strong>Privacy</strong>Explained transparently, right in the app.</figcaption>
+          </figure>
+          <figure class="gallery-item reveal" data-delay="3">
+            <div class="device"><img src="../assets/settings.png" alt="Settings" width="1206" height="2622" loading="lazy" /></div>
+            <figcaption><strong>Settings</strong>Only what is truly needed.</figcaption>
           </figure>
         </div>
       </section>
 
-      <section class="trust-strip" aria-label="Key benefits">
-        <div class="shell trust-grid">
-          <p><strong>No account</strong><span>Start right away</span></p>
-          <p><strong>Local data</strong><span>On your device</span></p>
-          <p><strong>Clear language</strong><span>No rigid templates</span></p>
-        </div>
-      </section>
-
-      <section class="section intro" id="overview">
-        <div class="shell split-heading reveal">
-          <p class="eyebrow">Understand today</p>
-          <div>
-            <h2>What might matter right now.</h2>
-            <p>CycleContext translates an estimated cycle stage into understandable context. See possible physical changes, everyday guidance, and upcoming stages—without predicting feelings or behaviour.</p>
-          </div>
-        </div>
-        <div class="shell bento-grid" id="features">
-          <article class="bento-card bento-large reveal">
-            <h3>Today at a glance.</h3><p>Cycle day, current stage, and respectful everyday guidance in one calm overview.</p>
-          </article>
-          <article class="bento-card bento-blue reveal" data-delay="1">
-            <h3>Plan with context.</h3><p>View upcoming stages and adjust the calendar-based estimate whenever needed.</p>
-          </article>
-          <article class="bento-card bento-dark reveal" data-delay="2">
-            <h3>Ask first.<br />Then support.</h3><p>Personal observations and expressed needs always come before an estimate.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section phases">
-        <div class="shell centered-heading reveal">
-          <p class="eyebrow">Guidance, not a template</p>
-          <h2>Five stages.<br />One individual cycle.</h2>
-          <p>The app explains possible patterns. It does not predict how someone will feel or behave.</p>
-        </div>
-        <div class="phase-track shell reveal" aria-label="Five cycle stages">
-          <article class="phase phase-red"><span>01</span><h3>Menstruation</h3><p>Bleeding, possible symptoms, and recovery.</p></article>
-          <article class="phase phase-orange"><span>02</span><h3>Building phase</h3><p>Follicle development and possible renewed energy.</p></article>
-          <article class="phase phase-blue"><span>03</span><h3>Ovulation window</h3><p>A careful calendar-based estimate.</p></article>
-          <article class="phase phase-green"><span>04</span><h3>Early luteal phase</h3><p>Progesterone rises and the body changes.</p></article>
-          <article class="phase phase-pink"><span>05</span><h3>Possible PMS period</h3><p>Understand symptoms without assuming them.</p></article>
-        </div>
-      </section>
-
-      <section class="section product-story">
-        <div class="shell product-row">
-          <div class="product-copy reveal">
-            <p class="eyebrow">Personal and separate</p>
-            <h2>A profile for every perspective.</h2>
-            <p>Document your own cycle or support someone close to you. Profiles stay separate; observations and notes add context to the calendar-based estimate.</p>
-            <ul class="plain-list"><li>Separate profiles and entries</li><li>Personal observations, not assumptions</li><li>Only with the other person's knowledge and consent</li></ul>
-          </div>
-          <div class="device-pair reveal" data-delay="1">
-            <figure class="device device-back" data-parallax="65"><img src="../assets/settings.png" alt="CycleContext settings" /></figure>
-            <figure class="device device-front" data-parallax="-55"><img src="../assets/profiles.png" alt="CycleContext profile management" /></figure>
+      <!-- CTA -->
+      <section class="section cta" id="availability">
+        <div class="shell">
+          <div class="cta-card reveal">
+            <div class="cta-ring" aria-hidden="true"><svg viewBox="0 0 200 200"><use href="#ring-segments" /></svg></div>
+            <div class="cta-copy">
+              <img class="cta-icon" src="../assets/app-icon.png" alt="" width="72" height="72" loading="lazy" />
+              <p class="eyebrow">Available now</p>
+              <h2>CycleContext <em>on the App Store.</em></h2>
+              <p>Try everything on iPhone and iPad for seven days without payment details. The trial only begins when you start it in the app.</p>
+              <a class="button button-primary button-large" href="https://apps.apple.com/app/id6804225862">
+                Download on the App Store
+                <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M5 10h10m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section privacy" id="privacy">
-        <div class="privacy-glow" data-parallax="90" aria-hidden="true"></div>
-        <div class="shell product-row privacy-row">
-          <div class="product-copy reveal">
-            <p class="eyebrow">Private by design</p>
-            <h2>Your data.<br />On your device.</h2>
-            <p>Profiles, cycle data, and entries stay locally on your iPhone in the current version. There is no account or sync with our own server. Regular iPhone backups may include app data; you can delete profiles at any time.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section trial" id="availability">
-        <div class="shell trial-inner reveal">
-          <div><p class="eyebrow">Available now</p><h2>CycleContext on the App Store.</h2><p>Try everything on iPhone and iPad for seven days without payment details. The trial only begins when you start it in the app.</p></div>
-          <a class="button button-primary" href="https://apps.apple.com/app/id6804225862">Download on the App Store</a>
-        </div>
-      </section>
-
-      <section class="section disclaimer">
-        <div class="shell disclaimer-card reveal">
-          <span class="approx" aria-hidden="true">≈</span>
-          <div><p class="eyebrow">Scientifically careful</p><h2>Guidance, not a diagnosis.</h2><p>CycleContext is intended for general information, personal documentation, and everyday guidance. It is not intended for diagnosis, treatment, contraception, or fertility determination. Seek medical advice for severe, unusual, or persistent symptoms.</p></div>
-        </div>
-      </section>
-
+      <!-- FAQ + DISCLAIMER -->
       <section class="section faq" id="faq">
         <div class="shell faq-layout">
-          <div class="faq-heading reveal"><p class="eyebrow">Common questions</p><h2>Good to know.</h2></div>
-          <div class="faq-list reveal">
+          <div class="faq-heading reveal">
+            <p class="eyebrow">Common questions</p>
+            <h2>Good <em>to know.</em></h2>
+            <div class="disclaimer">
+              <span class="approx" aria-hidden="true">≈</span>
+              <div>
+                <h3>Guidance, not a diagnosis.</h3>
+                <p>CycleContext is intended for general information, personal documentation, and everyday guidance. It is not intended for diagnosis, treatment, contraception, or fertility determination. Seek medical advice for severe, unusual, or persistent symptoms.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-list reveal" data-delay="1">
             <details><summary>Is CycleContext only for men?<span></span></summary><p>No. You can document your own cycle or respectfully support someone close to you.</p></details>
             <details><summary>Does the app predict mood or behaviour?<span></span></summary><p>No. The app provides calendar-based guidance and general information. Actual wellbeing and personal observations always take priority.</p></details>
             <details><summary>Is my data uploaded?<span></span></summary><p>In the current version, profiles, cycle data, and entries stay locally on your device. There is no account and no server sync.</p></details>
+            <details><summary>Do I need an account?<span></span></summary><p>No. You can start right after opening the app—no sign-up required.</p></details>
             <details><summary>Can CycleContext be used for contraception?<span></span></summary><p>No. The ovulation window is only a calendar-based estimate. The app is not intended for contraception or fertility determination.</p></details>
+            <details><summary>How does the trial work?<span></span></summary><p>You can try everything in CycleContext on iPhone and iPad for seven days without payment details. The trial only begins when you start it in the app.</p></details>
           </div>
         </div>
       </section>
@@ -149,9 +443,10 @@
 
     <footer class="footer">
       <div class="shell footer-main">
-        <div class="footer-brand"><img src="../assets/app-icon.png" alt="" /><div><strong>CycleContext</strong><span>Cycle Context: Period Guide</span></div></div>
-        <nav aria-label="Footer navigation"><a href="#features">Features</a><a href="#privacy">Privacy</a><a href="#availability">Availability</a><a href="mailto:support@bentosoftware.de">Support</a></nav>
+        <div class="footer-brand"><img src="../assets/app-icon.png" alt="" width="48" height="48" loading="lazy" /><div><strong>CycleContext</strong><span>Cycle Context: Period Guide</span></div></div>
+        <nav aria-label="Footer navigation"><a href="#features">Features</a><a href="#cycle">Cycle</a><a href="#privacy">Privacy</a><a href="#availability">Availability</a><a href="mailto:support@bentosoftware.de">Support</a></nav>
       </div>
+      <p class="footer-word" aria-hidden="true">CycleContext</p>
       <div class="shell footer-bottom"><p>© <span data-year></span> Bento Software</p><p><a href="https://bentosoftware.com/app-privacy">Privacy Policy</a> · <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a></p></div>
     </footer>
   </body>
