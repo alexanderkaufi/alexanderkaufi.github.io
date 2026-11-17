@@ -227,7 +227,7 @@ function setLanguage(language) {
   document.querySelectorAll("[data-language]").forEach((button) => {
     button.setAttribute("aria-pressed", String(button.dataset.language === language));
   });
-  document.querySelector("[data-cycle-site]")?.setAttribute("href", `/${language}/`);
+  document.querySelector("[data-cycle-site]")?.setAttribute("href", language === "de" ? "/CycleContext/" : "/en/");
 
   localStorage.setItem("portfolio-language", language);
   localStorage.setItem("cyclecontext-language", language);
