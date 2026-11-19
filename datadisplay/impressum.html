@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" id="dark-chrome" content="#15191e" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fafbfc">
+  <meta name="description" content="Impressum und Kontakt für DataDisplay." data-i18n-content="pages.imprintDescription">
+  <title>Impressum – DataDisplay</title>
+  <link rel="icon" href="../DataDisplay/app-icon.png?v=2">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="legal.css">
+  <link rel="stylesheet" id="dark-palette" href="dark.css" media="(prefers-color-scheme: dark)">
+  <script src="appearance.js"></script>
+  <script defer src="language.js"></script>
+  <script defer src="motion.js"></script>
+</head>
+<body data-page="imprint">
+  <a class="skip" href="#inhalt" data-i18n="skip">Zum Inhalt springen</a>
+  <header class="header">
+    <nav class="nav wrap" aria-label="Hauptnavigation" data-i18n-aria="navigation.main">
+      <a class="brand" href="index.html#start"><img src="../DataDisplay/app-icon.png?v=2" width="29" height="29" alt="">DataDisplay</a>
+      <div class="navlinks">
+        <a href="index.html#start" data-i18n="nav.home">Startseite</a>
+        <a href="index.html#feedback" data-i18n="nav.feedback">Feedback</a>
+      </div>
+      <div class="nav-actions">
+        <div class="language-switch" role="group" aria-label="Sprache" data-i18n-aria="language.switch">
+          <button type="button" data-language-choice="de" data-i18n-button-aria="language.german" aria-pressed="true">DE</button>
+          <button type="button" data-language-choice="en" data-i18n-button-aria="language.english" aria-pressed="false">EN</button>
+        </div>
+        <label class="appearance" hidden>
+          <span class="visually-hidden" data-i18n="theme.label">Farbschema</span>
+          <select id="appearance-mode">
+            <option value="system" data-i18n="theme.system">System</option>
+            <option value="light" data-i18n="theme.light">Hell</option>
+            <option value="dark" data-i18n="theme.dark">Dunkel</option>
+          </select>
+        </label>
+        <details class="mobile-menu">
+          <summary aria-label="Navigation" data-i18n-aria="navigation.menu"><span></span><span></span></summary>
+          <div>
+            <a href="index.html#start" data-i18n="nav.home">Startseite</a>
+            <a href="index.html#feedback" data-i18n="nav.feedback">Feedback</a>
+            <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
+          </div>
+        </details>
+      </div>
+    </nav>
+  </header>
+  <main id="inhalt" tabindex="-1">
+    <article class="legal-page wrap" aria-labelledby="page-title">
+      <h1 id="page-title" data-i18n="imprint.title">Impressum</h1>
+      <p class="legal-intro" data-i18n="imprint.intro">Angaben nach § 5 DDG zum Anbieter von DataDisplay.</p>
+
+      <section class="legal-section" aria-labelledby="company-title">
+        <h2 id="company-title" data-i18n="imprint.provider">Anbieter</h2>
+        <address>
+          <strong>Bento Software UG (haftungsbeschränkt)</strong><br>
+          Hessestr. 12<br>
+          32049 Herford<br>
+          <span data-i18n="country.germany">Deutschland</span>
+        </address>
+      </section>
+
+      <section class="legal-section" aria-labelledby="contact-title">
+        <h2 id="contact-title" data-i18n="imprint.contact">Kontakt</h2>
+        <dl class="legal-contact">
+          <dt data-i18n="imprint.phone">Telefon</dt><dd><a href="tel:+4952213889774">+49 (0)5221 / 388 977 4</a></dd>
+          <dt>Fax</dt><dd>+49 (0)5221 / 388 977 5</dd>
+          <dt data-i18n="imprint.email">E-Mail</dt><dd><a href="mailto:kontakt@bentosoftware.com">kontakt@bentosoftware.com</a></dd>
+        </dl>
+      </section>
+
+      <section class="legal-section" aria-labelledby="register-title">
+        <h2 id="register-title" data-i18n="imprint.registerTitle">Vertretung und Register</h2>
+        <dl class="legal-contact">
+          <dt data-i18n="imprint.managingDirectors">Geschäftsführer</dt><dd>Marcus Dürksen, Alexander Gebel</dd>
+          <dt data-i18n="imprint.registerCourt">Registergericht</dt><dd data-i18n="imprint.localCourt">Amtsgericht Bad Oeynhausen</dd>
+          <dt data-i18n="imprint.registerNumber">Registernummer</dt><dd>HRB 13124</dd>
+          <dt data-i18n="imprint.vatId">Umsatzsteuer-ID</dt><dd>DE284159016</dd>
+        </dl>
+      </section>
+
+      <a class="text-link legal-back" href="index.html#start"><span data-i18n="imprint.back">Zur DataDisplay-Seite</span> <span aria-hidden="true">→</span></a>
+    </article>
+  </main>
+  <footer>
+    <div class="footer-inner wrap">
+      <span data-i18n="footer.copyright">© DataDisplay</span>
+      <nav class="footer-links" aria-label="Rechtliche Informationen" data-i18n-aria="footer.legal">
+        <a href="impressum.html" aria-current="page" data-i18n="footer.imprint">Impressum</a>
+        <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
+      </nav>
+      <a href="index.html#start"><span data-i18n="footer.backToTop">Zurück nach oben</span> <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+</body>
+</html>
