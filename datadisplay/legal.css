@@ -1,0 +1,74 @@
+.legal-page {
+  padding-block: clamp(3.5rem, 7vw, 6rem) clamp(4rem, 8vw, 7rem);
+}
+.legal-page > h1 {
+  max-width: 20ch;
+  margin-bottom: 1.35rem;
+  font-size: clamp(2.7rem, 7vw, 4.3rem);
+  font-weight: 610;
+  letter-spacing: -0.055em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+.legal-intro {
+  max-width: 62ch;
+  margin-bottom: clamp(2.7rem, 5vw, 4.2rem);
+  color: var(--body-text);
+  font-size: 1.08rem;
+}
+.legal-section {
+  max-width: 66ch;
+  padding-block: 1.65rem;
+  border-top: 1px solid var(--line);
+}
+.legal-section h2 {
+  margin-bottom: 0.85rem;
+  font-size: clamp(1.3rem, 2.7vw, 1.65rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+.legal-section h3 {
+  margin-top: 1.35rem;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  font-weight: 620;
+}
+.legal-section p, .legal-section address, .legal-section li {
+  color: var(--body-text);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.legal-section p + p { margin-top: 0.75rem; }
+.legal-section address { font-style: normal; }
+.legal-section ul {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0.65rem 0 0;
+  padding-left: 1.25rem;
+}
+.legal-section a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  overflow-wrap: anywhere;
+}
+.legal-section a:hover { color: var(--accent-hover); }
+.legal-contact {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.4fr) minmax(0, 1fr);
+  gap: 0.55rem 1.2rem;
+  margin: 1rem 0 0;
+  font-variant-numeric: tabular-nums;
+}
+.legal-contact dt { color: var(--subtle-text); }
+.legal-contact dd { min-width: 0; color: var(--ink); }
+.legal-contact a { color: var(--accent); }
+.legal-back { display: inline-flex; margin-top: 0.75rem; }
+.footer-links { display: flex; align-items: center; gap: 1.4rem; }
+@media (max-width: 46rem) {
+  .legal-contact { grid-template-columns: 1fr; gap: 0.15rem; }
+  .legal-contact dd + dt { margin-top: 0.65rem; }
+  .footer-inner { flex-wrap: wrap; }
+  .footer-links { order: 3; width: 100%; padding-top: 0.85rem; border-top: 1px solid var(--line); }
+}
