@@ -1,277 +1,1095 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" data-appearance="system">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f5f5f7" />
-    <meta name="description" content="Ausgewählte Projekte von Alexander Kaufmann aus Web, Apps und digitalen Tools." />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Alexander Kaufmann — Native Apps für iPhone, Apple Watch, iPad und Mac sowie moderne Webprojekte und digitale Werkzeuge."
+    />
+    <meta name="theme-color" content="#f7f4ef" id="theme-color-meta" />
+    <meta property="og:title" content="Alexander Kaufmann — Apps, Web &amp; Digitale Werkzeuge" />
+    <meta
+      property="og:description"
+      content="Zwölf eigene Projekte für iOS, watchOS, iPadOS, macOS und das Web — klar gestaltet, lokal gedacht und direkt nutzbar."
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Alexander Kaufmann — Portfolio" />
-    <meta property="og:description" content="Websites, Apps und digitale Werkzeuge von Alexander Kaufmann." />
-    <meta property="og:url" content="https://kaufmann-dynamics.de/projekte/" />
-    <link rel="canonical" href="https://kaufmann-dynamics.de/projekte/" />
-    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
-    <title>Alexander Kaufmann — Portfolio</title>
-    <link rel="stylesheet" href="./portfolio.css?v=20" />
-    <script src="./portfolio.js?v=22" defer></script>
+    <meta property="og:url" content="https://alexanderkaufi.github.io/" />
+    <meta property="og:image" content="https://alexanderkaufi.github.io/assets/previews/bento-box.png" />
+    <link rel="icon" href="./assets/logo.png" type="image/png" />
+    <title>Alexander Kaufmann — Apps, Web &amp; Digitale Werkzeuge</title>
+    <link rel="stylesheet" href="./portfolio.css?v=52" />
+    <script src="./portfolio.js?v=52" defer></script>
   </head>
-  <body>
-    <a class="skip-link" href="#inhalt" data-i18n="skip">Zum Inhalt springen</a>
+  <body class="bento-home" data-page="home">
+    <a class="skip-link" href="#hauptinhalt" data-i18n="skip">Zum Inhalt springen</a>
 
-    <header class="site-header" data-header>
-      <nav class="nav shell" aria-label="Hauptnavigation" data-i18n-aria="nav.label">
-        <a class="brand" href="#top">Alexander Kaufmann<span class="brand-period">.</span></a>
-        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Menü öffnen" data-i18n-aria="nav.open">
-          <span></span><span></span>
-        </button>
-        <div class="nav-links" id="site-navigation">
-          <a href="#projekte" data-i18n="nav.projects">Projekte</a>
-          <a href="#ueber-mich" data-i18n="nav.about">Über mich</a>
-          <a href="#kontakt" data-i18n="nav.contact">Kontakt</a>
-          <div class="language-switch" role="group" aria-label="Sprache wählen" data-i18n-aria="language.label">
+    <!-- Shared SVG Definitions for CycleContext Rotating Orbit Ring -->
+    <svg class="svg-defs" aria-hidden="true" focusable="false">
+      <defs>
+        <g id="cycle-ring-segments" transform="rotate(-90 100 100)" fill="none">
+          <circle class="seg seg-1" cx="100" cy="100" r="84" stroke-dasharray="90.48 437.31" stroke-dashoffset="-1.88" />
+          <circle class="seg seg-2" cx="100" cy="100" r="84" stroke-dasharray="128.18 399.61" stroke-dashoffset="-96.13" />
+          <circle class="seg seg-3" cx="100" cy="100" r="84" stroke-dasharray="52.78 475.01" stroke-dashoffset="-228.08" />
+          <circle class="seg seg-4" cx="100" cy="100" r="84" stroke-dasharray="147.03 380.76" stroke-dashoffset="-284.63" />
+          <circle class="seg seg-5" cx="100" cy="100" r="84" stroke-dasharray="90.48 437.31" stroke-dashoffset="-435.42" />
+        </g>
+      </defs>
+    </svg>
+
+    <!-- Bento Floating Pill Header -->
+    <header class="site-header" id="site-header">
+      <div class="container nav">
+        <a class="brand" href="#top" aria-label="Startseite — Projekte" data-i18n-aria="brand.aria">
+          <img class="brand-mark" src="./assets/logo.png" width="36" height="36" alt="" />
+          <span class="brand-wordmark">
+            <strong data-i18n="brand.wordmark">Projekte</strong>
+          </span>
+        </a>
+
+        <nav class="nav-links" aria-label="Hauptnavigation" data-i18n-aria="nav.label">
+          <a class="nav-item" href="#projekte" data-i18n="nav.overview">Übersicht</a>
+          <a class="nav-item" href="#schwerpunkte" data-i18n="nav.focus">Schwerpunkte</a>
+          <a class="nav-item" href="https://github.com/alexanderkaufi" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </nav>
+
+        <div class="nav-actions">
+          <div class="language-switch" role="group" aria-label="Sprache" data-i18n-aria="language.label">
             <button type="button" data-language="de" aria-pressed="true">DE</button>
             <button type="button" data-language="en" aria-pressed="false">EN</button>
           </div>
+
+          <label class="appearance">
+            <span class="visually-hidden" data-i18n="theme.label">Farbschema</span>
+            <select id="appearance-mode" aria-label="Farbschema wählen" data-i18n-aria="theme.label">
+              <option value="system" data-i18n="theme.system">System</option>
+              <option value="light" data-i18n="theme.light">Hell</option>
+              <option value="dark" data-i18n="theme.dark">Dunkel</option>
+            </select>
+          </label>
+
+          <a class="nav-cta" href="#kontakt" data-i18n="nav.contact">Kontakt</a>
+
+          <button
+            id="menu-toggle"
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-drawer"
+            aria-label="Menü öffnen"
+            data-i18n-aria="nav.open"
+          >
+            <span></span>
+            <span></span>
+          </button>
         </div>
-      </nav>
+      </div>
     </header>
 
-    <main id="inhalt">
-      <section class="hero" id="top">
-        <div class="shell hero-inner">
-          <h1 class="hero-title reveal"><span data-i18n="hero.title.one">Ich mache Ideen</span><span class="hero-accent" data-i18n="hero.title.two">digital erlebbar.</span></h1>
-          <p class="hero-lead reveal" data-i18n="hero.lead">Ich entwickle Apps und Websites, die aus guten Ideen praktische Werkzeuge machen.</p>
-          <div class="hero-actions reveal">
-            <a class="button button-primary" href="#projekte"><span data-i18n="hero.cta.projects">Projekte entdecken</span><span aria-hidden="true">↓</span></a>
-            <a class="button button-quiet" href="https://github.com/alexanderkaufi" target="_blank" rel="noopener noreferrer"><span data-i18n="hero.cta.github">GitHub-Profil</span><span aria-hidden="true">↗</span></a>
-          </div>
-          <div class="hero-showcase reveal" aria-hidden="true">
-            <div class="showcase-tile showcase-gallery" data-parallax="-24" data-reveal-side="left"><img src="./assets/previews/nunavut-gallery.jpg" alt="" /></div>
-            <div class="showcase-tile showcase-featured" data-parallax="17"><img src="./assets/previews/gymmix-app.png" alt="" /></div>
-            <div class="showcase-tile showcase-bento" data-parallax="-19" data-reveal-side="right"><img src="./assets/previews/bento-hero.png" alt="" /></div>
-          </div>
-          <div class="hero-note reveal"><span class="hero-note-dot" aria-hidden="true"></span><span data-i18n="hero.note">Eine Auswahl aus Web, Apps und digitalen Werkzeugen</span></div>
-        </div>
-      </section>
+    <!-- Bento Mobile Navigation Drawer -->
+    <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+      <a class="mobile-drawer-link" href="#projekte" data-i18n="nav.overview">Übersicht</a>
+      <a class="mobile-drawer-link" href="#schwerpunkte" data-i18n="nav.focus">Schwerpunkte</a>
+      <a class="mobile-drawer-link" href="https://github.com/alexanderkaufi" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a class="mobile-drawer-link" href="#kontakt" data-i18n="nav.contact">Kontakt</a>
+    </div>
 
-      <section class="projects-section" id="projekte">
-        <div class="shell">
-          <div class="section-heading reveal">
-            <div>
-              <p class="eyebrow" data-i18n="projects.eyebrow">Ausgewählte Arbeiten</p>
-              <h2 data-i18n="projects.title">Einblicke in meine Projekte.</h2>
+    <main id="hauptinhalt" tabindex="-1">
+      <!-- Bento Split Hero -->
+      <section id="top" class="hero" aria-labelledby="page-title">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow-pill">
+              <span class="eyebrow-dot" aria-hidden="true"></span>
+              <span data-i18n="hero.eyebrow">Portfolio · iOS, Mac &amp; Web</span>
             </div>
-            <p data-i18n="projects.intro">Vierzehn Projekte aus Apps, Web und digitalen Werkzeugen — jedes mit einer kleinen Vorschau.</p>
+
+            <h1 id="page-title" class="hero-title">
+              <span data-i18n="hero.title.one">Software, die im</span>
+              <span class="hero-title-accent" data-i18n="hero.title.two">Alltag überzeugt.</span>
+            </h1>
+
+            <p class="hero-lead" data-i18n="hero.lead">
+              Ich entwickle durchdachte Apps für iPhone, Apple Watch, iPad und Mac sowie moderne Websites und digitale Werkzeuge – reduziert auf das Wesentliche, zuverlässig im Alltag.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#projekte">
+                <span data-i18n="hero.cta.projects">Projekte entdecken</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+              <a class="btn btn-secondary" href="https://github.com/alexanderkaufi" target="_blank" rel="noopener noreferrer" data-i18n="hero.cta.github">GitHub-Profil</a>
+            </div>
+
+            <div class="hero-meta">
+              <span class="hero-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                  <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                  <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                  <rect x="14" y="14" width="7" height="7" rx="1.5" />
+                </svg>
+                <span data-i18n="hero.meta1">12 eigene Projekte</span>
+              </span>
+              <span class="hero-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="6" y="2" width="12" height="20" rx="2.5" />
+                  <path d="M12 18h.01" />
+                </svg>
+                <span data-i18n="hero.meta2">iOS, Watch, iPad &amp; Mac</span>
+              </span>
+              <span class="hero-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+                <span data-i18n="hero.meta3">Webdesign &amp; KI-Tools</span>
+              </span>
+            </div>
           </div>
-          <div class="project-grid">
-            <article class="project-card reveal" data-project="gymmix-app">
-              <figure class="project-card-preview project-preview-gymmix-app" data-parallax="8"><img src="./assets/previews/gymmix-app.png" alt="Gymmix-Motiv mit anatomischer Muskelillustration" data-i18n-alt="preview.gymmixApp" loading="lazy" decoding="async" /></figure>
-              <div class="project-card-content">
-                <p class="project-card-type" data-i18n="gymmixApp.category">iOS-App · Fitness</p>
-                <h3>Gymmix</h3>
-                <p data-i18n="gymmixApp.description">Trainings planen, Sätze und Gewichte festhalten und Fortschritte im Gym oder zu Hause verfolgen.</p>
-                <div class="project-card-actions">
-                  <a class="app-store-badge" href="https://apps.apple.com/de/app/gymmix-workoutplan-gym-log/id6746069110" target="_blank" rel="noopener noreferrer">
-                    <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268c-25.8 0-46.8 15.8-60 15.8-14.2 0-32.5-15-53-15-42.5 0-88.5 39.3-88.5 103.5 0 39.8 15.3 81.8 34.8 111.3 16.5 24.8 31 41.3 50 41.3 18.8 0 27-12.5 51.5-12.5 23.8 0 30.8 12 51 12 20.3 0 37.8-17.3 52.3-39 12.3-18 17.3-27 26.8-48.8-70.3-26.5-81.8-129-12.8-168.8-14.5-18.3-39.3-31-61.3-31zM315.3 120.5c-6.5 0-14.3 4.5-19.8 10.8-5.5 6.3-9.5 14.5-8 23.3 7.8.5 16-4.5 21.5-10.5 5.5-6 9-14.5 8.3-23.5z"/></svg>
-                    <span><small data-i18n="store.kicker">Laden im</small><strong data-i18n="store.name">App Store</strong></span>
-                  </a>
-                  <a class="project-card-link project-site-link" href="https://kaufmann-dynamics.de/Gymmix/" target="_blank" rel="noopener noreferrer"><span data-i18n="link.projectSite">Projektseite</span><span aria-hidden="true">↗</span></a>
+
+          <div class="hero-stage">
+            <div class="hero-stage-glow" aria-hidden="true"></div>
+            <div
+              id="hero-slideshow"
+              class="hero-slideshow"
+              role="region"
+              aria-roledescription="carousel"
+              aria-label="App-Vorschau Diashow"
+              data-i18n-aria="slideshow.aria"
+              data-tilt-card
+            >
+              <div class="slideshow-track">
+                <figure class="slide-item slide-item--cover is-active" data-slide-index="0">
+                  <img
+                    src="./assets/previews/gymmix-hero-slide.jpg"
+                    width="506"
+                    height="1100"
+                    alt="Gymmix Trainings-App im Fitnessstudio"
+                    data-i18n-alt="preview.gymmixApp"
+                  />
+                </figure>
+
+                <figure class="slide-item slide-item--ui slide-item--pearl" data-slide-index="1" aria-hidden="true">
+                  <img
+                    src="./assets/dashboard.png"
+                    width="1206"
+                    height="2622"
+                    alt="CycleContext Heute-Ansicht"
+                    data-i18n-alt="preview.cycle"
+                  />
+                </figure>
+
+                <figure class="slide-item slide-item--cover slide-item--cover-mid" data-slide-index="2" aria-hidden="true">
+                  <img
+                    src="./assets/previews/carddisplay-slide.jpg"
+                    width="506"
+                    height="1100"
+                    alt="CardDisplay auf dem iPhone im Alltag"
+                    data-i18n-alt="carddisplay.heroAlt"
+                  />
+                </figure>
+
+                <figure class="slide-item slide-item--ui slide-item--gymdark" data-slide-index="3" aria-hidden="true">
+                  <img
+                    src="./assets/previews/gymmix-stats-slide.png"
+                    width="481"
+                    height="1041"
+                    alt="Gymmix Trainingsstatistik und Auswertung"
+                    data-i18n-alt="preview.gymmixStats"
+                  />
+                </figure>
+
+                <figure class="slide-item slide-item--cover slide-item--cover-top" data-slide-index="4" aria-hidden="true">
+                  <img
+                    src="./assets/previews/datadisplay-slide.png"
+                    width="760"
+                    height="1100"
+                    alt="DataDisplay Dashboard und Präsentationsfolie"
+                    data-i18n-alt="preview.datadisplay"
+                  />
+                </figure>
+              </div>
+
+              <div class="slideshow-controls">
+                <div class="slideshow-caption">
+                  <strong id="slide-caption-title">Gymmix</strong>
+                  <span id="slide-caption-sub" data-i18n="slideshow.s0.sub">iPhone &amp; Watch · Fitness</span>
+                </div>
+
+                <div class="slideshow-nav">
+                  <div class="slideshow-dots" role="tablist" aria-label="App-Folie wählen" data-i18n-aria="slideshow.dotsAria">
+                    <button type="button" class="slide-dot is-active" data-slide-dot="0" aria-label="Gymmix" aria-selected="true"></button>
+                    <button type="button" class="slide-dot" data-slide-dot="1" aria-label="CycleContext" aria-selected="false"></button>
+                    <button type="button" class="slide-dot" data-slide-dot="2" aria-label="CardDisplay" aria-selected="false"></button>
+                    <button type="button" class="slide-dot" data-slide-dot="3" aria-label="Gymmix Statistik" aria-selected="false"></button>
+                    <button type="button" class="slide-dot" data-slide-dot="4" aria-label="DataDisplay" aria-selected="false"></button>
+                  </div>
+
+                  <button
+                    id="slideshow-toggle"
+                    class="slide-toggle-btn"
+                    type="button"
+                    aria-label="Diashow pausieren"
+                    data-i18n-aria="slideshow.pauseAria"
+                  >
+                    <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <rect x="6" y="5" width="4" height="14" rx="1" />
+                      <rect x="14" y="5" width="4" height="14" rx="1" />
+                    </svg>
+                    <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" hidden>
+                      <polygon points="7 5 19 12 7 19" />
+                    </svg>
+                  </button>
                 </div>
               </div>
-            </article>
-            <article class="project-card reveal" data-project="cyclecontext">
-              <figure class="project-card-preview project-preview-cycle" data-parallax="8"><img src="./assets/app-icon.png" alt="CycleContext-Symbol mit farbigem Zyklusring" data-i18n-alt="preview.cycle" loading="lazy" decoding="async" /></figure>
-              <div class="project-card-content">
-                <p class="project-card-type" data-i18n="cycle.category">iOS-App · Gesundheit</p>
-                <h3>CycleContext</h3>
-                <p data-i18n="cycle.description">Eine ruhige iPhone-App, die Zyklusabschnitte einordnet und persönliche Daten lokal auf dem Gerät hält.</p>
-                <div class="project-card-actions">
-                  <a class="app-store-badge" href="https://apps.apple.com/app/id6804225862" target="_blank" rel="noopener noreferrer">
-                    <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268c-25.8 0-46.8 15.8-60 15.8-14.2 0-32.5-15-53-15-42.5 0-88.5 39.3-88.5 103.5 0 39.8 15.3 81.8 34.8 111.3 16.5 24.8 31 41.3 50 41.3 18.8 0 27-12.5 51.5-12.5 23.8 0 30.8 12 51 12 20.3 0 37.8-17.3 52.3-39 12.3-18 17.3-27 26.8-48.8-70.3-26.5-81.8-129-12.8-168.8-14.5-18.3-39.3-31-61.3-31zM315.3 120.5c-6.5 0-14.3 4.5-19.8 10.8-5.5 6.3-9.5 14.5-8 23.3 7.8.5 16-4.5 21.5-10.5 5.5-6 9-14.5 8.3-23.5z"/></svg>
-                    <span><small data-i18n="store.kicker">Laden im</small><strong data-i18n="store.name">App Store</strong></span>
-                  </a>
-                  <a class="project-card-link project-site-link" href="/cyclecontext/" data-cycle-site><span data-i18n="cycle.site">Projektseite</span><span aria-hidden="true">↗</span></a>
-                </div>
-              </div>
-            </article>
-            <article class="project-card reveal" data-project="carddisplay">
-              <figure class="project-card-preview project-preview-carddisplay" data-parallax="8"><img src="./assets/previews/carddisplay.jpg" alt="CardDisplay-Symbol mit digitaler Visitenkarte" data-i18n-alt="preview.carddisplay" loading="lazy" decoding="async" /></figure>
-              <div class="project-card-content">
-                <p class="project-card-number" aria-hidden="true">03</p>
-                <p class="project-card-type" data-i18n="carddisplay.category">iOS-App · Produktivität</p>
-                <h3>CardDisplay</h3>
-                <p class="project-card-tagline" data-i18n="carddisplay.tagline">Zeig deine Karte</p>
-                <p class="project-card-description" data-i18n="carddisplay.description">Digitale Visitenkarten gestalten, vorhandene Karten erfassen und Kontakte direkt vom iPhone teilen.</p>
-                <div class="project-card-actions">
-                  <a class="app-store-badge" href="https://apps.apple.com/de/app/carddisplay-visitenkarte/id6756011983" target="_blank" rel="noopener noreferrer">
-                    <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268c-25.8 0-46.8 15.8-60 15.8-14.2 0-32.5-15-53-15-42.5 0-88.5 39.3-88.5 103.5 0 39.8 15.3 81.8 34.8 111.3 16.5 24.8 31 41.3 50 41.3 18.8 0 27-12.5 51.5-12.5 23.8 0 30.8 12 51 12 20.3 0 37.8-17.3 52.3-39 12.3-18 17.3-27 26.8-48.8-70.3-26.5-81.8-129-12.8-168.8-14.5-18.3-39.3-31-61.3-31zM315.3 120.5c-6.5 0-14.3 4.5-19.8 10.8-5.5 6.3-9.5 14.5-8 23.3 7.8.5 16-4.5 21.5-10.5 5.5-6 9-14.5 8.3-23.5z"/></svg>
-                    <span><small data-i18n="store.kicker">Laden im</small><strong data-i18n="store.name">App Store</strong></span>
-                  </a>
-                  <a class="project-card-link project-site-link" href="https://kaufmann-dynamics.de/CardDisplay/" target="_blank" rel="noopener noreferrer"><span data-i18n="link.projectSite">Projektseite</span><span aria-hidden="true">↗</span></a>
-                </div>
-              </div>
-            </article>
-            <article class="project-card reveal">
-              <figure class="project-card-preview project-preview-bento" data-parallax="8" aria-label="Animation aus meinem Bento-Webprojekt" data-i18n-aria="preview.bentoAnimation">
-                <video src="./assets/previews/bento-software.mp4?v=2" poster="./assets/previews/bento-hero.png" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
-                <img class="motion-fallback" src="./assets/previews/bento-hero.png" alt="" loading="eager" decoding="async" />
-              </figure>
-              <div class="project-card-content">
-                <p class="project-card-type" data-i18n="bento.category">Eigenes Webprojekt · Produktdesign</p>
-                <h3>Bento Software</h3>
-                <p data-i18n="bento.description">Mein Bento-Software-Webprojekt mit Animationen und einer klaren Präsentation der Apps.</p>
-                <a class="project-card-link project-site-link" href="/bento/" target="_blank" rel="noopener noreferrer"><span data-i18n="link.projectSite">Projektseite</span><span aria-hidden="true">↗</span></a>
-              </div>
-            </article>
-            <article class="project-card reveal" data-project="datadisplay">
-              <figure class="project-card-preview project-preview-datadisplay" data-parallax="8"><img src="./assets/previews/datadisplay.png" alt="DataDisplay-App-Symbol" data-i18n-alt="preview.datadisplay" loading="lazy" decoding="async" /></figure>
-              <div class="project-card-content">
-                <p class="project-card-type" data-i18n="datadisplay.category">App · Datenvisualisierung</p>
-                <h3>DataDisplay</h3>
-                <p data-i18n="datadisplay.description">Diagramme und Dashboards für Mac und iPad: Tabellen übersichtlich visualisieren und präsentieren.</p>
-                <a class="project-card-link project-site-link" href="https://kaufmann-dynamics.de/datadisplay/" target="_blank" rel="noopener noreferrer"><span data-i18n="link.projectSite">Projektseite</span><span aria-hidden="true">↗</span></a>
-              </div>
-            </article>
-            <article class="project-card reveal" data-project="grow">
-              <figure class="project-card-preview project-preview-grow" data-parallax="-8"><img src="./assets/previews/grow.jpg" alt="Pflanzenmotiv aus der Grow-Website" data-i18n-alt="preview.grow" loading="lazy" decoding="async" /></figure>
-              <div class="project-card-content">
-                <p class="project-card-type" data-i18n="grow.category">Web · Designbeispiel</p>
-                <h3>Grow</h3>
-                <p data-i18n="grow.description">Ein Website-Beispiel mit Pflanzenmotiven, vertikalen Übergängen und Parallax-Effekten.</p>
-                <a class="project-card-link project-site-link" href="https://kaufmann-dynamics.de/Beispiel1/" target="_blank" rel="noopener noreferrer"><span data-i18n="link.projectSite">Projektseite</span><span aria-hidden="true">↗</span></a>
-              </div>
-            </article>
-            <article class="project-card reveal">
-              <figure class="project-card-preview project-preview-gallery" data-parallax="-8"><img src="./assets/previews/nunavut-gallery.jpg" alt="Kunstwerk aus der Nunavut Gallery" data-i18n-alt="preview.gallery" loading="lazy" decoding="async" /></figure>
-              <div class="project-card-content">
-                <p class="project-card-type" data-i18n="gallery.category">Webplattform · Kunst</p>
-                <h3>Nunavut Gallery</h3>
-                <p data-i18n="gallery.description">Eine Galerie-Website für Kunst aus Nunavut, Kanada. Neue Arbeiten erscheinen automatisch aus dem Instagram-Auftritt der Galerie.</p>
-                <a class="project-card-link project-site-link" href="/nunavutgallery/" target="_blank" rel="noopener noreferrer"><span data-i18n="link.projectSite">Projektseite</span><span aria-hidden="true">↗</span></a>
-              </div>
-            </article>
-            <article class="project-card reveal" data-project="heating">
-              <figure class="project-card-preview project-preview-heating" data-parallax="8"><img src="./assets/previews/waermekosten.jpg" alt="Themenbild zur Berechnung von Wärmekosten" data-i18n-alt="preview.heating" loading="lazy" decoding="async" /></figure>
-              <div class="project-card-content">
-                <p class="project-card-type" data-i18n="heat.category">Konzept · Web-Rechner</p>
-                <h3 data-i18n="heat.title">Wärmekostenrechner</h3>
-                <p data-i18n="heat.description">Ein interaktiver Entwurf, der die Kosten von Gasheizung und Wärmepumpe anhand eigener Annahmen vergleicht.</p>
-                <a class="project-card-link project-site-link" href="/Waermekosten/" target="_blank" rel="noopener noreferrer"><span data-i18n="link.projectSite">Projektseite</span><span aria-hidden="true">↗</span></a>
-              </div>
-            </article>
-            <article class="project-card reveal">
-              <figure class="project-card-preview project-preview-text project-preview-kluug" data-parallax="-8" aria-label="Textvorschau aus dem KLUUG-Dashboard" data-i18n-aria="preview.dashboardAria">
-                <span class="preview-label" data-i18n="preview.dashboard">KLUUG · Dashboard</span>
-                <p class="preview-kicker" data-i18n="preview.ready">Bereit für heute?</p>
-                <blockquote data-i18n="preview.kluug">Hey Alex! Was knacken wir heute?</blockquote>
-                <span class="preview-caption" data-i18n="preview.path">Mathe · Klasse 5 · Weiterlernen</span>
-              </figure>
-              <div class="project-card-content">
-                <p class="project-card-type" data-i18n="kluug.category">App · Bildung</p>
-                <h3>KLUUG</h3>
-                <p data-i18n="kluug.description">Eine Lern-App für Klasse 5 bis 8 mit Lernpfaden, Quiz-Quests und Fiete als Tutor.</p>
-                <a class="project-card-link project-site-link" href="/LernApp/" target="_blank" rel="noopener noreferrer"><span data-i18n="link.projectSite">Projektseite</span><span aria-hidden="true">↗</span></a>
-              </div>
-            </article>
-            <article class="project-card reveal">
-              <figure class="project-card-preview project-preview-text project-preview-credo" data-parallax="-8" aria-label="Textvorschau aus dem Glaubensbekenntnis" data-i18n-aria="preview.credoAria">
-                <span class="preview-label" data-i18n="preview.credoLabel">Credo · Glaubensbekenntnis</span>
-                <p class="preview-script" data-i18n="preview.credoHeading">Nizäno-Konstantinopolitanisches Glaubensbekenntnis</p>
-                <blockquote data-i18n="preview.credoQuote">Wir glauben an den einen Gott, den Vater, den Allmächtigen.</blockquote>
-                <span class="preview-caption" data-i18n="preview.terms">Erklärungen zu Begriffen und Themen</span>
-              </figure>
-              <div class="project-card-content">
-                <p class="project-card-type" data-i18n="credo.category">Web · Wissen</p>
-                <h3>Credo</h3>
-                <p data-i18n="credo.description">Texte zum orthodoxen Glaubensbekenntnis und zur Katechese digital zugänglich gemacht.</p>
-                <a class="project-card-link project-site-link" href="/credo/" target="_blank" rel="noopener noreferrer"><span data-i18n="link.projectSite">Projektseite</span><span aria-hidden="true">↗</span></a>
-              </div>
-            </article>
-            <article class="project-card reveal">
-              <figure class="project-card-preview project-preview-gymmix" data-parallax="8"><img src="./assets/previews/gymmix-manual.png" alt="Trainingsübersicht aus dem Gymmix Manual" data-i18n-alt="preview.gymmix" loading="lazy" decoding="async" /></figure>
-              <div class="project-card-content">
-                <p class="project-card-type" data-i18n="gymmix.category">Web · Dokumentation</p>
-                <h3>Gymmix Manual</h3>
-                <p data-i18n="gymmix.description">Ein digitales Handbuch mit Dokumentation und Anleitungen für Gymmix.</p>
-                <div class="project-card-actions">
-                  <a class="app-store-badge" href="https://apps.apple.com/de/app/gymmix-trainingsplan-tracker/id6746069110" target="_blank" rel="noopener noreferrer">
-                    <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268c-25.8 0-46.8 15.8-60 15.8-14.2 0-32.5-15-53-15-42.5 0-88.5 39.3-88.5 103.5 0 39.8 15.3 81.8 34.8 111.3 16.5 24.8 31 41.3 50 41.3 18.8 0 27-12.5 51.5-12.5 23.8 0 30.8 12 51 12 20.3 0 37.8-17.3 52.3-39 12.3-18 17.3-27 26.8-48.8-70.3-26.5-81.8-129-12.8-168.8-14.5-18.3-39.3-31-61.3-31zM315.3 120.5c-6.5 0-14.3 4.5-19.8 10.8-5.5 6.3-9.5 14.5-8 23.3 7.8.5 16-4.5 21.5-10.5 5.5-6 9-14.5 8.3-23.5z"/></svg>
-                    <span><small data-i18n="store.kicker">Laden im</small><strong data-i18n="store.name">App Store</strong></span>
-                  </a>
-                  <a class="project-card-link project-site-link" href="/Gymmix_Manual/de/handbuch/index.html" target="_blank" rel="noopener noreferrer"><span data-i18n="gymmix.handbook">Handbuch</span><span aria-hidden="true">↗</span></a>
-                </div>
-              </div>
-            </article>
-            <article class="project-card reveal">
-              <figure class="project-card-preview project-preview-text project-preview-luv" data-parallax="-8" aria-label="Textvorschau aus der LuV-Anwendung" data-i18n-aria="preview.luvAria">
-                <span class="preview-label" data-i18n="preview.luvLabel">LuV · Beurteilung</span>
-                <p class="preview-script" data-i18n="preview.luvHeading">Leistungs- und Verhaltensbeurteilung</p>
-                <span class="preview-chip-row" aria-hidden="true"><span data-i18n="preview.luvTab">Bewertung</span><span data-i18n="preview.luvResult">Erzeugtes Ergebnis</span></span>
-                <span class="preview-caption" data-i18n="preview.luvAction">Speichern · Laden · Drucken</span>
-              </figure>
-              <div class="project-card-content">
-                <p class="project-card-type" data-i18n="luv.category">Web-App · Bildung</p>
-                <h3>LuV</h3>
-                <p data-i18n="luv.description">Eine Browser-App für Leistungs- und Verhaltensbeurteilungen.</p>
-                <a class="project-card-link project-site-link" href="/LuV/" target="_blank" rel="noopener noreferrer"><span data-i18n="link.projectSite">Projektseite</span><span aria-hidden="true">↗</span></a>
-              </div>
-            </article>
-            <article class="project-card reveal">
-              <figure class="project-card-preview project-preview-text" data-parallax="-8" aria-label="Hauskreis Controlling">
-                <span class="preview-label">Hauskreis · Controlling</span>
-                <p class="preview-script">Hauskreis Controlling</p>
-              </figure>
-              <div class="project-card-content">
-                <p class="project-card-type" data-i18n="hauskreis.category">Web-App · Organisation</p>
-                <h3>Hauskreis Controlling</h3>
-                <p data-i18n="hauskreis.description">Eine Web-App für die Übersicht und Organisation im Hauskreis.</p>
-                <a class="project-card-link project-site-link" href="/hausi/" target="_blank" rel="noopener noreferrer"><span data-i18n="link.projectSite">Projektseite</span><span aria-hidden="true">↗</span></a>
-              </div>
-            </article>
-            <article class="project-card reveal">
-              <figure class="project-card-preview project-preview-text project-preview-transkript" data-parallax="8" aria-label="Textvorschau aus dem Transkript-Redaktor" data-i18n-aria="preview.transcriptAria">
-                <span class="preview-label" data-i18n="preview.transcriptLabel">Transkript · Redaktor</span>
-                <p class="preview-script" data-i18n="preview.transcriptHeading">YouTube-Wissensdateien im Handumdrehen erzeugen</p>
-                <span class="preview-input" data-i18n="preview.transcriptInput">YouTube URL / Video-ID</span>
-                <span class="preview-caption" data-i18n="preview.transcriptStep">1 · Setup & Metadaten</span>
-              </figure>
-              <div class="project-card-content">
-                <p class="project-card-type" data-i18n="transcript.category">Tool · Sprache</p>
-                <h3 data-i18n="transcript.title">Transkript</h3>
-                <p data-i18n="transcript.description">Ein Tool zum Transkribieren und Übersetzen von YouTube-Videos mit KI-Unterstützung.</p>
-                <a class="project-card-link project-site-link" href="/Transkript/" target="_blank" rel="noopener noreferrer"><span data-i18n="link.projectSite">Projektseite</span><span aria-hidden="true">↗</span></a>
-              </div>
-            </article>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="about-section" id="ueber-mich">
-        <div class="shell about-inner reveal">
-          <p class="eyebrow" data-i18n="about.eyebrow">Ein bisschen über mich</p>
-          <h2 data-i18n="about.title">Gute Software macht Dinge einfacher.</h2>
-          <div class="about-copy">
-            <p data-i18n="about.description">Ich bin Alexander Kaufmann. Ich mache digitale Ideen erlebbar und entwickle Websites, Apps und Werkzeuge, die Dinge im Alltag einfacher machen.</p>
-            <a class="text-link" href="https://github.com/alexanderkaufi" target="_blank" rel="noopener noreferrer"><span data-i18n="about.github">Mehr über meine Arbeit auf GitHub</span><span aria-hidden="true">↗</span></a>
+      <!-- Produkte / Projekte Bento Grid -->
+      <section id="projekte" class="section" aria-labelledby="projects-title">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="section-heading-group">
+              <p class="section-eyebrow" data-i18n="projects.eyebrow">Eigene Projekte</p>
+              <h2 id="projects-title" class="section-title" data-i18n="projects.title">Apps, Web &amp; Werkzeuge</h2>
+              <p class="section-subtitle" data-i18n="projects.subtitle">
+                Zwölf eigene Arbeiten mit echten Einblicken, klaren Details und direkten Links.
+              </p>
+            </div>
+
+            <div class="filter-bar" role="toolbar" aria-label="Projekte nach Bereich filtern" data-i18n-aria="filter.label">
+              <button class="filter-pill is-active" type="button" data-filter="all" aria-pressed="true">
+                <span data-i18n="filter.all">Alle</span>
+                <span class="filter-count">12</span>
+              </button>
+              <button class="filter-pill" type="button" data-filter="apps" aria-pressed="false">
+                <span data-i18n="filter.apps">Apple Apps</span>
+                <span class="filter-count">4</span>
+              </button>
+              <button class="filter-pill" type="button" data-filter="web" aria-pressed="false">
+                <span data-i18n="filter.web">Web &amp; Design</span>
+                <span class="filter-count">4</span>
+              </button>
+              <button class="filter-pill" type="button" data-filter="tools" aria-pressed="false">
+                <span data-i18n="filter.tools">Bildung &amp; KI</span>
+                <span class="filter-count">4</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="bento-grid" id="product-grid" data-filter="all">
+
+            <!-- 1. CycleContext — Flagship Rotating 3D Orbit inside Crisp Bento Card (Span 7) -->
+            <article class="bento-card card--span-7 reveal" data-app="cyclecontext" data-category="apps" data-orbit>
+              <div class="cycle-layout">
+                <div class="cycle-copy">
+                  <div class="app-header">
+                    <div class="app-icon app-icon--padded">
+                      <img src="./assets/app-icon.png" width="68" height="68" alt="CycleContext Icon" />
+                    </div>
+                    <div class="app-heading">
+                      <div class="app-meta-row">
+                        <span class="app-category" data-i18n="cycle.category">iOS &amp; iPad · Gesundheit</span>
+                        <span class="badge-pill badge-pill--new" data-i18n="badge.new">Neu</span>
+                      </div>
+                      <h3 class="app-title">CycleContext</h3>
+                    </div>
+                  </div>
+
+                  <div class="app-body">
+                    <p class="app-description" data-i18n="cycle.description">
+                      Übersetzt den Zyklusstand in klaren Alltagskontext – für dich selbst oder um eine nahestehende Person respektvoll zu begleiten. 100 % lokal und ohne Account.
+                    </p>
+
+                    <div class="orbit-readout" aria-live="off">
+                      <span class="orbit-dot" data-orbit-dot aria-hidden="true"></span>
+                      <div class="orbit-readout-text">
+                        <strong data-orbit-day>Zyklustag 4 von 28</strong>
+                        <small data-orbit-phase>Menstruation</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card-explore-row">
+                    <a class="card-explore-link" href="./de/" data-cycle-site>
+                      <span data-i18n="link.moreApp">Mehr zur App</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                    </a>
+                  </div>
+
+                  <div class="card-actions">
+                    <a
+                      class="store-btn"
+                      href="https://apps.apple.com/de/app/id6804225862"
+                      data-store-id="id6804225862"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.3 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.3zM34.4 0C59.4.5 86.6 15 103.8 32.7c15 15.5 29.8 40.5 25.4 64.9-28.2 1.2-56.5-13.8-74.3-33C37.5 48.2 22.3 22 26.6-1.5z" /></svg>
+                      <span class="store-btn-copy">
+                        <span class="store-btn-kicker" data-i18n="store.kicker">Laden im</span>
+                        <span class="store-btn-label" data-i18n="store.name">App Store</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Rotating 3D CycleContext Orbit inside soft Bento Stage -->
+                <div class="orbit-visual" aria-hidden="true">
+                  <div class="orbit-halo"></div>
+                  <div class="orbit-stage" data-tilt-card>
+                    <div class="orbit-floor"></div>
+                    <svg class="orbit-ring orbit-back" viewBox="0 0 200 200" preserveAspectRatio="none">
+                      <use href="#cycle-ring-segments" />
+                    </svg>
+                    <figure class="orbit-phone">
+                      <img src="./assets/dashboard.png" width="1206" height="2622" alt="" />
+                    </figure>
+                    <svg class="orbit-ring orbit-front" viewBox="0 0 200 200" preserveAspectRatio="none">
+                      <use href="#cycle-ring-segments" />
+                    </svg>
+                    <span class="orbit-knob"></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 2. Bento Software — Brand Emblem + Uncropped 3D Box Showcase (Span 5) -->
+            <article class="bento-card card--span-5 reveal" data-app="bento" data-category="web">
+              <div class="bento-brand-bar">
+                <div class="bento-emblem">
+                  <svg class="bento-emblem-svg" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="bentoGrad" x1="4" y1="4" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#0071e3" />
+                        <stop offset="55%" stop-color="#5b6cf6" />
+                        <stop offset="100%" stop-color="#a855f7" />
+                      </linearGradient>
+                    </defs>
+                    <rect x="2" y="2" width="36" height="36" rx="10" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.18" stroke-width="1.4" />
+                    <rect x="7" y="7" width="15" height="11" rx="3" fill="url(#bentoGrad)" />
+                    <rect x="24" y="7" width="9" height="11" rx="3" fill="currentColor" fill-opacity="0.32" />
+                    <rect x="7" y="20" width="9" height="13" rx="3" fill="currentColor" fill-opacity="0.32" />
+                    <rect x="18" y="20" width="15" height="13" rx="3" fill="currentColor" fill-opacity="0.88" />
+                  </svg>
+                  <span class="bento-wordmark"><strong>BENTO</strong><span>SOFTWARE</span></span>
+                </div>
+                <span class="app-category" data-i18n="bento.category">Webprojekt</span>
+              </div>
+
+              <div class="bento-box-preview" data-tilt-card>
+                <img
+                  class="bento-cutout-img"
+                  src="./assets/previews/bento-box.png"
+                  width="541"
+                  height="714"
+                  alt="Freigestellte metallene Bento-Software-Box mit vier leuchtenden Modulen"
+                  data-i18n-alt="preview.bento"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="app-body">
+                <p class="app-description" data-i18n="bento.description">
+                  Zentrale Produktplattform für meine Apps mit 3D-Box-Animation, Plattform-Filterung und direktem App-Store-Routing.
+                </p>
+              </div>
+
+              <div class="card-explore-row">
+                <a class="card-explore-link" href="https://kaufmann-dynamics.de/bento/" target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="link.projectSite">Projektseite öffnen</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- 3. Gymmix — Clean Bento Flagship Card (Span 7) -->
+            <article class="bento-card card--span-7 reveal" data-app="gymmix" data-category="apps">
+              <div class="app-header">
+                <div class="app-icon app-icon--cover">
+                  <img src="./assets/previews/gymmix-app.png" width="68" height="68" alt="Gymmix Icon" loading="lazy" />
+                </div>
+                <div class="app-heading">
+                  <div class="app-meta-row">
+                    <span class="app-category" data-i18n="gymmixApp.category">iPhone &amp; Watch · Fitness</span>
+                    <span class="badge-pill badge-pill--flagship" data-i18n="badge.appstore">App Store</span>
+                  </div>
+                  <h3 class="app-title">Gymmix</h3>
+                </div>
+              </div>
+
+              <div class="app-body">
+                <p class="app-description" data-i18n="gymmixApp.description">
+                  Krafttraining ohne Ballast: Individuelle Trainingspläne, schnelles Satz-Logging am Handgelenk und langfristige Auswertung von Volumen und Maximalkraft.
+                </p>
+
+                <div class="gymmix-media-frame">
+                  <img
+                    src="./assets/previews/gymmix-studio.jpg"
+                    width="1400"
+                    height="498"
+                    alt="Gymmix Trainings-App im Fitnessstudio"
+                    data-i18n-alt="preview.gymmixApp"
+                    loading="lazy"
+                  />
+                </div>
+
+                <ul class="feature-list feature-list--grid">
+                  <li class="feature-chip">
+                    <span class="feature-chip-title" data-i18n="gymmixApp.f1.t">iPhone &amp; Watch</span>
+                    <span class="feature-chip-desc" data-i18n="gymmixApp.f1.d">Direkt am Handgelenk loggen</span>
+                  </li>
+                  <li class="feature-chip">
+                    <span class="feature-chip-title" data-i18n="gymmixApp.f2.t">37 Sprachen</span>
+                    <span class="feature-chip-desc" data-i18n="gymmixApp.f2.d">Weltweit lokalisiert</span>
+                  </li>
+                  <li class="feature-chip">
+                    <span class="feature-chip-title" data-i18n="gymmixApp.f3.t">Offline-First</span>
+                    <span class="feature-chip-desc" data-i18n="gymmixApp.f3.d">Ohne Account im Studio</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="card-explore-row">
+                <a class="card-explore-link" href="https://alexanderkaufi.github.io/Gymmix/" target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="link.moreApp">Mehr zur App</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                </a>
+              </div>
+
+              <div class="card-actions">
+                <a
+                  class="store-btn"
+                  href="https://apps.apple.com/de/app/gymmix-workoutplan-gym-log/id6746069110"
+                  data-store-id="id6746069110"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.3 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.3zM34.4 0C59.4.5 86.6 15 103.8 32.7c15 15.5 29.8 40.5 25.4 64.9-28.2 1.2-56.5-13.8-74.3-33C37.5 48.2 22.3 22 26.6-1.5z" /></svg>
+                  <span class="store-btn-copy">
+                    <span class="store-btn-kicker" data-i18n="store.kicker">Laden im</span>
+                    <span class="store-btn-label" data-i18n="store.name">App Store</span>
+                  </span>
+                </a>
+                <a class="secondary-btn" href="https://alexanderkaufi.github.io/Gymmix_Manual/de/handbuch/index.html" target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="gymmix.handbook">Handbuch</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- 4. DataDisplay — Clean Bento Card with Interactive macOS Dashboard/Slide Stage (Span 5) -->
+            <article class="bento-card card--span-5 reveal" data-app="datadisplay" data-category="apps">
+              <div class="app-header">
+                <div class="app-icon app-icon--padded">
+                  <img src="./assets/previews/datadisplay.png" width="68" height="68" alt="DataDisplay Icon" loading="lazy" />
+                </div>
+                <div class="app-heading">
+                  <div class="app-meta-row">
+                    <span class="app-category" data-i18n="datadisplay.category">Mac &amp; iPad · Daten</span>
+                    <span class="badge-pill badge-pill--preview" data-i18n="badge.preview">Vorschau</span>
+                  </div>
+                  <h3 class="app-title">DataDisplay</h3>
+                </div>
+              </div>
+
+              <div class="app-body">
+                <p class="app-description" data-i18n="datadisplay.description">
+                  CSV-, Excel- oder Numbers-Dateien direkt im Dashboard vergleichen und fertige Diagramme nahtlos auf Präsentationsfolien übernehmen.
+                </p>
+
+                <div class="dd-stage" data-dd-mode="dashboard" data-tilt-card>
+                  <div class="dd-window-bar">
+                    <span class="dd-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                    <div class="dd-mode-switch" role="tablist" aria-label="DataDisplay Ansicht" data-i18n-aria="dd.switchAria">
+                      <button type="button" class="dd-mode-btn is-active" data-dd-target="dashboard" aria-selected="true" data-i18n="dd.step2">Dashboard</button>
+                      <button type="button" class="dd-mode-btn" data-dd-target="slide" aria-selected="false" data-i18n="dd.step3">Folie</button>
+                    </div>
+                  </div>
+
+                  <div class="dd-view dd-view--dashboard">
+                    <div class="dd-kpis">
+                      <div><span>Nord</span><strong>+18,4 %</strong></div>
+                      <div><span>West</span><strong>+11,2 %</strong></div>
+                      <div><span>Süd</span><strong>+8,9 %</strong></div>
+                    </div>
+                    <svg class="dd-chart-svg" viewBox="0 0 320 112" fill="none" aria-hidden="true">
+                      <path class="dd-grid" d="M12 22H308 M12 56H308 M12 90H308" />
+                      <polyline class="dd-line dd-line--coral" points="16,86 64,82 112,74 160,68 208,61 256,54 302,42" />
+                      <polyline class="dd-line dd-line--blue" points="16,74 64,68 112,71 160,55 208,49 256,43 302,28" />
+                      <polyline class="dd-line dd-line--green" points="16,64 64,58 112,50 160,44 208,33 256,26 302,14" />
+                      <circle cx="302" cy="14" r="3.8" fill="#59c92c" />
+                    </svg>
+                  </div>
+
+                  <div class="dd-view dd-view--slide" hidden>
+                    <div class="dd-slide-canvas">
+                      <div class="dd-slide-head">
+                        <span class="dd-slide-kicker">Q4 Report · 16:9</span>
+                        <strong data-i18n="dd.slideTitle">Jahresverlauf nach Standort</strong>
+                      </div>
+                      <div class="dd-slide-bars" aria-hidden="true">
+                        <span style="--h: 42%; --c: #ff5d52;"></span>
+                        <span style="--h: 72%; --c: #2b88ff;"></span>
+                        <span style="--h: 94%; --c: #59c92c;"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-explore-row">
+                <a class="card-explore-link" href="https://kaufmann-dynamics.de/datadisplay/" target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="link.morePreview">Vorschau öffnen</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- 5. CardDisplay — App Store / Hero Visual + Interactive Business Card Addon (Span 12) -->
+            <article class="bento-card card--full reveal" data-app="carddisplay" data-category="apps">
+              <div class="carddisplay-layout">
+                <div class="carddisplay-main">
+                  <div class="app-header">
+                    <div class="app-icon app-icon--cover">
+                      <img src="./assets/previews/carddisplay.jpg" width="68" height="68" alt="CardDisplay Icon" loading="lazy" />
+                    </div>
+                    <div class="app-heading">
+                      <div class="app-meta-row">
+                        <span class="app-category" data-i18n="carddisplay.category">iPhone · Produktivität</span>
+                        <span class="badge-pill badge-pill--flagship" data-i18n="badge.appstore">App Store</span>
+                      </div>
+                      <h3 class="app-title">CardDisplay</h3>
+                    </div>
+                  </div>
+
+                  <div class="app-body">
+                    <p class="app-description" data-i18n="carddisplay.description">
+                      Digitale Visitenkarten per Kamera erfassen, mit QR-Codes gestalten und im Vollbild teilen – komplett lokal auf dem iPhone.
+                    </p>
+
+                    <div class="carddisplay-media-frame">
+                      <img
+                        src="./assets/previews/carddisplay-hero.jpg"
+                        width="1400"
+                        height="498"
+                        alt="CardDisplay auf dem iPhone im Alltag"
+                        data-i18n-alt="carddisplay.heroAlt"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bizcard-addon">
+                  <div class="bizcard-addon-head">
+                    <span class="bizcard-addon-label" data-i18n="carddisplay.addonTitle">Zusatz · Visitenkarten aus der App</span>
+                    <div class="bizcard-addon-controls">
+                      <button type="button" class="bizcard-pill is-active" data-bizcard-index="0" aria-pressed="true">CardDisplay</button>
+                      <button type="button" class="bizcard-pill" data-bizcard-index="1" aria-pressed="false">CycleContext</button>
+                      <button type="button" class="bizcard-pill" data-bizcard-index="2" aria-pressed="false">Gymmix</button>
+                      <button type="button" class="flip-trigger" data-card-flip data-i18n="carddisplay.flip">
+                        Nächste Karte ↻
+                      </button>
+                    </div>
+                  </div>
+                  <div class="bizcard-scene bizcard-scene--compact" data-tilt-card>
+                    <div class="bizcard-3d" id="bizcard-3d">
+                      <div class="bizcard-face bizcard-image-face is-current" data-bizcard-item="0">
+                        <img
+                          src="./assets/previews/carddisplay-card.png"
+                          width="1024"
+                          height="662"
+                          alt="CardDisplay digitale Visitenkarte"
+                          data-i18n-alt="carddisplay.card1Alt"
+                          loading="lazy"
+                        />
+                        <div class="bizcard-sheen" aria-hidden="true"></div>
+                      </div>
+                      <div class="bizcard-face bizcard-image-face" data-bizcard-item="1" aria-hidden="true">
+                        <img
+                          src="./assets/previews/cyclecontext-card.jpg"
+                          width="1024"
+                          height="685"
+                          alt="CycleContext digitale Visitenkarte aus CardDisplay"
+                          data-i18n-alt="carddisplay.card2Alt"
+                          loading="lazy"
+                        />
+                        <div class="bizcard-sheen" aria-hidden="true"></div>
+                      </div>
+                      <div class="bizcard-face bizcard-image-face" data-bizcard-item="2" aria-hidden="true">
+                        <img
+                          src="./assets/previews/gymmix-card.jpg"
+                          width="1024"
+                          height="686"
+                          alt="Gymmix digitale Visitenkarte aus CardDisplay"
+                          data-i18n-alt="carddisplay.card3Alt"
+                          loading="lazy"
+                        />
+                        <div class="bizcard-sheen" aria-hidden="true"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-explore-row">
+                <a class="card-explore-link" href="https://kaufmann-dynamics.de/carddisplay/" target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="link.moreApp">Mehr zur App</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                </a>
+              </div>
+
+              <div class="card-actions">
+                <a
+                  class="store-btn"
+                  href="https://apps.apple.com/de/app/id6760602460"
+                  data-store-id="id6760602460"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.3 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.3zM34.4 0C59.4.5 86.6 15 103.8 32.7c15 15.5 29.8 40.5 25.4 64.9-28.2 1.2-56.5-13.8-74.3-33C37.5 48.2 22.3 22 26.6-1.5z" /></svg>
+                  <span class="store-btn-copy">
+                    <span class="store-btn-kicker" data-i18n="store.kicker">Laden im</span>
+                    <span class="store-btn-label" data-i18n="store.name">App Store</span>
+                  </span>
+                </a>
+              </div>
+            </article>
+
+            <!-- 6. Kunstgalerie Nunavut — Curated Full-Width Exhibition Showcase (Span 12) -->
+            <article class="bento-card card--full reveal" data-app="gallery" data-category="web">
+              <div class="gallery-layout">
+                <div class="gallery-copy">
+                  <div class="app-header">
+                    <div class="app-icon app-icon--gallery" aria-hidden="true">
+                      <svg viewBox="0 0 44 44" fill="none">
+                        <rect x="6" y="7" width="32" height="30" rx="5" stroke="currentColor" stroke-width="2" />
+                        <path d="M13 30C15 22 19 16 23 14C26 17 27 23 26 30" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="15" cy="14.5" r="2.2" fill="#cf3528" />
+                        <circle cx="29.5" cy="15.5" r="2.2" fill="#cf3528" />
+                        <circle cx="31" cy="24" r="2" fill="#cf3528" />
+                      </svg>
+                    </div>
+                    <div class="app-heading">
+                      <div class="app-meta-row">
+                        <span class="app-category" data-i18n="gallery.category">Webplattform · Kunst</span>
+                        <span class="badge-pill badge-pill--art" data-i18n="gallery.badge">Live-Sync</span>
+                      </div>
+                      <h3 class="app-title" data-i18n="gallery.title">Kunstgalerie Nunavut</h3>
+                    </div>
+                  </div>
+
+                  <div class="app-body">
+                    <p class="app-description" data-i18n="gallery.description">
+                      Galerie-Website für Inuit-Kunst aus Nunavut, Kanada. Neue Werke erscheinen automatisch aus dem Instagram-Auftritt der Galerie.
+                    </p>
+
+                    <ul class="feature-list gallery-highlights">
+                      <li class="feature-chip">
+                        <span class="feature-chip-title" data-i18n="gallery.f1.t">Instagram → Web</span>
+                        <span class="feature-chip-desc" data-i18n="gallery.f1.d">Neue Werke erscheinen direkt im Katalog</span>
+                      </li>
+                      <li class="feature-chip">
+                        <span class="feature-chip-title" data-i18n="gallery.f2.t">Inuit-Grafik</span>
+                        <span class="feature-chip-desc" data-i18n="gallery.f2.d">Lithografien, Steinschnitte &amp; Künstlerprofile</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card-explore-row">
+                    <a class="card-explore-link" href="https://nunavutgallery.nunavutgallery.workers.dev" target="_blank" rel="noopener noreferrer">
+                      <span data-i18n="link.projectSite">Projektseite öffnen</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="gallery-stage" data-tilt-card>
+                  <div class="gallery-spotlight" aria-hidden="true"></div>
+                  <figure class="gallery-matte-frame">
+                    <div class="gallery-passepartout">
+                      <img
+                        class="gallery-artwork"
+                        src="./assets/previews/nunavut-gallery.jpg"
+                        width="763"
+                        height="1000"
+                        alt="Kunstgalerie Nunavut Werk"
+                        data-i18n-alt="preview.gallery"
+                        loading="lazy"
+                      />
+                    </div>
+                  </figure>
+                  <div class="gallery-plaque">
+                    <span class="gallery-plaque-dot" aria-hidden="true"></span>
+                    <div class="gallery-plaque-text">
+                      <strong data-i18n="gallery.plaqueTitle">Zeitgenössische Inuit-Kunst</strong>
+                      <small data-i18n="gallery.plaqueSub">Nunavut · Kuratierte Ausstellung</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 7. Grow (Span 6) -->
+            <article class="bento-card card--half reveal" data-app="grow" data-category="web">
+              <div class="app-header">
+                <div class="app-icon app-icon--cover">
+                  <img src="./assets/previews/grow.jpg" width="68" height="68" alt="Grow Icon" loading="lazy" />
+                </div>
+                <div class="app-heading">
+                  <div class="app-meta-row">
+                    <span class="app-category" data-i18n="grow.category">Web · Designbeispiel</span>
+                  </div>
+                  <h3 class="app-title">Grow</h3>
+                </div>
+              </div>
+
+              <div class="app-body">
+                <p class="app-description" data-i18n="grow.description">
+                  Atmosphärisches Website-Beispiel mit tiefen Pflanzenmotiven, ruhigen vertikalen Übergängen und mehrschichtiger Parallax-Tiefe.
+                </p>
+
+                <div class="grow-frame">
+                  <img
+                    src="./assets/previews/grow.jpg"
+                    width="1376"
+                    height="768"
+                    alt="Grow Pflanzen-Designbeispiel"
+                    data-i18n-alt="preview.grow"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+              <div class="card-explore-row">
+                <a class="card-explore-link" href="https://alexanderkaufi.github.io/grow/" target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="link.projectSite">Projektseite öffnen</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- 8. Wärmekostenrechner (Span 6) -->
+            <article class="bento-card card--half reveal" data-app="heating" data-category="web">
+              <div class="app-header">
+                <div class="app-icon app-icon--glyph" aria-hidden="true">℃</div>
+                <div class="app-heading">
+                  <div class="app-meta-row">
+                    <span class="app-category" data-i18n="heat.category">Konzept · Web-Rechner</span>
+                  </div>
+                  <h3 class="app-title" data-i18n="heat.title">Wärmekostenrechner</h3>
+                </div>
+              </div>
+
+              <div class="app-body">
+                <p class="app-description" data-i18n="heat.description">
+                  Interaktiver Vergleichsrechner für Gasheizung und Wärmepumpe anhand eigener Verbrauchs- und Energieannahmen.
+                </p>
+
+                <div class="heating-panorama">
+                  <img
+                    src="./assets/previews/waermekosten.jpg"
+                    width="1400"
+                    height="333"
+                    alt="Wärmekostenrechner Konzept"
+                    data-i18n-alt="preview.heating"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div class="heating-meter" aria-hidden="true">
+                  <div class="heating-meter-row">
+                    <span data-i18n="heat.gas">Gasheizung</span>
+                    <div class="heating-bar"><i class="bar-gas"></i></div>
+                  </div>
+                  <div class="heating-meter-row">
+                    <span data-i18n="heat.pump">Wärmepumpe</span>
+                    <div class="heating-bar"><i class="bar-pump"></i></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-explore-row">
+                <a class="card-explore-link" href="https://alexanderkaufi.github.io/waermekosten/" target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="link.projectSite">Projektseite öffnen</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- 9. KLUUG (Quarter Span 3) -->
+            <article class="bento-card card--quarter reveal" data-app="kluug" data-category="tools">
+              <div class="tool-stage tool-stage--kluug" aria-hidden="true">
+                <svg class="kluug-pizza" viewBox="0 0 44 44">
+                  <circle cx="22" cy="22" r="18" fill="rgba(124, 58, 237, 0.14)" stroke="rgba(124, 58, 237, 0.35)" stroke-width="1.5" />
+                  <path d="M22 22 L22 4 A18 18 0 1 1 4 22 Z" fill="#7c3aed" opacity="0.88" />
+                  <line x1="22" y1="4" x2="22" y2="40" stroke="#ffffff" stroke-width="1.5" />
+                  <line x1="4" y1="22" x2="40" y2="22" stroke="#ffffff" stroke-width="1.5" />
+                </svg>
+                <div class="kluug-xp">
+                  <strong>¾ · +120 XP</strong>
+                  <div class="kluug-bar"><i></i></div>
+                </div>
+              </div>
+
+              <div class="app-body">
+                <div class="app-meta-row">
+                  <span class="app-category" data-i18n="kluug.category">Bildung</span>
+                  <span class="badge-pill badge-pill--new" data-i18n="kluug.status">Prototyp</span>
+                </div>
+                <h3 class="app-title">KLUUG</h3>
+                <p class="app-description" data-i18n="kluug.description">
+                  Lern-App für Klasse 5 bis 8 mit Lernpfaden, Pizza-Bäckerei, Quiz-Quests und Tutor Fiete.
+                </p>
+              </div>
+
+              <div class="card-explore-row">
+                <a class="card-explore-link" href="https://alexanderkaufi.github.io/LernApp/" target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="link.open">Öffnen</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- 10. Credo (Quarter Span 3) -->
+            <article class="bento-card card--quarter reveal" data-app="credo" data-category="tools">
+              <div class="tool-stage tool-stage--credo" aria-hidden="true">
+                <span class="credo-dropcap">C</span>
+                <div class="credo-lines">
+                  <strong data-i18n="preview.credoHeading">Glaubensbekenntnis</strong>
+                  <span>Art. I – XII · Katechese</span>
+                </div>
+              </div>
+
+              <div class="app-body">
+                <div class="app-meta-row">
+                  <span class="app-category" data-i18n="credo.category">Wissen</span>
+                </div>
+                <h3 class="app-title">Credo</h3>
+                <p class="app-description" data-i18n="credo.description">
+                  Texte zum orthodoxen Glaubensbekenntnis und zur Katechese strukturiert und lesefreundlich aufbereitet.
+                </p>
+              </div>
+
+              <div class="card-explore-row">
+                <a class="card-explore-link" href="https://alexanderkaufi.github.io/credo/" target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="link.open">Öffnen</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- 11. LuV (Quarter Span 3) -->
+            <article class="bento-card card--quarter reveal" data-app="luv" data-category="tools">
+              <div class="tool-stage tool-stage--luv" aria-hidden="true">
+                <div class="luv-row"><span>A</span><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i></i></div>
+                <div class="luv-row"><span>B</span><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i></div>
+                <span class="luv-tag" data-i18n="preview.luvTag">Lokal · Print</span>
+              </div>
+
+              <div class="app-body">
+                <div class="app-meta-row">
+                  <span class="app-category" data-i18n="luv.category">Bildung</span>
+                </div>
+                <h3 class="app-title">LuV</h3>
+                <p class="app-description" data-i18n="luv.description">
+                  Browser-App zum Erstellen, Verwalten und Drucken von Leistungs- und Verhaltensbeurteilungen.
+                </p>
+              </div>
+
+              <div class="card-explore-row">
+                <a class="card-explore-link" href="https://alexanderkaufi.github.io/LuV/" target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="link.open">Öffnen</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- 12. Transkript (Quarter Span 3) -->
+            <article class="bento-card card--quarter reveal" data-app="transkript" data-category="tools">
+              <div class="tool-stage tool-stage--transkript" aria-hidden="true">
+                <div class="wave-bars">
+                  <i style="--h: 35%"></i><i style="--h: 72%"></i><i style="--h: 100%"></i><i style="--h: 58%"></i><i style="--h: 84%"></i><i style="--h: 44%"></i>
+                </div>
+                <span class="wave-label">YT → MD · KI</span>
+              </div>
+
+              <div class="app-body">
+                <div class="app-meta-row">
+                  <span class="app-category" data-i18n="transcript.category">Sprache &amp; KI</span>
+                </div>
+                <h3 class="app-title" data-i18n="transcript.title">Transkript</h3>
+                <p class="app-description" data-i18n="transcript.description">
+                  Werkzeug zum Transkribieren, Strukturieren und Übersetzen von YouTube-Videos in Wissensdateien.
+                </p>
+              </div>
+
+              <div class="card-explore-row">
+                <a class="card-explore-link" href="https://alexanderkaufi.github.io/Transkript/" target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="link.open">Öffnen</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                </a>
+              </div>
+            </article>
+
           </div>
         </div>
       </section>
 
-      <section class="contact-section" id="kontakt">
-        <div class="shell contact-inner reveal">
-          <p class="eyebrow" data-i18n="contact.eyebrow">Kontakt</p>
-          <h2 data-i18n="contact.title">Eine gute Idee im Kopf?</h2>
-          <p data-i18n="contact.description">Schreib mir auf GitHub — ich freue mich, von deinem Projekt zu hören.</p>
-          <a class="button button-primary" href="https://github.com/alexanderkaufi" target="_blank" rel="noopener noreferrer"><span data-i18n="contact.cta">Auf GitHub schreiben</span><span aria-hidden="true">↗</span></a>
+      <!-- Bento Services / Focus Section + CTA Banner -->
+      <section id="schwerpunkte" class="section section--services" aria-labelledby="focus-title">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="section-heading-group">
+              <p class="section-eyebrow" data-i18n="services.eyebrow">Schwerpunkte</p>
+              <h2 id="focus-title" class="section-title" data-i18n="services.title">Woran ich arbeite</h2>
+              <p class="section-subtitle" data-i18n="services.subtitle">
+                Zwischen nativer Apple-Entwicklung, ruhigem Webdesign und kompakten Werkzeugen für den Alltag.
+              </p>
+            </div>
+          </div>
+
+          <div class="services-grid">
+            <article class="service-card service-card--featured reveal">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="7" y="2" width="10" height="20" rx="2.5" />
+                  <path d="M12 18h.01" />
+                </svg>
+              </div>
+              <h3 class="service-title" data-i18n="service1.title">Apple Apps (iOS, Watch &amp; Mac)</h3>
+              <p class="service-description" data-i18n="service1.desc">
+                Von der Konzeption über ruhige Benutzeroberflächen bis zum App Store – lokal gespeichert, schnell und für den täglichen Einsatz entwickelt.
+              </p>
+              <a class="service-cta" href="#projekte" data-filter-jump="apps">
+                <span data-i18n="service1.cta">Apple Apps ansehen</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="16" rx="3" />
+                  <path d="M3 9h18" />
+                  <path d="M9 14h6" />
+                </svg>
+              </div>
+              <h3 class="service-title" data-i18n="service2.title">Webauftritt &amp; Produktdesign</h3>
+              <p class="service-description" data-i18n="service2.desc">
+                Übersichtliche, moderne Websites mit sauberer Typografie, stimmigen Animationen und schneller Darstellung auf allen Geräten.
+              </p>
+              <a class="service-cta" href="#projekte" data-filter-jump="web">
+                <span data-i18n="service2.cta">Webprojekte ansehen</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                  <path d="M14 4 10 20" />
+                </svg>
+              </div>
+              <h3 class="service-title" data-i18n="service3.title">Bildung &amp; KI-Werkzeuge</h3>
+              <p class="service-description" data-i18n="service3.desc">
+                Fokussierte Browser-Tools für Lernen, Wissensaufbereitung und strukturierte Workflows – ohne Installation direkt startklar.
+              </p>
+              <a class="service-cta" href="#projekte" data-filter-jump="tools">
+                <span data-i18n="service3.cta">Tools entdecken</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+            </article>
+          </div>
+
+          <!-- Bento Closing CTA Banner -->
+          <div id="kontakt" class="cta-banner reveal">
+            <svg class="cta-motif" viewBox="0 0 240 240" fill="none" aria-hidden="true">
+              <rect x="14" y="14" width="212" height="212" rx="48" stroke="currentColor" stroke-width="2.5" />
+              <rect x="32" y="32" width="82" height="82" rx="22" stroke="currentColor" stroke-width="2" />
+              <rect x="126" y="32" width="82" height="82" rx="22" stroke="currentColor" stroke-width="2" />
+              <rect x="32" y="126" width="82" height="82" rx="22" stroke="currentColor" stroke-width="2" />
+              <rect x="126" y="126" width="82" height="82" rx="22" stroke="currentColor" stroke-width="2" />
+            </svg>
+            <div class="cta-banner-copy">
+              <div class="cta-banner-kicker">
+                <img class="cta-icon" src="./assets/logo.png" width="44" height="44" alt="" />
+                <p class="cta-eyebrow" data-i18n="cta.eyebrow">Kaufmann-Dynamics · iOS, Mac &amp; Web</p>
+              </div>
+              <h3 class="cta-banner-title">
+                <span data-i18n="cta.title.one">Fragen oder</span>
+                <em data-i18n="cta.title.two">Feedback?</em>
+              </h3>
+              <p class="cta-banner-text" data-i18n="contact.copy">
+                Du nutzt eine meiner Apps, hast einen Hinweis oder möchtest einfach kurz schreiben? Melde dich gerne direkt.
+              </p>
+            </div>
+            <div class="cta-banner-actions">
+              <a class="btn cta-primary" href="mailto:kontakt@kaufmann-dynamics.de">
+                <span data-i18n="contact.email">Kontakt aufnehmen</span>
+                <span aria-hidden="true">→</span>
+              </a>
+              <button type="button" class="btn cta-email copy-email-link" data-copy-email="kontakt@kaufmann-dynamics.de">
+                <span data-copy-label>kontakt@kaufmann-dynamics.de</span>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="shell footer-inner">
-        <a class="footer-brand" href="#top">Alexander Kaufmann<span class="brand-period">.</span></a>
-        <p>© <span data-year></span> Alexander Kaufmann</p>
-        <a href="https://github.com/alexanderkaufi" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    <!-- Bento Dark Obsidian Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div>
+            <a class="brand" href="#top" aria-label="Zurück nach oben" data-i18n-aria="footer.backToTop">
+              <img class="brand-mark" src="./assets/logo.png" width="32" height="32" alt="" />
+              <span class="brand-wordmark">
+                <strong data-i18n="brand.wordmark">Projekte</strong>
+              </span>
+            </a>
+            <p class="footer-tagline" data-i18n="footer.tagline">Software, die im Alltag überzeugt.</p>
+          </div>
+
+          <nav class="footer-links" aria-label="Footer-Navigation" data-i18n-aria="footer.links">
+            <a class="footer-link" href="#projekte" data-i18n="nav.projects">Projekte</a>
+            <a class="footer-link" href="#schwerpunkte" data-i18n="nav.focus">Schwerpunkte</a>
+            <a class="footer-link" href="https://github.com/alexanderkaufi" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="footer-link" href="https://kaufmann-dynamics.de/bento/" target="_blank" rel="noopener noreferrer">Bento Software</a>
+            <a class="footer-link" href="https://kaufmann-dynamics.de/datadisplay/" target="_blank" rel="noopener noreferrer">DataDisplay</a>
+            <a class="footer-link" href="https://alexanderkaufi.github.io/Gymmix_Manual/de/handbuch/index.html" target="_blank" rel="noopener noreferrer" data-i18n="dir.manualTitle">Gymmix Handbuch</a>
+          </nav>
+        </div>
+
+        <p class="footer-word" aria-hidden="true">KAUFMANN-DYNAMICS</p>
+
+        <div class="footer-bottom">
+          <span>© <span data-year></span> Kaufmann-Dynamics</span>
+          <nav class="footer-legal" aria-label="Rechtliches" data-i18n-aria="footer.legalLabel">
+            <a class="footer-legal-link" href="./impressum.html" data-i18n="footer.imprint">Impressum</a>
+            <span aria-hidden="true">·</span>
+            <a class="footer-legal-link" href="./datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
+          </nav>
+          <a class="footer-top-link" href="#top"><span data-i18n="footer.backToTop">Nach oben</span> <span aria-hidden="true">↑</span></a>
+        </div>
       </div>
     </footer>
   </body>
