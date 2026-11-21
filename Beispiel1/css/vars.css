@@ -1,9 +1,0 @@
-:root {
-    --white-color: #ffffff;
-    --grey-color: #aeb4a6;
-    --green-color: #6bb98d;
-    --index: calc(1vw + 1vh);
-    --transition: cubic-bezier(0.1, -0.6, 0.2, 0);
-    --grid-width: 1140px;
-    --grid-gutter: 1.5rem;
-}

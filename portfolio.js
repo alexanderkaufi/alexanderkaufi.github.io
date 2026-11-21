@@ -5,374 +5,435 @@
   const translations = {
     de: {
       title: "Alexander Kaufmann — Apps, Web & Digitale Werkzeuge",
-      description: "Portfolio von Alexander Kaufmann: Native Apple-Apps (Gymmix, CycleContext, CardDisplay, DataDisplay), Webdesign-Projekte und digitale Lern- und KI-Werkzeuge.",
+      description: "Alexander Kaufmann — Native Apps für iPhone, Apple Watch, iPad und Mac sowie moderne Webprojekte und digitale Werkzeuge.",
       skip: "Zum Inhalt springen",
+      "brand.aria": "Startseite — Projekte",
+      "brand.wordmark": "Projekte",
       "nav.label": "Hauptnavigation",
-      "nav.open": "Navigation",
-      "nav.overview": "Überblick",
+      "nav.overview": "Übersicht",
       "nav.projects": "Projekte",
-      "nav.approach": "Arbeitsweise",
+      "nav.focus": "Schwerpunkte",
+      "nav.open": "Menü öffnen",
       "nav.contact": "Kontakt",
-      "nav.cta": "Zu den Projekten",
-      "nav.workflow": "Zu den Bereichen springen",
       "language.label": "Sprache",
       "theme.label": "Farbschema",
       "theme.system": "System",
       "theme.light": "Hell",
       "theme.dark": "Dunkel",
 
-      "hero.platform": "Portfolio · iOS, Mac & Web",
-      "hero.title.one": "Ich mache Ideen",
-      "hero.title.two": "digital erlebbar.",
-      "hero.lead": "Ich entwickle durchdachte Apps für iPhone, iPad, Apple Watch und Mac sowie moderne Websites und Werkzeuge – reduziert auf das Wesentliche, zuverlässig im Alltag.",
+      "hero.eyebrow": "Portfolio · iOS, Mac & Web",
+      "hero.title.one": "Software, die im",
+      "hero.title.two": "Alltag überzeugt.",
+      "hero.lead": "Ich entwickle durchdachte Apps für iPhone, Apple Watch, iPad und Mac sowie moderne Websites und digitale Werkzeuge – reduziert auf das Wesentliche, zuverlässig im Alltag.",
       "hero.cta.projects": "Projekte entdecken",
       "hero.cta.github": "GitHub-Profil",
-      "hero.meta1": "12 ausgewählte Projekte",
-      "hero.meta2": "iOS, Watch, Mac & iPad",
-      "hero.meta3": "Webdesign & Tools",
-      "hero.replay": "Abspielen",
-      "hero.replayAria": "Animation erneut abspielen",
-      "hero.caption": "Ausgewählte App- und Webprojekte — von der Idee bis zum Release",
+      "hero.meta1": "12 eigene Projekte",
+      "hero.meta2": "iOS, Watch, iPad & Mac",
+      "hero.meta3": "Webdesign & KI-Tools",
 
-      "workflow.apps": "Apple Apps ansehen",
-      "workflow.web": "Web & Plattformen",
-      "workflow.tools": "Bildung & KI-Tools",
-      "workflow.highlights": "Ausgewählte Einblicke",
+      "slideshow.aria": "App-Vorschau Diashow",
+      "slideshow.dotsAria": "App-Folie wählen",
+      "slideshow.pauseAria": "Diashow pausieren",
+      "slideshow.playAria": "Diashow abspielen",
+      "slideshow.s0.sub": "iPhone & Watch · Krafttraining",
+      "slideshow.s1.sub": "iOS & iPad · Zykluskontext",
+      "slideshow.s2.sub": "iPhone · Digitale Visitenkarten",
+      "slideshow.s3.sub": "Gymmix · Fortschritt & Statistik",
+      "slideshow.s4.sub": "Mac & iPad · Dashboard & Folien",
 
-      "overview.title": "Von der Idee zur klaren Anwendung.",
-      "overview.copy": "Jedes Projekt startet mit einer konkreten Alltagsfrage — vom strukturierten Krafttraining im Studio über verständliche Datenvisualisierung bis hin zu datenschutzfreundlichen Lern- und Webwerkzeugen.",
-      "overview.note": "Alle Projekte sind ohne unnötigen Ballast entwickelt — mit Fokus auf klare Benutzeroberflächen, hohe Geschwindigkeit und lokale Datenspeicherung.",
-      "stats.appsTitle": "App Store",
-      "stats.appsVal": "3 iOS & Watch Apps",
-      "stats.webTitle": "Web & Mac",
-      "stats.webVal": "5 Plattformen",
-      "stats.toolsTitle": "Bildung & KI",
-      "stats.toolsVal": "4 Browser-Tools",
-
-      "highlights.aria": "Ausgewählte Einblicke",
-      "scene.cycle.cat": "iOS-App · Gesundheit",
-      "scene.cycle.title": "CycleContext. Klar und privat.",
-      "scene.cycle.copy": "Übersetzt einen geschätzten Zyklusstand in verständlichen Alltagskontext. Profile und Einträge bleiben komplett ohne Account lokal auf deinem iPhone.",
-      "scene.cycle.badge": "100 % Lokal",
-      "scene.cycle.caption": "Heute-Ansicht · iPhone & iPad",
-
-      "scene.gymmix.cat": "iOS & Apple Watch · Fitness",
-      "scene.gymmix.title": "Gymmix im Studio.",
-      "scene.gymmix.copy": "Plane dein Krafttraining, protokolliere Gewichte und Wiederholungen direkt auf iPhone oder Apple Watch und verfolge deine langfristige Entwicklung – in 37 Sprachen.",
-      "scene.gymmix.m1": "Übungen",
-      "scene.gymmix.m2": "Geräte",
-      "scene.gymmix.m3": "Sprachen",
-      "scene.gymmix.caption": "Trainingsplanung & Online-Handbuch",
-
-      "projects.eyebrow": "Alle Arbeiten",
-      "projects.title": "Projekte im Überblick",
-      "projects.subtitle": "Zwölf Projekte aus Apps, Web und digitalen Werkzeugen — mit echten Einblicken und direkten Links.",
+      "projects.eyebrow": "Eigene Projekte",
+      "projects.title": "Apps, Web & Werkzeuge",
+      "projects.subtitle": "Zwölf eigene Arbeiten mit echten Einblicken, klaren Details und direkten Links.",
       "filter.label": "Projekte nach Bereich filtern",
       "filter.all": "Alle",
-      "filter.apps": "iOS & Mac",
-      "filter.web": "Web",
+      "filter.apps": "Apple Apps",
+      "filter.web": "Web & Design",
       "filter.tools": "Bildung & KI",
 
       "badge.appstore": "App Store",
       "badge.new": "Neu",
       "badge.preview": "Vorschau",
-      "store.open": "Im App Store",
       "store.kicker": "Laden im",
       "store.name": "App Store",
       "link.moreApp": "Mehr zur App",
-      "link.morePreview": "Mehr zur Vorschau",
+      "link.morePreview": "Vorschau öffnen",
       "link.projectSite": "Projektseite öffnen",
+      "link.open": "Öffnen",
       "gymmix.handbook": "Handbuch",
 
-      "gymmixApp.category": "Fitness & Training",
-      "gymmixApp.platforms": "iPhone & Apple Watch · 37 Sprachen",
-      "gymmixApp.description": "Strukturieren Sie Ihr Krafttraining im Studio oder zu Hause. Erstellen Sie individuelle Trainingspläne, erfassen Sie Sätze, Gewichte sowie Ausführungsqualität und behalten Sie Volumen, Maximallasten und Körpermaße im Blick.",
-      "gymmixApp.f1.t": "Trainingspläne",
-      "gymmixApp.f1.d": "Geräte, freie Gewichte & eigene Übungen flexibel kombinieren.",
-      "gymmixApp.f2.t": "Apple Watch",
-      "gymmixApp.f2.d": "Sätze, Gewichte und Pausenzeiten direkt am Handgelenk steuern.",
-      "gymmixApp.f3.t": "Fortschritt",
-      "gymmixApp.f3.d": "Volumen, Maximalkraft und Entwicklung langfristig auswerten.",
+      "cycle.category": "iOS & iPad · Gesundheit",
+      "cycle.description": "Übersetzt den Zyklusstand in klaren Alltagskontext – für dich selbst oder um eine nahestehende Person respektvoll zu begleiten. 100 % lokal und ohne Account.",
+      "orbit.dayTemplate": "Zyklustag {d} von 28",
+      "orbit.phases": ["Menstruation", "Follikelphase", "Eisprung", "Lutealphase", "Prämenstruell"],
 
-      "cycle.category": "Gesundheit & Orientierung",
-      "cycle.description": "Verstehen Sie den Menstruationszyklus im Alltag besser: Dokumentieren Sie Ihren eigenen Zyklus oder begleiten Sie eine nahestehende Person respektvoll – komplett ohne Account, lokal auf Ihrem Gerät.",
-      "cycle.f1": "Getrennte Profile & kalendarische Einordnung",
-      "cycle.f2": "100 % lokale Datenspeicherung · iPhone & iPad",
+      "bento.category": "Webprojekt",
+      "bento.description": "Zentrale Produktplattform für meine Apps mit 3D-Box-Animation, Plattform-Filterung und direktem App-Store-Routing.",
 
-      "carddisplay.category": "Wirtschaft & Produktivität",
-      "carddisplay.description": "Digitale Visitenkarten auf dem iPhone: Bestehende Karten per Kamera erfassen, Vorder- und Rückseite im flexiblen Karteneditor mit QR-Codes gestalten und im Vollbild teilen.",
-      "carddisplay.f1": "QR-Codes für vCards, Websites & Kontakt",
-      "carddisplay.f2": "Lokale Speicherung · PNG-Export & Share",
+      "gymmixApp.category": "iPhone & Watch · Fitness",
+      "gymmixApp.description": "Krafttraining ohne Ballast: Individuelle Trainingspläne, schnelles Satz-Logging am Handgelenk und langfristige Auswertung von Volumen und Maximalkraft.",
+      "gymmixApp.f1.t": "iPhone & Watch",
+      "gymmixApp.f1.d": "Direkt am Handgelenk loggen",
+      "gymmixApp.f2.t": "37 Sprachen",
+      "gymmixApp.f2.d": "Weltweit lokalisiert",
+      "gymmixApp.f3.t": "Offline-First",
+      "gymmixApp.f3.d": "Ohne Account im Studio",
 
-      "datadisplay.category": "Mac & iPad · Datenvisualisierung",
-      "datadisplay.description": "Von der Tabelle zur Präsentation: CSV-, Excel- oder Numbers-Dateien importieren, Verläufe im Dashboard vergleichen und ausgewählte Diagramme direkt auf eine Folie übernehmen.",
-      "datadisplay.boxTitle": "Für Mac und iPad entwickelt",
-      "datadisplay.f1": "Direkter Import von Tabellen und Arbeitsmappen",
-      "datadisplay.f2": "Vom Dashboard nahtlos in die Folien-Präsentation",
+      "datadisplay.category": "Mac & iPad · Daten",
+      "datadisplay.description": "CSV-, Excel- oder Numbers-Dateien direkt im Dashboard vergleichen und fertige Diagramme nahtlos auf Präsentationsfolien übernehmen.",
+      "dd.switchAria": "DataDisplay Ansicht umschalten",
+      "dd.step2": "Dashboard",
+      "dd.step3": "Folie",
+      "dd.slideTitle": "Jahresverlauf nach Standort",
 
-      "bento.category": "Eigenes Webprojekt · Produktdesign",
-      "bento.description": "Mein Bento-Software-Webprojekt mit 3D-Animationen, Plattform-Filterung, interaktiver Produktvorschau und einer klaren Präsentation der eigenen Apps.",
-      "bento.f1": "3D-Box-Video & strukturierte Bento-Architektur",
-      "bento.f2": "Live-Filterung nach Plattform & direkte Store-Links",
+      "carddisplay.category": "iPhone · Produktivität",
+      "carddisplay.flip": "Nächste Karte ↻",
+      "carddisplay.description": "Digitale Visitenkarten per Kamera erfassen, mit QR-Codes gestalten und im Vollbild teilen – komplett lokal auf dem iPhone.",
+      "carddisplay.heroAlt": "CardDisplay auf dem iPhone im Alltag",
+      "carddisplay.addonTitle": "Zusatz · Visitenkarten aus der App",
+      "carddisplay.card1Alt": "CardDisplay digitale Visitenkarte",
+      "carddisplay.card2Alt": "CycleContext digitale Visitenkarte aus CardDisplay",
+      "carddisplay.card3Alt": "Gymmix digitale Visitenkarte aus CardDisplay",
 
       "gallery.category": "Webplattform · Kunst",
-      "gallery.description": "Eine Galerie-Website für Kunst aus Nunavut, Kanada. Neue Arbeiten erscheinen automatisch aus dem Instagram-Auftritt der Galerie.",
+      "gallery.badge": "Live-Sync",
+      "gallery.title": "Kunstgalerie Nunavut",
+      "gallery.description": "Galerie-Website für Inuit-Kunst aus Nunavut, Kanada. Neue Werke erscheinen automatisch aus dem Instagram-Auftritt der Galerie.",
+      "gallery.f1.t": "Instagram → Web",
+      "gallery.f1.d": "Neue Werke erscheinen direkt im Katalog",
+      "gallery.f2.t": "Inuit-Grafik",
+      "gallery.f2.d": "Lithografien, Steinschnitte & Künstlerprofile",
+      "gallery.plaqueTitle": "Zeitgenössische Inuit-Kunst",
+      "gallery.plaqueSub": "Nunavut · Kuratierte Ausstellung",
 
       "grow.category": "Web · Designbeispiel",
-      "grow.description": "Ein atmosphärisches Website-Beispiel mit Pflanzenmotiven, vertikalen Übergängen und mehrschichtigen Parallax-Effekten.",
+      "grow.description": "Atmosphärisches Website-Beispiel mit tiefen Pflanzenmotiven, ruhigen vertikalen Übergängen und mehrschichtiger Parallax-Tiefe.",
 
       "heat.category": "Konzept · Web-Rechner",
       "heat.title": "Wärmekostenrechner",
-      "heat.description": "Ein interaktiver Entwurf, der die Kosten von Gasheizung und Wärmepumpe anhand eigener Annahmen und Verbrauchswerte vergleicht.",
+      "heat.description": "Interaktiver Vergleichsrechner für Gasheizung und Wärmepumpe anhand eigener Verbrauchs- und Energieannahmen.",
+      "heat.gas": "Gasheizung",
+      "heat.pump": "Wärmepumpe",
 
-      "kluug.category": "Web-App · Bildung",
+      "kluug.category": "Bildung",
       "kluug.status": "Prototyp",
-      "kluug.description": "Eine Lern-App für Klasse 5 bis 8 mit Lernpfaden, Pizza-Bäckerei, Quiz-Quests und Fiete als Tutor.",
-      "kluug.f2": "Quiz-Quests mit XP, Abzeichen & Tutor Fiete",
+      "kluug.description": "Lern-App für Klasse 5 bis 8 mit Lernpfaden, Pizza-Bäckerei, Quiz-Quests und Tutor Fiete.",
 
-      "credo.category": "Web · Wissen",
-      "credo.description": "Texte zum orthodoxen Glaubensbekenntnis und zur Katechese strukturiert, lesefreundlich und digital zugänglich gemacht.",
+      "credo.category": "Wissen",
+      "credo.description": "Texte zum orthodoxen Glaubensbekenntnis und zur Katechese strukturiert und lesefreundlich aufbereitet.",
 
-      "luv.category": "Web-App · Bildung",
-      "luv.description": "Eine Browser-App zum strukturierten Erstellen, Verwalten und Drucken von Leistungs- und Verhaltensbeurteilungen.",
+      "luv.category": "Bildung",
+      "luv.description": "Browser-App zum Erstellen, Verwalten und Drucken von Leistungs- und Verhaltensbeurteilungen.",
 
-      "transcript.category": "Tool · Sprache & KI",
+      "transcript.category": "Sprache & KI",
       "transcript.title": "Transkript",
-      "transcript.description": "Ein Werkzeug zum Transkribieren, Strukturieren und Übersetzen von YouTube-Videos in Wissensdokumente mit KI-Unterstützung.",
+      "transcript.description": "Werkzeug zum Transkribieren, Strukturieren und Übersetzen von YouTube-Videos in Wissensdateien.",
 
       "preview.gymmixApp": "Gymmix Trainings-App im Fitnessstudio",
+      "preview.gymmixStats": "Gymmix Trainingsstatistik und Auswertung",
       "preview.cycle": "CycleContext Heute-Ansicht",
-      "preview.carddisplay": "CardDisplay Visitenkarten-Editor",
-      "preview.datadisplay": "DataDisplay Datenvisualisierung",
-      "preview.bento": "Bento Software Webprojekt",
-      "preview.gallery": "Kunstgalerie Nunavut Website",
+      "preview.datadisplay": "DataDisplay Dashboard und Präsentationsfolie",
+      "preview.bento": "Freigestellte metallene Bento-Software-Box mit vier leuchtenden Modulen",
+      "preview.gallery": "Kunstgalerie Nunavut Werk",
       "preview.grow": "Grow Pflanzen-Designbeispiel",
       "preview.heating": "Wärmekostenrechner Konzept",
-      "preview.ready": "Bereit für heute?",
-      "preview.path": "Mathe · Klasse 5–8 · Brüche visuell verstehen",
-      "preview.credoHeading": "Nizäno-Konstantinopolitanisches Glaubensbekenntnis",
-      "preview.terms": "Erklärungen zu Begriffen und Themen",
-      "preview.luvHeading": "Leistungs- und Verhaltensbeurteilung",
-      "preview.luvAction": "Lokal im Browser speichern · Laden · Drucken",
-      "preview.transcriptHeading": "YouTube-Wissensdateien im Handumdrehen erzeugen",
-      "preview.transcriptStep": "Setup · Transkription · KI-Übersetzung",
+      "preview.credoHeading": "Glaubensbekenntnis",
+      "preview.luvTag": "Lokal · Print",
 
-      "about.eyebrow": "Arbeitsweise",
-      "about.title": "Gute Software macht Dinge einfacher.",
-      "about.subtitle": "Ich bin Alexander Kaufmann. Zwischen nativer Apple-Entwicklung und modernem Webdesign entstehen Werkzeuge, die im Alltag sofort verständlich sind.",
-      "service1.title": "Mobile & Desktop Apps",
-      "service1.desc": "Von der ersten Konzeption über die Benutzeroberfläche bis zur Veröffentlichung im App Store: Durchdachte Apps für iPhone, Apple Watch, iPad und Mac.",
-      "service1.cta": "Apps ansehen",
+      "services.eyebrow": "Schwerpunkte",
+      "services.title": "Woran ich arbeite",
+      "services.subtitle": "Zwischen nativer Apple-Entwicklung, ruhigem Webdesign und kompakten Werkzeugen für den Alltag.",
+      "service1.title": "Apple Apps (iOS, Watch & Mac)",
+      "service1.desc": "Von der Konzeption über ruhige Benutzeroberflächen bis zum App Store – lokal gespeichert, schnell und für den täglichen Einsatz entwickelt.",
+      "service1.cta": "Apple Apps ansehen",
       "service2.title": "Webauftritt & Produktdesign",
-      "service2.desc": "Übersichtliche, moderne Websites mit ruhiger Typografie, feiner Tiefenstaffelung und flüssiger Darstellung auf allen Geräten.",
-      "service2.cta": "Webprojekte zeigen",
-      "service3.title": "Bildung & Alltagstools",
-      "service3.desc": "Interaktive Lern-Apps, Vergleichsrechner und KI-gestützte Sprachwerkzeuge, die komplexe Abläufe auf das Wesentliche reduzieren.",
+      "service2.desc": "Übersichtliche, moderne Websites mit sauberer Typografie, stimmigen Animationen und schneller Darstellung auf allen Geräten.",
+      "service2.cta": "Webprojekte ansehen",
+      "service3.title": "Bildung & KI-Werkzeuge",
+      "service3.desc": "Fokussierte Browser-Tools für Lernen, Wissensaufbereitung und strukturierte Workflows – ohne Installation direkt startklar.",
       "service3.cta": "Tools entdecken",
 
-      "closing.title": "Alexander Kaufmann.",
-      "closing.copy": "Entwickler für iOS, macOS und das Web. Alle veröffentlichten Projekte und Quellcodes findest du gesammelt auf GitHub.",
-      "closing.github": "GitHub-Profil öffnen ↗",
-      "contact.title": "Kontakt & Austausch",
-      "contact.copy": "Du hast eine Projektidee im Kopf oder möchtest Feedback zu einer der Apps geben? Schreib mir gerne direkt.",
-      "contact.email": "E-Mail schreiben",
+      "cta.eyebrow": "Kaufmann-Dynamics · iOS, Mac & Web",
+      "cta.title.one": "Fragen oder",
+      "cta.title.two": "Feedback?",
+      "contact.copy": "Du nutzt eine meiner Apps, hast einen Hinweis oder möchtest einfach kurz schreiben? Melde dich gerne direkt.",
+      "contact.email": "Kontakt aufnehmen",
       "contact.copied": "E-Mail kopiert ✓",
+      "dir.manualTitle": "Gymmix Handbuch",
+      "footer.tagline": "Software, die im Alltag überzeugt.",
+      "footer.links": "Footer-Navigation",
+      "footer.legalLabel": "Rechtliches",
+      "footer.imprint": "Impressum",
+      "footer.privacy": "Datenschutz",
+      "footer.backToTop": "Nach oben",
 
-      "footer.links": "Links",
-      "footer.email": "E-Mail",
-      "footer.backToTop": "Zurück nach oben"
+      "country.germany": "Deutschland",
+      "legal.back": "Zurück zur Übersicht",
+      "legal.eyebrow": "Rechtliche Hinweise",
+      "legal.street": "[Straße und Hausnummer eintragen]",
+      "legal.city": "[PLZ und Ort eintragen]",
+
+      "imprint.pageTitle": "Impressum — Projekte · Kaufmann-Dynamics",
+      "imprint.pageDesc": "Impressum und Anbieterkennzeichnung für das Projektportfolio unter Kaufmann-Dynamics.",
+      "imprint.heading": "Impressum",
+      "imprint.intro": "Angaben gemäß § 5 DDG sowie § 18 Abs. 2 MStV für diese eigenständige Portfolio-Website.",
+      "imprint.providerTitle": "Anbieter & inhaltlich verantwortlich",
+      "imprint.independentNote": "Verantwortlicher Betreiber dieser Portfolio-Website („Projekte / Kaufmann-Dynamics“) ist Alexander Kaufmann als Einzelperson. Dieses Angebot gehört rechtlich nicht zur Bento Software UG (haftungsbeschränkt).",
+      "imprint.contactTitle": "Kontakt",
+      "imprint.emailLabel": "E-Mail",
+      "imprint.contactNote": "Es wird aktuell keine öffentliche Telefonnummer veröffentlicht. Anfragen erreichen mich direkt per E-Mail über die oben genannte Adresse.",
+      "imprint.scopeTitle": "Art des Angebots",
+      "imprint.scopeText": "Diese Website dient als persönliches Informations- und Projektportfolio für entwickelte Apps, Webseiten und Lernwerkzeuge. Es werden darüber keine kostenpflichtigen Verträge abgeschlossen oder Online-Shops betrieben.",
+      "imprint.thirdPartyTitle": "Abgrenzung zu verlinkten Produktseiten & Apps",
+      "imprint.thirdPartyText": "Einzelne hier vorgestellte Apps und Produktseiten (z. B. unter Bento Software sowie DataDisplay, CycleContext, Gymmix und CardDisplay inklusive der zugehörigen App-Store-Einträge) werden eigenständig von ihrem jeweiligen Anbieter bzw. Publisher (insbesondere der Bento Software UG) betrieben und vertrieben. Auf diesen externen Angeboten gelten ausschließlich deren eigene Impressums- und Datenschutzangaben.",
+      "imprint.liabilityTitle": "Haftung für Inhalte & externe Links",
+      "imprint.liabilityText": "Die Inhalte dieser Website werden mit großer Sorgfalt erstellt, dennoch kann keine Gewähr für Vollständigkeit, Richtigkeit und Aktualität übernommen werden. Bei Verlinkungen auf externe Websites Dritter liegt die Verantwortung für deren Inhalte und deren Rechtskonformität stets beim jeweiligen Betreiber.",
+      "imprint.copyrightTitle": "Urheberrecht",
+      "imprint.copyrightText": "Die auf dieser Website erstellten Texte, Grafiken und Darstellungen unterliegen, soweit nicht anders gekennzeichnet, dem Urheberrecht. Jede Verwertung außerhalb der gesetzlichen Schranken bedarf der vorherigen Zustimmung des jeweiligen Rechteinhabers.",
+
+      "privacy.pageTitle": "Datenschutz — Projekte · Kaufmann-Dynamics",
+      "privacy.pageDesc": "Datenschutzerklärung für das Projektportfolio unter Kaufmann-Dynamics — Hosting über STRATO und GitHub Pages, ohne Cookies oder Tracking.",
+      "privacy.heading": "Datenschutzerklärung",
+      "privacy.intro": "Hier erfährst du transparent, welche technischen Daten beim Besuch dieser Portfolio-Website verarbeitet werden und warum keine Cookies oder Tracker eingesetzt werden.",
+      "privacy.controllerTitle": "1. Verantwortlicher",
+      "privacy.reachPre": "Kontakt per E-Mail:",
+      "privacy.hostingTitle": "2. Bereitstellung der Website & Server-Logfiles (STRATO & GitHub Pages)",
+      "privacy.hostingStrato": "Beim Aufruf über die Domain kaufmann-dynamics.de erfolgt die Bereitstellung über Server der STRATO AG (Otto-Ostrowski-Straße 7, 10249 Berlin, Deutschland). STRATO speichert zu Verbindungsaufbau, Auslieferung und Sicherheit kurzzeitig technische Server-Logfiles (z. B. IP-Adresse, Zeitpunkt des Abrufs, aufgerufene Datei und Browserinformationen). Die Verarbeitung erfolgt auf Grundlage des berechtigten Interesses an einem sicheren, stabilen Betrieb der Website (Art. 6 Abs. 1 lit. f DSGVO). Weitere Hinweise finden sich in der",
+      "privacy.stratoLink": "Datenschutzerklärung von STRATO",
+      "privacy.hostingGithub": "Soweit oder solange diese Portfolio-Website parallel bzw. direkt über github.io ausgeliefert wird, erfolgt das Hosting technisch über GitHub Pages (GitHub, Inc. / GitHub B.V.). Dabei protokolliert GitHub Verbindungs- und Sicherheitsdaten einschließlich der IP-Adresse des Besuchers, wobei eine Verarbeitung auch außerhalb des Europäischen Wirtschaftsraums stattfinden kann. Weitere Details stehen in der",
+      "privacy.githubPolicy": "Datenschutzerklärung von GitHub",
+      "privacy.and": "sowie in den",
+      "privacy.githubPages": "Hinweisen zu GitHub Pages",
+      "privacy.prefsTitle": "3. Sprache, Farbschema & lokale Speicherung (keine Cookies)",
+      "privacy.prefsText": "Diese Website setzt keine Cookies und verwendet keine Analyse-, Reichweiten- oder Werbedienste. Um deine gewählte Sprache (DE/EN) sowie das gewählte Farbschema (System, Hell oder Dunkel) beim erneuten Öffnen beizubehalten, speichert die Website ausschließlich die Schlüssel „portfolio-lang“ und „portfolio-appearance“ lokal im Speicher deines Browsers (localStorage). Diese Einstellungen werden nicht an Server übertragen und lassen sich jederzeit in den Browser-Einstellungen löschen.",
+      "privacy.emailTitle": "4. Kontaktaufnahme per E-Mail",
+      "privacy.emailText": "Wenn du eine Nachricht an kontakt@kaufmann-dynamics.de sendest, wird deine E-Mail über das Postfach bei STRATO empfangen. Absenderadresse, Betreff und Nachrichteninhalt werden ausschließlich zur Beantwortung und Bearbeitung deines Anliegens verarbeitet (Art. 6 Abs. 1 lit. f DSGVO bzw. Art. 6 Abs. 1 lit. b DSGVO bei vorvertraglicher Kommunikation) und gelöscht, sobald sie für diesen Zweck nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.",
+      "privacy.linksTitle": "5. Externe Links zu Apps & Projektseiten",
+      "privacy.linksText": "Auf dieser Seite sind externe Angebote verlinkt, darunter GitHub-Repositories, der Apple App Store sowie Produktseiten und Apps, die eigenständig durch Bento Software betrieben werden. Erst beim aktiven Anklicken eines Links verlassen deine Browser-Anfragen diese Seite; ab dort gelten die Datenschutzhinweise des jeweiligen Anbieters.",
+      "privacy.rightsTitle": "6. Deine Rechte",
+      "privacy.rightsText": "Du hast nach Maßgabe der DSGVO das Recht auf Auskunft über gespeicherte personenbezogene Daten, auf Berichtigung, Löschung oder Einschränkung der Verarbeitung, auf Widerspruch gegen Verarbeitungen auf Grundlage berechtigter Interessen sowie gegebenenfalls auf Datenübertragbarkeit. Hierzu genügt eine formlose E-Mail an kontakt@kaufmann-dynamics.de. Zudem besteht ein Beschwerderecht bei einer zuständigen Datenschutzaufsichtsbehörde (Art. 77 DSGVO)."
     },
     en: {
       title: "Alexander Kaufmann — Apps, Web & Digital Tools",
-      description: "Portfolio of Alexander Kaufmann: native Apple apps (Gymmix, CycleContext, CardDisplay, DataDisplay), web design work, and educational/AI browser tools.",
+      description: "Alexander Kaufmann — Native apps for iPhone, Apple Watch, iPad, and Mac alongside modern web projects and digital tools.",
       skip: "Skip to content",
+      "brand.aria": "Home — Projects",
+      "brand.wordmark": "Projects",
       "nav.label": "Primary navigation",
-      "nav.open": "Navigation",
       "nav.overview": "Overview",
       "nav.projects": "Projects",
-      "nav.approach": "Approach",
+      "nav.focus": "Focus",
+      "nav.open": "Open menu",
       "nav.contact": "Contact",
-      "nav.cta": "View projects",
-      "nav.workflow": "Jump to category",
       "language.label": "Language",
       "theme.label": "Appearance",
       "theme.system": "System",
       "theme.light": "Light",
       "theme.dark": "Dark",
 
-      "hero.platform": "Portfolio · iOS, Mac & Web",
-      "hero.title.one": "Turning ideas into",
-      "hero.title.two": "clear digital products.",
-      "hero.lead": "I design and build focused apps for iPhone, iPad, Apple Watch, and Mac alongside modern websites and browser tools — pared down to what matters and dependable every day.",
+      "hero.eyebrow": "Portfolio · iOS, Mac & Web",
+      "hero.title.one": "Software built for",
+      "hero.title.two": "everyday clarity.",
+      "hero.lead": "I design and build thoughtful apps for iPhone, Apple Watch, iPad, and Mac alongside modern websites and digital tools — pared down to what matters, dependable every day.",
       "hero.cta.projects": "Explore projects",
       "hero.cta.github": "GitHub profile",
-      "hero.meta1": "12 selected projects",
-      "hero.meta2": "iOS, Watch, Mac & iPad",
-      "hero.meta3": "Web design & tools",
-      "hero.replay": "Replay",
-      "hero.replayAria": "Replay animation",
-      "hero.caption": "Selected app and web projects — from first concept to release",
+      "hero.meta1": "12 independent projects",
+      "hero.meta2": "iOS, Watch, iPad & Mac",
+      "hero.meta3": "Web design & AI tools",
 
-      "workflow.apps": "View Apple apps",
-      "workflow.web": "Web & Platforms",
-      "workflow.tools": "Education & AI Tools",
-      "workflow.highlights": "Selected Highlights",
+      "slideshow.aria": "App preview slideshow",
+      "slideshow.dotsAria": "Select app slide",
+      "slideshow.pauseAria": "Pause slideshow",
+      "slideshow.playAria": "Play slideshow",
+      "slideshow.s0.sub": "iPhone & Watch · Strength Training",
+      "slideshow.s1.sub": "iOS & iPad · Cycle Context",
+      "slideshow.s2.sub": "iPhone · Digital Business Cards",
+      "slideshow.s3.sub": "Gymmix · Progress & Statistics",
+      "slideshow.s4.sub": "Mac & iPad · Dashboard & Slides",
 
-      "overview.title": "From a real question to a focused app.",
-      "overview.copy": "Every project starts with a concrete everyday challenge — from structured strength training in the gym to clear data visualization and privacy-first learning or browser utilities.",
-      "overview.note": "Every build avoids unnecessary clutter — prioritizing clean interfaces, high speed, and local-first storage.",
-      "stats.appsTitle": "App Store",
-      "stats.appsVal": "3 iOS & Watch apps",
-      "stats.webTitle": "Web & Mac",
-      "stats.webVal": "5 platforms",
-      "stats.toolsTitle": "Education & AI",
-      "stats.toolsVal": "4 browser tools",
-
-      "highlights.aria": "Selected highlights",
-      "scene.cycle.cat": "iOS App · Health",
-      "scene.cycle.title": "CycleContext. Clear and private.",
-      "scene.cycle.copy": "Translates an estimated cycle phase into clear everyday context. Profiles and entries remain completely local on your iPhone with zero account required.",
-      "scene.cycle.badge": "100% Local",
-      "scene.cycle.caption": "Today View · iPhone & iPad",
-
-      "scene.gymmix.cat": "iOS & Apple Watch · Fitness",
-      "scene.gymmix.title": "Gymmix in the gym.",
-      "scene.gymmix.copy": "Plan strength workouts, log weights and reps directly on iPhone or Apple Watch, and track long-term progress — localized into 37 languages.",
-      "scene.gymmix.m1": "Exercises",
-      "scene.gymmix.m2": "Devices",
-      "scene.gymmix.m3": "Languages",
-      "scene.gymmix.caption": "Workout planning & online manual",
-
-      "projects.eyebrow": "All Work",
-      "projects.title": "Projects at a Glance",
-      "projects.subtitle": "Twelve projects across native apps, web builds, and digital tools — with visual previews and direct links.",
-      "filter.label": "Filter projects by area",
+      "projects.eyebrow": "Selected Work",
+      "projects.title": "Apps, Web & Tools",
+      "projects.subtitle": "Twelve independent projects with live previews, thoughtful details, and direct links.",
+      "filter.label": "Filter projects by category",
       "filter.all": "All",
-      "filter.apps": "iOS & Mac",
-      "filter.web": "Web",
+      "filter.apps": "Apple Apps",
+      "filter.web": "Web & Design",
       "filter.tools": "Education & AI",
 
       "badge.appstore": "App Store",
       "badge.new": "New",
       "badge.preview": "Preview",
-      "store.open": "App Store",
       "store.kicker": "Download on the",
       "store.name": "App Store",
       "link.moreApp": "About this app",
-      "link.morePreview": "About this preview",
+      "link.morePreview": "Open preview",
       "link.projectSite": "Open project site",
+      "link.open": "Open",
       "gymmix.handbook": "Handbook",
 
-      "gymmixApp.category": "Fitness & Training",
-      "gymmixApp.platforms": "iPhone & Apple Watch · 37 Languages",
-      "gymmixApp.description": "Structure your strength training at the gym or home. Build custom workout splits, record sets, weights, and execution quality, and monitor volume, one-rep maxes, and body metrics.",
-      "gymmixApp.f1.t": "Workout Plans",
-      "gymmixApp.f1.d": "Combine machines, free weights, and custom exercises flexibly.",
-      "gymmixApp.f2.t": "Apple Watch",
-      "gymmixApp.f2.d": "Track sets, weights, and rest timers right from your wrist.",
-      "gymmixApp.f3.t": "Progression",
-      "gymmixApp.f3.d": "Analyze volume, peak strength, and long-term progress cleanly.",
+      "cycle.category": "iOS & iPad · Health",
+      "cycle.description": "Translates an estimated cycle phase into clear everyday context — for yourself or to thoughtfully support a partner. 100% local and account-free.",
+      "orbit.dayTemplate": "Cycle day {d} of 28",
+      "orbit.phases": ["Menstruation", "Follicular", "Ovulation", "Luteal", "Premenstrual"],
 
-      "cycle.category": "Health & Clarity",
-      "cycle.description": "Understand the menstrual cycle in daily life: track your own cycle or thoughtfully support a partner or loved one — completely account-free and stored locally on device.",
-      "cycle.f1": "Separate profiles & calendar clarity",
-      "cycle.f2": "100% on-device storage · iPhone & iPad",
+      "bento.category": "Web Project",
+      "bento.description": "Central product platform for my apps featuring a 3D box animation, live platform filtering, and direct App Store routing.",
 
-      "carddisplay.category": "Business & Productivity",
-      "carddisplay.description": "Digital business cards on iPhone: capture physical cards by camera, design front and back layouts with QR codes in the editor, and share full-screen on the spot.",
-      "carddisplay.f1": "QR codes for vCards, websites & contact info",
-      "carddisplay.f2": "Local storage · PNG export & share",
+      "gymmixApp.category": "iPhone & Watch · Fitness",
+      "gymmixApp.description": "Strength training without clutter: custom workout plans, rapid set logging on your wrist, and long-term volume and max-load analytics.",
+      "gymmixApp.f1.t": "iPhone & Watch",
+      "gymmixApp.f1.d": "Log sets right on your wrist",
+      "gymmixApp.f2.t": "37 Languages",
+      "gymmixApp.f2.d": "Localized worldwide",
+      "gymmixApp.f3.t": "Offline-First",
+      "gymmixApp.f3.d": "No account needed at the gym",
 
-      "datadisplay.category": "Mac & iPad · Data Visualization",
-      "datadisplay.description": "From spreadsheet to slide deck: import CSV, Excel, or Numbers files, compare trends in the interactive dashboard, and place selected charts straight onto presentation slides.",
-      "datadisplay.boxTitle": "Built for Mac and iPad",
-      "datadisplay.f1": "Direct import of tables and multi-sheet workbooks",
-      "datadisplay.f2": "Move effortlessly from dashboard to slide layout",
+      "datadisplay.category": "Mac & iPad · Data",
+      "datadisplay.description": "Compare CSV, Excel, or Numbers files directly inside the dashboard and place finished charts straight onto presentation slides.",
+      "dd.switchAria": "Switch DataDisplay view",
+      "dd.step2": "Dashboard",
+      "dd.step3": "Slide",
+      "dd.slideTitle": "Annual Trend by Location",
 
-      "bento.category": "Web Project · Product Design",
-      "bento.description": "My Bento Software web platform combining 3D motion previews, platform filtering, interactive product cards, and direct routing to all native apps.",
-      "bento.f1": "3D box video & structured Bento grid layout",
-      "bento.f2": "Live platform filters & direct App Store routing",
+      "carddisplay.category": "iPhone · Productivity",
+      "carddisplay.flip": "Next card ↻",
+      "carddisplay.description": "Capture business cards by camera, customize layouts with QR codes, and share full-screen — stored entirely locally on iPhone.",
+      "carddisplay.heroAlt": "CardDisplay on iPhone in everyday use",
+      "carddisplay.addonTitle": "Extra · In-app business cards",
+      "carddisplay.card1Alt": "CardDisplay digital business card",
+      "carddisplay.card2Alt": "CycleContext digital business card built in CardDisplay",
+      "carddisplay.card3Alt": "Gymmix digital business card built in CardDisplay",
 
       "gallery.category": "Web Platform · Fine Art",
-      "gallery.description": "A gallery website dedicated to art from Nunavut, Canada. Newly published artworks appear automatically synced from the gallery's Instagram feed.",
+      "gallery.badge": "Live Sync",
+      "gallery.title": "Nunavut Art Gallery",
+      "gallery.description": "Gallery website for Inuit art from Nunavut, Canada. Newly published artworks appear automatically synced from Instagram.",
+      "gallery.f1.t": "Instagram → Web",
+      "gallery.f1.d": "New artworks appear directly in the catalog",
+      "gallery.f2.t": "Inuit Fine Art",
+      "gallery.f2.d": "Lithographs, stonecuts & artist profiles",
+      "gallery.plaqueTitle": "Contemporary Inuit Art",
+      "gallery.plaqueSub": "Nunavut · Curated Exhibition",
 
-      "grow.category": "Web · Visual Showcase",
-      "grow.description": "An atmospheric botanical web showcase built around plant imagery, vertical transitions, and multi-layered scroll parallax.",
+      "grow.category": "Web · Design Showcase",
+      "grow.description": "Atmospheric botanical website concept featuring lush forest imagery, calm vertical transitions, and multi-layered parallax depth.",
 
       "heat.category": "Concept · Web Calculator",
       "heat.title": "Heating Cost Calculator",
-      "heat.description": "An interactive concept comparing gas heating and heat-pump operating costs based on custom usage and efficiency assumptions.",
+      "heat.description": "Interactive calculator comparing gas heating and heat-pump costs based on custom usage and energy assumptions.",
+      "heat.gas": "Gas Heating",
+      "heat.pump": "Heat Pump",
 
-      "kluug.category": "Web App · Education",
+      "kluug.category": "Education",
       "kluug.status": "Prototype",
-      "kluug.description": "A learning app for grades 5–8 featuring structured paths, a fraction pizza bakery, quiz quests, and Fiete as an interactive tutor.",
-      "kluug.f2": "Quiz quests with XP, badges & tutor Fiete",
+      "kluug.description": "Learning app for grades 5–8 with learning paths, a fraction pizza bakery, quiz quests, and tutor Fiete.",
 
-      "credo.category": "Web · Knowledge",
-      "credo.description": "Texts on the Orthodox Creed and catechesis structured into a calm, readable, and accessible digital reference.",
+      "credo.category": "Knowledge",
+      "credo.description": "Texts on the Orthodox Creed and catechesis structured into a calm, readable digital reference.",
 
-      "luv.category": "Web App · Education",
-      "luv.description": "A browser application for drafting, organizing, and printing structured performance and conduct evaluations locally.",
+      "luv.category": "Education",
+      "luv.description": "Browser app for creating, organizing, and printing structured performance and conduct evaluations.",
 
-      "transcript.category": "Tool · Language & AI",
+      "transcript.category": "Language & AI",
       "transcript.title": "Transcript",
-      "transcript.description": "A focused utility for transcribing, structuring, and translating YouTube videos into clean AI-assisted knowledge documents.",
+      "transcript.description": "Utility for transcribing, structuring, and translating YouTube videos into clean knowledge files.",
 
-      "preview.gymmixApp": "Gymmix workout app inside a gym setting",
+      "preview.gymmixApp": "Gymmix workout app in the gym",
+      "preview.gymmixStats": "Gymmix training statistics and analytics",
       "preview.cycle": "CycleContext Today view",
-      "preview.carddisplay": "CardDisplay business card editor",
-      "preview.datadisplay": "DataDisplay data visualization",
-      "preview.bento": "Bento Software web project",
-      "preview.gallery": "Nunavut Art Gallery website",
+      "preview.datadisplay": "DataDisplay dashboard and presentation slide",
+      "preview.bento": "Isolated metallic Bento Software box with four glowing modules",
+      "preview.gallery": "Nunavut Art Gallery artwork",
       "preview.grow": "Grow botanical design example",
       "preview.heating": "Heating cost calculator concept",
-      "preview.ready": "Ready for today?",
-      "preview.path": "Math · Grades 5–8 · Understand fractions visually",
-      "preview.credoHeading": "Nicene-Constantinopolitan Creed",
-      "preview.terms": "Explanations of core terms and topics",
-      "preview.luvHeading": "Performance & Conduct Evaluation",
-      "preview.luvAction": "Save locally in browser · Load · Print",
-      "preview.transcriptHeading": "Turn YouTube talks into structured knowledge files",
-      "preview.transcriptStep": "Setup · Transcription · AI Translation",
+      "preview.credoHeading": "Creed & Catechesis",
+      "preview.luvTag": "Local · Print",
 
-      "about.eyebrow": "Approach",
-      "about.title": "Good software makes things simpler.",
-      "about.subtitle": "I'm Alexander Kaufmann. Bridging native Apple engineering and calm web craft to build tools that feel clear from the very first tap.",
-      "service1.title": "Mobile & Desktop Apps",
-      "service1.desc": "From initial concept and interface rhythm to App Store launch: thoughtful native software for iPhone, Apple Watch, iPad, and Mac.",
-      "service1.cta": "View apps",
+      "services.eyebrow": "Focus Areas",
+      "services.title": "What I build",
+      "services.subtitle": "Bridging native Apple engineering, calm web design, and compact everyday tools.",
+      "service1.title": "Apple Apps (iOS, Watch & Mac)",
+      "service1.desc": "From initial concept and calm interfaces to App Store launch — stored locally, responsive, and built for everyday use.",
+      "service1.cta": "View Apple apps",
       "service2.title": "Websites & Product Design",
-      "service2.desc": "Clear, modern web experiences with measured typography, subtle depth layers, and responsive fluidity across every viewport.",
-      "service2.cta": "Show web projects",
-      "service3.title": "Education & Everyday Tools",
-      "service3.desc": "Interactive learning apps, comparison calculators, and AI-assisted language helpers that strip complex tasks down to the essentials.",
+      "service2.desc": "Clear, modern websites featuring measured typography, refined motion, and fast rendering across every device.",
+      "service2.cta": "View web projects",
+      "service3.title": "Education & AI Utilities",
+      "service3.desc": "Focused browser tools for learning, knowledge formatting, and structured workflows — ready immediately with zero setup.",
       "service3.cta": "Explore tools",
 
-      "closing.title": "Alexander Kaufmann.",
-      "closing.copy": "Developer for iOS, macOS, and the web. Explore published releases, web builds, and repositories together on GitHub.",
-      "closing.github": "Open GitHub profile ↗",
-      "contact.title": "Contact & Feedback",
-      "contact.copy": "Have a project idea in mind or feedback on any of the apps? Feel free to write directly.",
-      "contact.email": "Send email",
+      "cta.eyebrow": "Kaufmann-Dynamics · iOS, Mac & Web",
+      "cta.title.one": "Questions or",
+      "cta.title.two": "feedback?",
+      "contact.copy": "Using one of my apps, spotted feedback, or just want to say hello? Feel free to get in touch.",
+      "contact.email": "Get in touch",
       "contact.copied": "Email copied ✓",
+      "dir.manualTitle": "Gymmix Handbook",
+      "footer.tagline": "Software built for everyday clarity.",
+      "footer.links": "Footer navigation",
+      "footer.legalLabel": "Legal",
+      "footer.imprint": "Imprint",
+      "footer.privacy": "Privacy Policy",
+      "footer.backToTop": "Back to top",
 
-      "footer.links": "Links",
-      "footer.email": "Email",
-      "footer.backToTop": "Back to top"
+      "country.germany": "Germany",
+      "legal.back": "Back to overview",
+      "legal.eyebrow": "Legal Information",
+      "legal.street": "[Insert street and house number]",
+      "legal.city": "[Insert postal code and city]",
+
+      "imprint.pageTitle": "Imprint — Projects · Kaufmann-Dynamics",
+      "imprint.pageDesc": "Legal notice and provider details under German law for the Kaufmann-Dynamics project portfolio.",
+      "imprint.heading": "Imprint (Legal Notice)",
+      "imprint.intro": "Information pursuant to Section 5 DDG (German Digital Services Act) and Section 18 (2) MStV for this independent portfolio website.",
+      "imprint.providerTitle": "Provider & Person Responsible for Content",
+      "imprint.independentNote": "This portfolio website (“Projects / Kaufmann-Dynamics”) is operated independently by Alexander Kaufmann as an individual. Legally, this website does not belong to Bento Software UG (haftungsbeschränkt).",
+      "imprint.contactTitle": "Contact",
+      "imprint.emailLabel": "Email",
+      "imprint.contactNote": "No public telephone number is listed at this time. Please reach out directly via the email address above.",
+      "imprint.scopeTitle": "Nature of This Website",
+      "imprint.scopeText": "This website serves as a personal showcase and project overview for independent apps, websites, and learning tools. No paid contracts are concluded and no online shop is operated through this site.",
+      "imprint.thirdPartyTitle": "Distinction from Linked Product Pages & Apps",
+      "imprint.thirdPartyText": "Certain apps and product websites showcased here (such as Bento Software, DataDisplay, CycleContext, Gymmix, and CardDisplay along with their App Store listings) are operated and published independently by their respective operator/publisher (in particular Bento Software UG). Their own legal notices and privacy policies apply exclusively on those external offerings.",
+      "imprint.liabilityTitle": "Liability for Content & External Links",
+      "imprint.liabilityText": "While the content on this website is prepared with care, no guarantee is assumed for completeness, accuracy, or timeliness. Responsibility for the content and legal compliance of linked third-party websites always rests solely with their respective operators.",
+      "imprint.copyrightTitle": "Copyright",
+      "imprint.copyrightText": "Unless stated otherwise, texts, graphics, and visual presentations created for this website are subject to copyright. Any use beyond statutory exceptions requires prior permission from the respective rights holder.",
+
+      "privacy.pageTitle": "Privacy Policy — Projects · Kaufmann-Dynamics",
+      "privacy.pageDesc": "Privacy notice for the Kaufmann-Dynamics project portfolio — hosted via STRATO and GitHub Pages with no cookies or tracking.",
+      "privacy.heading": "Privacy Policy",
+      "privacy.intro": "This notice explains transparently which technical data is processed when visiting this portfolio website and confirms that no cookies or analytics trackers are used.",
+      "privacy.controllerTitle": "1. Controller",
+      "privacy.reachPre": "Contact by email:",
+      "privacy.hostingTitle": "2. Website Hosting & Server Log Files (STRATO & GitHub Pages)",
+      "privacy.hostingStrato": "When accessed via kaufmann-dynamics.de, this website is served by STRATO AG (Otto-Ostrowski-Straße 7, 10249 Berlin, Germany). To establish connections, deliver pages, and ensure security, STRATO temporarily stores technical server log files (e.g., IP address, timestamp, requested file, and browser details) based on legitimate interest in reliable website operation (Art. 6(1)(f) GDPR). Further details are available in",
+      "privacy.stratoLink": "STRATO’s Privacy Policy",
+      "privacy.hostingGithub": "Where or as long as this portfolio website is delivered in parallel or directly via github.io, hosting is provided by GitHub Pages (GitHub, Inc. / GitHub B.V.). GitHub logs technical connection and security data including visitors’ IP addresses, which may also be processed outside the European Economic Area. More details can be found in the",
+      "privacy.githubPolicy": "GitHub General Privacy Statement",
+      "privacy.and": "and the",
+      "privacy.githubPages": "GitHub Pages documentation",
+      "privacy.prefsTitle": "3. Language, Appearance & Local Storage (No Cookies)",
+      "privacy.prefsText": "This website sets no cookies and does not use any analytics, audience measurement, or advertising trackers. Solely to remember your chosen language (DE/EN) and color appearance (System, Light, or Dark) across visits, the site stores the keys “portfolio-lang” and “portfolio-appearance” locally in your browser’s localStorage. These preferences are never sent to a server and can be cleared anytime via your browser settings.",
+      "privacy.emailTitle": "4. Contacting Us by Email",
+      "privacy.emailText": "Messages sent to kontakt@kaufmann-dynamics.de are received through our STRATO mailbox. Your sender address, subject, and message content are processed solely to handle and reply to your inquiry (Art. 6(1)(f) GDPR, or Art. 6(1)(b) GDPR for pre-contractual communication) and deleted once no longer needed, subject to statutory retention duties.",
+      "privacy.linksTitle": "5. External Links to Apps & Project Websites",
+      "privacy.linksText": "This site links to external websites including GitHub repositories, the Apple App Store, and product sites or apps operated independently by Bento Software. Only when you actively follow a link does your browser leave this site, at which point the respective provider’s privacy notice applies.",
+      "privacy.rightsTitle": "6. Your Rights Under the GDPR",
+      "privacy.rightsText": "Under the GDPR, you have the right to access personal data stored about you, request rectification, erasure, or restriction of processing, object to processing based on legitimate interests, and, where applicable, exercise data portability by emailing kontakt@kaufmann-dynamics.de. You also have the right to lodge a complaint with a supervisory data protection authority (Art. 77 GDPR)."
     }
   };
 
   let currentLang = "de";
+  let orbitShownDay = 4;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const colorSchemeMedia = window.matchMedia("(prefers-color-scheme: dark)");
 
-  // Dynamic footer copyright year
+  // Dynamic footer year
   document.querySelectorAll("[data-year]").forEach((node) => {
     node.textContent = String(new Date().getFullYear());
   });
 
-  // Appearance (System / Light / Dark)
+  // Appearance (System / Hell / Dunkel)
   const appearanceSelect = document.getElementById("appearance-mode");
   const themeMeta = document.getElementById("theme-color-meta");
 
@@ -385,7 +446,7 @@
       appearanceSelect.value = valid;
     }
     if (themeMeta) {
-      themeMeta.setAttribute("content", resolved === "dark" ? "#15191e" : "#ffffff");
+      themeMeta.setAttribute("content", resolved === "dark" ? "#15191e" : "#f7f4ef");
     }
   }
 
@@ -413,6 +474,104 @@
     });
   }
 
+  // CycleContext Rotating 3D Orbit
+  const CYCLE_LENGTH = 28;
+  const PHASES = [
+    { start: 1, end: 5, color: "#ff3b30" },
+    { start: 6, end: 12, color: "#34c759" },
+    { start: 13, end: 15, color: "#0a84ff" },
+    { start: 16, end: 23, color: "#ff9500" },
+    { start: 24, end: 28, color: "#ff2d55" }
+  ];
+
+  function phaseIndexForDay(day) {
+    const idx = PHASES.findIndex((p) => day >= p.start && day <= p.end);
+    return idx >= 0 ? idx : 0;
+  }
+
+  function wrapDay(day) {
+    return ((((day - 1) % CYCLE_LENGTH) + CYCLE_LENGTH) % CYCLE_LENGTH) + 1;
+  }
+
+  const orbitCard = document.querySelector("[data-orbit]");
+  const orbitRing = orbitCard ? orbitCard.querySelector(".orbit-front") : null;
+  const orbitKnob = orbitCard ? orbitCard.querySelector(".orbit-knob") : null;
+  const orbitDayLabel = orbitCard ? orbitCard.querySelector("[data-orbit-day]") : null;
+  const orbitPhaseLabel = orbitCard ? orbitCard.querySelector("[data-orbit-phase]") : null;
+
+  function updateOrbitLabels(day) {
+    const dict = translations[currentLang];
+    const index = phaseIndexForDay(day);
+    const phaseColor = PHASES[index].color;
+    if (orbitCard) {
+      orbitCard.style.setProperty("--orbit-color", phaseColor);
+    }
+    if (orbitDayLabel) {
+      orbitDayLabel.textContent = dict["orbit.dayTemplate"].replace("{d}", String(day));
+    }
+    if (orbitPhaseLabel && Array.isArray(dict["orbit.phases"])) {
+      orbitPhaseLabel.textContent = dict["orbit.phases"][index] || "";
+    }
+  }
+
+  function placeOrbit(dayFloat) {
+    if (!orbitRing || !orbitKnob) return;
+    const angle = ((dayFloat - 1) / CYCLE_LENGTH) * Math.PI * 2;
+    const style = getComputedStyle(orbitRing);
+    const cx = parseFloat(style.left) || 134;
+    const cy = parseFloat(style.top) || 144;
+    const rx = ((parseFloat(style.width) || 252) / 2) * 0.84;
+    const ry = ((parseFloat(style.height) || 100) / 2) * 0.84;
+    const depth = -Math.cos(angle);
+    orbitKnob.style.setProperty("--kx", `${(cx + rx * Math.sin(angle)).toFixed(1)}px`);
+    orbitKnob.style.setProperty("--ky", `${(cy - ry * Math.cos(angle)).toFixed(1)}px`);
+    orbitKnob.style.setProperty("--ks", (0.86 + 0.14 * depth).toFixed(3));
+    orbitKnob.style.zIndex = depth > 0 ? "4" : "1";
+
+    const nextDay = wrapDay(Math.floor(dayFloat));
+    if (nextDay !== orbitShownDay) {
+      orbitShownDay = nextDay;
+      updateOrbitLabels(orbitShownDay);
+    }
+  }
+
+  // Hero Multi-App Slideshow State & Helpers (declared before setLanguage)
+  const heroSlideshow = document.getElementById("hero-slideshow");
+  const slideItems = heroSlideshow ? Array.from(heroSlideshow.querySelectorAll(".slide-item")) : [];
+  const slideDots = heroSlideshow ? Array.from(heroSlideshow.querySelectorAll(".slide-dot")) : [];
+  const slideTitleEl = document.getElementById("slide-caption-title");
+  const slideSubEl = document.getElementById("slide-caption-sub");
+  const slideshowToggle = document.getElementById("slideshow-toggle");
+  const slideshowPauseIcon = slideshowToggle ? slideshowToggle.querySelector(".icon-pause") : null;
+  const slideshowPlayIcon = slideshowToggle ? slideshowToggle.querySelector(".icon-play") : null;
+  const SLIDE_TITLES = ["Gymmix", "CycleContext", "CardDisplay", "Gymmix", "DataDisplay"];
+  let activeSlideIndex = 0;
+  let slideshowUserPaused = reducedMotion.matches;
+
+  function updateSlideshowCaption() {
+    const dict = translations[currentLang] || translations.de;
+    if (slideTitleEl) {
+      slideTitleEl.textContent = SLIDE_TITLES[activeSlideIndex] || SLIDE_TITLES[0];
+    }
+    const subKey = `slideshow.s${activeSlideIndex}.sub`;
+    if (slideSubEl && typeof dict[subKey] === "string") {
+      slideSubEl.textContent = dict[subKey];
+    }
+    if (slideshowToggle) {
+      const ariaKey = slideshowUserPaused ? "slideshow.playAria" : "slideshow.pauseAria";
+      if (typeof dict[ariaKey] === "string") {
+        slideshowToggle.setAttribute("aria-label", dict[ariaKey]);
+      }
+      slideshowToggle.setAttribute("aria-pressed", slideshowUserPaused ? "true" : "false");
+    }
+    if (slideshowPauseIcon) {
+      slideshowPauseIcon.hidden = slideshowUserPaused;
+    }
+    if (slideshowPlayIcon) {
+      slideshowPlayIcon.hidden = !slideshowUserPaused;
+    }
+  }
+
   // Language Switching (DE / EN)
   function updateLocalizedLinks(lang) {
     const storeCountry = lang === "en" ? "us" : "de";
@@ -431,31 +590,45 @@
   function setLanguage(lang) {
     currentLang = lang === "en" ? "en" : "de";
     const dict = translations[currentLang];
+    const pageType = document.body ? document.body.getAttribute("data-page") : "home";
     root.lang = currentLang;
-    document.title = dict.title;
+
+    if (pageType === "imprint" && dict["imprint.pageTitle"]) {
+      document.title = dict["imprint.pageTitle"];
+    } else if (pageType === "privacy" && dict["privacy.pageTitle"]) {
+      document.title = dict["privacy.pageTitle"];
+    } else {
+      document.title = dict.title;
+    }
 
     const descMeta = document.querySelector('meta[name="description"]');
     if (descMeta) {
-      descMeta.setAttribute("content", dict.description);
+      if (pageType === "imprint" && dict["imprint.pageDesc"]) {
+        descMeta.setAttribute("content", dict["imprint.pageDesc"]);
+      } else if (pageType === "privacy" && dict["privacy.pageDesc"]) {
+        descMeta.setAttribute("content", dict["privacy.pageDesc"]);
+      } else {
+        descMeta.setAttribute("content", dict.description);
+      }
     }
 
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
-      if (key && dict[key] !== undefined) {
+      if (key && typeof dict[key] === "string") {
         el.textContent = dict[key];
       }
     });
 
     document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
       const key = el.getAttribute("data-i18n-alt");
-      if (key && dict[key] !== undefined) {
+      if (key && typeof dict[key] === "string") {
         el.setAttribute("alt", dict[key]);
       }
     });
 
     document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
       const key = el.getAttribute("data-i18n-aria");
-      if (key && dict[key] !== undefined) {
+      if (key && typeof dict[key] === "string") {
         el.setAttribute("aria-label", dict[key]);
       }
     });
@@ -466,6 +639,8 @@
     });
 
     updateLocalizedLinks(currentLang);
+    updateOrbitLabels(orbitShownDay);
+    updateSlideshowCaption();
 
     try {
       localStorage.setItem("portfolio-lang", currentLang);
@@ -490,7 +665,369 @@
 
   setLanguage(initialLang);
 
-  // Project Bento Filtering
+  // Start CycleContext Orbit Loop
+  if (orbitCard && orbitRing && orbitKnob) {
+    const START_DAY = 4;
+    const SECONDS_PER_DAY = 1.45;
+    placeOrbit(START_DAY + 0.5);
+    updateOrbitLabels(START_DAY);
+
+    window.addEventListener("resize", () => placeOrbit(orbitShownDay + 0.5), { passive: true });
+
+    if (!reducedMotion.matches) {
+      let running = false;
+      let visible = true;
+      let startTime = 0;
+      let elapsedBeforePause = 0;
+      let rafId = 0;
+
+      const loop = (now) => {
+        if (!startTime) startTime = now;
+        const elapsed = (now - startTime) / 1000;
+        elapsedBeforePause = elapsed;
+        placeOrbit(START_DAY + 0.5 + elapsed / SECONDS_PER_DAY);
+        rafId = window.requestAnimationFrame(loop);
+      };
+
+      const start = () => {
+        if (running || !visible || document.hidden) return;
+        running = true;
+        const offset = elapsedBeforePause;
+        rafId = window.requestAnimationFrame((now) => {
+          startTime = now - offset * 1000;
+          loop(now);
+        });
+      };
+
+      const stop = () => {
+        if (!running) return;
+        running = false;
+        window.cancelAnimationFrame(rafId);
+      };
+
+      if ("IntersectionObserver" in window) {
+        const orbitObserver = new IntersectionObserver(
+          (entries) => {
+            visible = Boolean(entries[0] && entries[0].isIntersecting);
+            if (visible) start();
+            else stop();
+          },
+          { threshold: 0.1 }
+        );
+        orbitObserver.observe(orbitCard);
+      } else {
+        start();
+      }
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) stop();
+        else start();
+      });
+    }
+  }
+
+  // Interactive DataDisplay Dashboard / Slide Toggle
+  const ddStage = document.querySelector("[data-dd-mode]");
+  if (ddStage) {
+    const ddButtons = Array.from(ddStage.querySelectorAll("[data-dd-target]"));
+    const dashView = ddStage.querySelector(".dd-view--dashboard");
+    const slideView = ddStage.querySelector(".dd-view--slide");
+
+    const setDdMode = (mode) => {
+      const next = mode === "slide" ? "slide" : "dashboard";
+      ddStage.setAttribute("data-dd-mode", next);
+      ddButtons.forEach((btn) => {
+        const active = btn.getAttribute("data-dd-target") === next;
+        btn.classList.toggle("is-active", active);
+        btn.setAttribute("aria-selected", active ? "true" : "false");
+      });
+      if (dashView) dashView.hidden = next !== "dashboard";
+      if (slideView) slideView.hidden = next !== "slide";
+    };
+
+    ddButtons.forEach((btn) => {
+      btn.addEventListener("click", () => setDdMode(btn.getAttribute("data-dd-target")));
+    });
+  }
+
+  // Hero Multi-App Slideshow Controls & Autoplay
+  if (heroSlideshow && slideItems.length) {
+    const SLIDESHOW_INTERVAL_MS = 4200;
+    let slideshowHoverPaused = false;
+    let slideshowTimer = null;
+
+    const setSlide = (index) => {
+      const count = slideItems.length;
+      activeSlideIndex = ((index % count) + count) % count;
+
+      slideItems.forEach((slide, idx) => {
+        const active = idx === activeSlideIndex;
+        slide.classList.toggle("is-active", active);
+        if (active) {
+          slide.removeAttribute("aria-hidden");
+        } else {
+          slide.setAttribute("aria-hidden", "true");
+        }
+      });
+
+      slideDots.forEach((dot, idx) => {
+        const active = idx === activeSlideIndex;
+        dot.classList.toggle("is-active", active);
+        dot.setAttribute("aria-selected", active ? "true" : "false");
+      });
+
+      updateSlideshowCaption();
+    };
+
+    const stopSlideshowTimer = () => {
+      if (slideshowTimer !== null) {
+        window.clearInterval(slideshowTimer);
+        slideshowTimer = null;
+      }
+    };
+
+    const startSlideshowTimer = () => {
+      stopSlideshowTimer();
+      if (slideshowUserPaused || slideshowHoverPaused || slideItems.length < 2 || document.hidden) {
+        return;
+      }
+      slideshowTimer = window.setInterval(() => {
+        setSlide(activeSlideIndex + 1);
+      }, SLIDESHOW_INTERVAL_MS);
+    };
+
+    slideDots.forEach((dot, idx) => {
+      dot.addEventListener("click", () => {
+        const raw = dot.getAttribute("data-slide-dot");
+        const target = raw !== null ? Number(raw) : idx;
+        setSlide(Number.isFinite(target) ? target : idx);
+        startSlideshowTimer();
+      });
+
+      dot.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+          const next = (idx + 1) % slideItems.length;
+          setSlide(next);
+          if (slideDots[next]) slideDots[next].focus();
+          startSlideshowTimer();
+        } else if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          const prev = (idx - 1 + slideItems.length) % slideItems.length;
+          setSlide(prev);
+          if (slideDots[prev]) slideDots[prev].focus();
+          startSlideshowTimer();
+        }
+      });
+    });
+
+    if (slideshowToggle) {
+      slideshowToggle.addEventListener("click", () => {
+        slideshowUserPaused = !slideshowUserPaused;
+        updateSlideshowCaption();
+        if (slideshowUserPaused) {
+          stopSlideshowTimer();
+        } else {
+          startSlideshowTimer();
+        }
+      });
+    }
+
+    heroSlideshow.addEventListener("mouseenter", () => {
+      slideshowHoverPaused = true;
+      stopSlideshowTimer();
+    });
+
+    heroSlideshow.addEventListener("mouseleave", () => {
+      slideshowHoverPaused = false;
+      startSlideshowTimer();
+    });
+
+    heroSlideshow.addEventListener("focusin", () => {
+      slideshowHoverPaused = true;
+      stopSlideshowTimer();
+    });
+
+    heroSlideshow.addEventListener("focusout", (event) => {
+      if (!heroSlideshow.contains(event.relatedTarget)) {
+        slideshowHoverPaused = false;
+        startSlideshowTimer();
+      }
+    });
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        stopSlideshowTimer();
+      } else {
+        startSlideshowTimer();
+      }
+    });
+
+    if (typeof reducedMotion.addEventListener === "function") {
+      reducedMotion.addEventListener("change", (event) => {
+        slideshowUserPaused = event.matches;
+        updateSlideshowCaption();
+        if (slideshowUserPaused) {
+          stopSlideshowTimer();
+        } else {
+          startSlideshowTimer();
+        }
+      });
+    }
+
+    setSlide(0);
+    startSlideshowTimer();
+  }
+
+  // Interactive CardDisplay 3D Business Card Deck (CardDisplay, CycleContext, Gymmix)
+  const bizCard = document.getElementById("bizcard-3d");
+  const cardItems = bizCard ? Array.from(bizCard.querySelectorAll("[data-bizcard-item]")) : [];
+  const flipBtn = document.querySelector("[data-card-flip]");
+  const cardPills = Array.from(document.querySelectorAll(".bizcard-pill[data-bizcard-index]"));
+
+  if (bizCard && cardItems.length) {
+    let activeCardIndex = 0;
+    let flipSteps = 0;
+    let leaveTimer = null;
+
+    const syncPills = () => {
+      cardPills.forEach((pill, idx) => {
+        const raw = pill.getAttribute("data-bizcard-index");
+        const pillIdx = raw !== null ? Number(raw) : idx;
+        const active = pillIdx === activeCardIndex;
+        pill.classList.toggle("is-active", active);
+        pill.setAttribute("aria-pressed", active ? "true" : "false");
+      });
+    };
+
+    const setCardIndex = (targetIdx, animate = true) => {
+      const count = cardItems.length;
+      const nextIdx = ((targetIdx % count) + count) % count;
+
+      if (!animate) {
+        activeCardIndex = nextIdx;
+        flipSteps = 0;
+        bizCard.style.setProperty("--flip-deg", "0deg");
+        cardItems.forEach((card, idx) => {
+          const active = idx === activeCardIndex;
+          card.classList.remove("is-leaving", "is-back-plane");
+          card.classList.toggle("is-current", active);
+          card.setAttribute("aria-hidden", active ? "false" : "true");
+        });
+        syncPills();
+        return;
+      }
+
+      if (nextIdx === activeCardIndex) return;
+
+      if (leaveTimer !== null) {
+        window.clearTimeout(leaveTimer);
+        leaveTimer = null;
+      }
+
+      const prevCard = cardItems[activeCardIndex];
+      const nextCard = cardItems[nextIdx];
+
+      cardItems.forEach((card) => card.classList.remove("is-leaving"));
+
+      if (prevCard) {
+        prevCard.classList.remove("is-current");
+        prevCard.classList.add("is-leaving");
+        prevCard.setAttribute("aria-hidden", "true");
+      }
+
+      flipSteps += 1;
+      const nextIsBackPlane = (flipSteps % 2) === 1;
+
+      if (nextCard) {
+        nextCard.classList.toggle("is-back-plane", nextIsBackPlane);
+        nextCard.classList.add("is-current");
+        nextCard.setAttribute("aria-hidden", "false");
+      }
+
+      activeCardIndex = nextIdx;
+      bizCard.style.setProperty("--flip-deg", `${flipSteps * 180}deg`);
+      syncPills();
+
+      leaveTimer = window.setTimeout(() => {
+        cardItems.forEach((card) => card.classList.remove("is-leaving"));
+        leaveTimer = null;
+      }, 740);
+    };
+
+    const nextCard = () => setCardIndex(activeCardIndex + 1, true);
+
+    setCardIndex(0, false);
+    bizCard.addEventListener("click", nextCard);
+    if (flipBtn) {
+      flipBtn.addEventListener("click", nextCard);
+    }
+    cardPills.forEach((pill, idx) => {
+      pill.addEventListener("click", () => {
+        const raw = pill.getAttribute("data-bizcard-index");
+        const target = raw !== null ? Number(raw) : idx;
+        setCardIndex(Number.isFinite(target) ? target : idx, true);
+      });
+    });
+  }
+
+  // Subtle 3D Pointer Tilt
+  if (window.matchMedia("(pointer: fine)").matches && !reducedMotion.matches) {
+    document.querySelectorAll("[data-tilt-card]").forEach((el) => {
+      el.addEventListener("mousemove", (event) => {
+        const rect = el.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+        el.style.setProperty("--tilt-y", `${(x * 5.5).toFixed(2)}deg`);
+        el.style.setProperty("--tilt-x", `${(-y * 5.5).toFixed(2)}deg`);
+      });
+      el.addEventListener("mouseleave", () => {
+        el.style.setProperty("--tilt-y", "0deg");
+        el.style.setProperty("--tilt-x", "0deg");
+      });
+    });
+  }
+
+  // Bento Floating Pill Header Scroll State + Mobile Drawer
+  const siteHeader = document.getElementById("site-header");
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileDrawer = document.getElementById("mobile-drawer");
+
+  const updateHeaderScroll = () => {
+    if (!siteHeader) return;
+    siteHeader.classList.toggle("is-scrolled", window.scrollY > 12);
+  };
+  window.addEventListener("scroll", updateHeaderScroll, { passive: true });
+  updateHeaderScroll();
+
+  const setDrawerOpen = (open) => {
+    if (!menuToggle || !mobileDrawer) return;
+    menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    mobileDrawer.setAttribute("aria-hidden", open ? "false" : "true");
+    mobileDrawer.classList.toggle("is-open", open);
+    document.body.classList.toggle("menu-open", open);
+  };
+
+  if (menuToggle && mobileDrawer) {
+    menuToggle.addEventListener("click", () => {
+      const next = menuToggle.getAttribute("aria-expanded") !== "true";
+      setDrawerOpen(next);
+    });
+
+    mobileDrawer.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => setDrawerOpen(false));
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") setDrawerOpen(false);
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 960) setDrawerOpen(false);
+    });
+  }
+
+  // Category Filtering
   const productGrid = document.getElementById("product-grid");
   const filterPills = Array.from(document.querySelectorAll(".filter-pill[data-filter]"));
   const bentoCards = Array.from(document.querySelectorAll(".bento-card[data-category]"));
@@ -516,6 +1053,10 @@
         card.classList.add("is-visible");
       }
     });
+
+    if (orbitCard && !orbitCard.hidden) {
+      window.requestAnimationFrame(() => placeOrbit(orbitShownDay + 0.5));
+    }
   }
 
   filterPills.forEach((pill) => {
@@ -529,6 +1070,7 @@
       const targetFilter = trigger.getAttribute("data-filter-jump");
       if (!targetFilter) return;
       event.preventDefault();
+      setDrawerOpen(false);
       applyFilter(targetFilter);
       const section = document.getElementById("projekte");
       if (section) {
@@ -541,127 +1083,6 @@
   });
 
   applyFilter("all");
-
-  // Close mobile menu when a link inside is tapped
-  document.querySelectorAll(".mobile-menu a").forEach((link) => {
-    link.addEventListener("click", () => {
-      const details = link.closest("details");
-      if (details) {
-        details.open = false;
-      }
-    });
-  });
-
-  // Hero Bento Video Card (Playback + Replay + Gentle Hover Tilt)
-  const videoCard = document.getElementById("bento-video-card");
-  const heroVideo = document.getElementById("hero-video");
-  const replayBtn = document.getElementById("video-replay");
-
-  if (heroVideo && videoCard) {
-    heroVideo.muted = true;
-    heroVideo.playsInline = true;
-
-    const markVideoReady = () => {
-      videoCard.classList.add("video-ready");
-      heroVideo.classList.add("video-ready");
-    };
-
-    if ("requestVideoFrameCallback" in heroVideo) {
-      heroVideo.requestVideoFrameCallback(markVideoReady);
-    }
-    heroVideo.addEventListener("playing", markVideoReady, { once: true });
-    heroVideo.addEventListener("loadeddata", markVideoReady, { once: true });
-
-    const safePlay = () => {
-      if (reducedMotion.matches) return;
-      const promise = heroVideo.play();
-      if (promise && typeof promise.catch === "function") {
-        promise.catch(() => {});
-      }
-    };
-
-    if ("IntersectionObserver" in window && !reducedMotion.matches) {
-      const videoObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              safePlay();
-            } else {
-              heroVideo.pause();
-            }
-          });
-        },
-        { threshold: 0.25 }
-      );
-      videoObserver.observe(heroVideo);
-    } else if (!reducedMotion.matches) {
-      safePlay();
-    }
-
-    if (replayBtn) {
-      replayBtn.addEventListener("click", () => {
-        heroVideo.currentTime = 0;
-        markVideoReady();
-        const promise = heroVideo.play();
-        if (promise && typeof promise.catch === "function") {
-          promise.catch(() => {});
-        }
-      });
-    }
-
-    if (window.matchMedia("(pointer: fine)").matches && !reducedMotion.matches) {
-      videoCard.addEventListener("mousemove", (event) => {
-        const rect = videoCard.getBoundingClientRect();
-        const x = (event.clientX - rect.left) / rect.width - 0.5;
-        const y = (event.clientY - rect.top) / rect.height - 0.5;
-        videoCard.style.transform = `rotateY(${(x * 4.5).toFixed(2)}deg) rotateX(${(-y * 4.5).toFixed(2)}deg)`;
-      });
-      videoCard.addEventListener("mouseleave", () => {
-        videoCard.style.transform = "";
-      });
-    }
-  }
-
-  // DataDisplay Scroll Depth Parallax (decoupled from hover transform via CSS translate)
-  const parallaxLayers = Array.from(document.querySelectorAll(".parallax-layer[data-depth]"));
-  const scenes = Array.from(document.querySelectorAll("[data-scene]"));
-
-  if (!reducedMotion.matches && (parallaxLayers.length || scenes.length)) {
-    let rafId = 0;
-
-    const updateParallax = () => {
-      rafId = 0;
-      const scrollY = window.scrollY;
-      const viewportHeight = window.innerHeight || 800;
-
-      parallaxLayers.forEach((layer) => {
-        const depth = Number(layer.getAttribute("data-depth") || 0);
-        const offset = Math.max(-260, Math.min(260, scrollY * depth));
-        layer.style.translate = `0 ${offset.toFixed(1)}px`;
-      });
-
-      scenes.forEach((scene) => {
-        const rect = scene.getBoundingClientRect();
-        if (rect.bottom < -120 || rect.top > viewportHeight + 120) return;
-        const centerOffset = rect.top + rect.height / 2 - viewportHeight / 2;
-        scene.querySelectorAll("[data-scene-layer]").forEach((layer) => {
-          const depth = Number(layer.getAttribute("data-scene-layer") || 0);
-          const shift = Math.max(-350, Math.min(350, centerOffset * depth));
-          layer.style.translate = `0 ${shift.toFixed(1)}px`;
-        });
-      });
-    };
-
-    const requestTick = () => {
-      if (!rafId) {
-        rafId = window.requestAnimationFrame(updateParallax);
-      }
-    };
-
-    window.addEventListener("scroll", requestTick, { passive: true });
-    window.addEventListener("resize", requestTick, { passive: true });
-    updateParallax();
-  }
 
   // Copy Email Button
   document.querySelectorAll("[data-copy-email]").forEach((btn) => {
@@ -716,7 +1137,7 @@
             }
           });
         },
-        { threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
+        { threshold: 0.06, rootMargin: "0px 0px -24px 0px" }
       );
       revealNodes.forEach((el) => revealObserver.observe(el));
     } else {
